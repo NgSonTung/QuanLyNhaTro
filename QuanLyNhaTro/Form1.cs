@@ -27,6 +27,7 @@ namespace QuanLyNhaTro
             {
                 e.Cancel = true;
             }
+            var a = "hello";
         }
     }
 }
