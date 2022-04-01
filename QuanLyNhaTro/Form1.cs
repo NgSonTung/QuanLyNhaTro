@@ -19,7 +19,7 @@ namespace QuanLyNhaTro
 
         private void Form1_FormClosing(object sender, FormClosingEventArgs e)
         {
-            DialogResult dialogResult = MessageBox.Show("Bạn có muốn thoát không", "Thông Báo", MessageBoxButtons.YesNo, MessageBoxIcon.Information);
+            DialogResult dialogResult = MessageBox.Show("Do you want to exit?", "Notification", MessageBoxButtons.YesNo, MessageBoxIcon.Information);
             if (dialogResult == DialogResult.Yes)
             {
             }
@@ -34,6 +34,27 @@ namespace QuanLyNhaTro
         {
             
         }
-        
+
+        private void btnExit_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
+
+        private void fLogin_Click(object sender, EventArgs e)
+        {
+            fManager f = new fManager();
+            f.ShowDialog();
+            this.Show();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
+
+        private void label7_Click(object sender, EventArgs e)
+        {
+            var a = "123";
+        }
     }
 }
