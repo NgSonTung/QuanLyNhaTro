@@ -61,9 +61,9 @@ namespace QuanLyNhaTro
             /*if (Login(textBox1.Text, textBox2.Text))*/
             
                 this.Hide();
-                Form2 form02 = new Form2();
-                form02.Closed += (s, args) => this.Close();
-                form02.Show();
+                fManager fManager = new fManager();
+                fManager.Closed += (s, args) => this.Close();
+                fManager.Show();
             
             /*else
                 MessageBox.Show("Đăng nhập lại", "Thông Báo", MessageBoxButtons.OK, MessageBoxIcon.Information);*/
