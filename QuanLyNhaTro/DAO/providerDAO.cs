@@ -21,7 +21,7 @@ namespace QuanLyNhaTro.DAO
         public providerDAO()
         { }
 
-        string connectSTR = "Data Source=DESKTOP-NO88C1O\\TUNGDEPZAI;Initial Catalog=QuanLyQuanCafe;Integrated Security=True";
+        string connectSTR = "Data Source=DESKTOP-NO88C1O\\TUNGDEPZAI;Initial Catalog=doAn;Integrated Security=True";
 
         public DataTable loadDL(string command)
         {
@@ -34,6 +34,17 @@ namespace QuanLyNhaTro.DAO
             connect.Close();
             return dt;
 
+        }
+
+        public object executeScalar(string query)
+        {
+            object dt = 0;
+            SqlConnection connect = new SqlConnection(connectSTR);
+            connect.Open();
+            SqlCommand cmd = new SqlCommand(query, connect);
+            dt = cmd.ExecuteScalar();
+            connect.Close();
+            return dt;
         }
     }
 }

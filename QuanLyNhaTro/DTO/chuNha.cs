@@ -23,11 +23,11 @@ namespace QuanLyNhaTro.DTO
 
         public chuNha(DataRow row)
         {
-            maChuNha = (int)row["maChuNha"];
-            maNhaTro = (int)row["maNhaTro"];
-            diaChiChu = (string)row["diaChiChu"];
-            ten = (string)row["ten"];
-            sdt = (string)row["sdt"];
+            this.maChuNha = (int)row["maChuNha"];
+            this.maNhaTro = (int)row["maNhaTro"];
+            this.diaChiChu = (string)row["diaChiChu"];
+            this.ten = (string)row["ten"];
+            this.sdt = (string)row["sdt"];
         }
     }
 }

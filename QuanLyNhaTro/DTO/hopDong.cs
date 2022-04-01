@@ -21,10 +21,10 @@ namespace QuanLyNhaTro.DTO
 
         public hopDong(DataRow row)
         {
-            maHopDong = (int)row["maHopDong"];
-            maThanhToan = (int)row["maThanhToan"];
-            maSinhVien = (int)row["maSinhVien"];
-            soSinhVien = (int)row["soSinhVien"];
+            this.maHopDong = (int)row["maHopDong"];
+            this.maThanhToan = (int)row["maThanhToan"];
+            this.maSinhVien = (int)row["maSinhVien"];
+            this.soSinhVien = (int)row["soSinhVien"];
         }
     }
 }

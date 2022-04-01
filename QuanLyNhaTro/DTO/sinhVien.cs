@@ -25,12 +25,12 @@ namespace QuanLyNhaTro.DTO
 
         public sinhVien(DataRow row)
         {
-            maSinhVien = (int)row["maSinhVien"];
-            khoa = (string)row["khoa"];
-            name = (string)row["name"];
-            dienThoai = (string)row["dienThoai"];
-            lop = (int)row["lop"];
-            queQuan = (string)row["queQuan"];
+            this.maSinhVien = (int)row["maSinhVien"];
+            this.khoa = (string)row["khoa"];
+            this.name = (string)row["name"];
+            this.dienThoai = (string)row["dienThoai"];
+            this.lop = (int)row["lop"];
+            this.queQuan = (string)row["queQuan"];
 
         }
     }
