@@ -46,7 +46,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="DAO\AccountDAO.cs" />
+    <Compile Include="DAO\accountDAO.cs" />
     <Compile Include="DAO\providerDAO.cs" />
     <Compile Include="DTO\chuNha.cs" />
     <Compile Include="DTO\hopDong.cs" />
@@ -106,9 +106,7 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="DTO\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <None Include="Resources\technical-support.png" />
   </ItemGroup>
