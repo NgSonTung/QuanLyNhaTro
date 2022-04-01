@@ -69,7 +69,7 @@
             // 
             // button3
             // 
-            this.button3.Location = new System.Drawing.Point(710, 394);
+            this.button3.Location = new System.Drawing.Point(710, 414);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(121, 41);
             this.button3.TabIndex = 21;
@@ -78,7 +78,7 @@
             // 
             // numericUpDown1
             // 
-            this.numericUpDown1.Location = new System.Drawing.Point(710, 450);
+            this.numericUpDown1.Location = new System.Drawing.Point(710, 470);
             this.numericUpDown1.Name = "numericUpDown1";
             this.numericUpDown1.Size = new System.Drawing.Size(121, 22);
             this.numericUpDown1.TabIndex = 20;
@@ -86,18 +86,18 @@
             // comboBox3
             // 
             this.comboBox3.FormattingEnabled = true;
-            this.comboBox3.Location = new System.Drawing.Point(540, 450);
+            this.comboBox3.Location = new System.Drawing.Point(540, 470);
             this.comboBox3.Name = "comboBox3";
             this.comboBox3.Size = new System.Drawing.Size(121, 24);
             this.comboBox3.TabIndex = 19;
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(540, 394);
+            this.button2.Location = new System.Drawing.Point(540, 414);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(121, 41);
             this.button2.TabIndex = 18;
-            this.button2.Text = "button2";
+            this.button2.Text = "Chuyển bàn";
             this.button2.UseVisualStyleBackColor = true;
             // 
             // button1
@@ -106,7 +106,7 @@
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(67, 73);
             this.button1.TabIndex = 17;
-            this.button1.Text = "button1";
+            this.button1.Text = "Thêm món";
             this.button1.UseVisualStyleBackColor = true;
             // 
             // comboBox2
@@ -131,11 +131,11 @@
             // 
             // button4
             // 
-            this.button4.Location = new System.Drawing.Point(872, 394);
+            this.button4.Location = new System.Drawing.Point(872, 414);
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(104, 78);
             this.button4.TabIndex = 22;
-            this.button4.Text = "button4";
+            this.button4.Text = "Checkout";
             this.button4.UseVisualStyleBackColor = true;
             // 
             // columnHeader3
@@ -217,7 +217,7 @@
             this.menuStrip1.TabIndex = 13;
             this.menuStrip1.Text = "menuStrip1";
             // 
-            // fAdmin
+            // fManager
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -234,7 +234,7 @@
             this.Controls.Add(this.listView1);
             this.Controls.Add(this.flowLayoutPanel1);
             this.Controls.Add(this.menuStrip1);
-            this.Name = "fAdmin";
+            this.Name = "fManager";
             this.Text = "fAdmin";
             ((System.ComponentModel.ISupportInitialize)(this.soLuongMon)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).EndInit();
