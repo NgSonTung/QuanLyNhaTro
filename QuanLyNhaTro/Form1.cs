@@ -28,6 +28,13 @@ namespace QuanLyNhaTro
                 e.Cancel = true;
             }
             var a = "hello";
+            var b = "concac";
         }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+            
+        }
+        
     }
 }
