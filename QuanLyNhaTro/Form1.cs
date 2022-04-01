@@ -55,5 +55,17 @@ namespace QuanLyNhaTro
         private void label7_Click(object sender, EventArgs e)
         {
         }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            fManager f = new fManager();
+            f.ShowDialog();
+            this.Show();
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
     }
 }
