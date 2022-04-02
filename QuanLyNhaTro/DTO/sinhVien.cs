@@ -13,25 +13,24 @@ namespace QuanLyNhaTro.DTO
         private string khoa;
         private string name;
         private string dienThoai;
-        private int lop;
+        private string lop;
         private string queQuan;
 
         public int MaSinhVien { get => maSinhVien; set => maSinhVien = value; }
         public string Khoa { get => khoa; set => khoa = value; }
         public string Name { get => name; set => name = value; }
         public string DienThoai { get => dienThoai; set => dienThoai = value; }
-        public int Lop { get => lop; set => lop = value; }
+        public string Lop { get => lop; set => lop = value; }
         public string QueQuan { get => queQuan; set => queQuan = value; }
 
         public sinhVien(DataRow row)
         {
-            this.maSinhVien = (int)row["maSinhVien"];
-            this.khoa = (string)row["khoa"];
-            this.name = (string)row["name"];
-            this.dienThoai = (string)row["dienThoai"];
-            this.lop = (int)row["lop"];
-            this.queQuan = (string)row["queQuan"];
-
+            this.MaSinhVien = (int)row["maSinhVien"];
+            this.Khoa = (string)row["khoa"];
+            this.Name = (string)row["name"];
+            this.DienThoai = (string)row["dienThoai"];
+            this.Lop = (string)row["lop"];
+            this.QueQuan = (string)row["queQuan"];
         }
     }
 }

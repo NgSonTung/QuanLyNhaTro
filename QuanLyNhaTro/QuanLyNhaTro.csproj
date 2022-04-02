@@ -47,6 +47,8 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="DAO\accountDAO.cs" />
+    <Compile Include="DAO\chuyenTroDAO.cs" />
+    <Compile Include="DAO\countDAO.cs" />
     <Compile Include="DAO\thongTinTroDAO.cs" />
     <Compile Include="DAO\khoaDAO.cs" />
     <Compile Include="DAO\sinhVienDAO.cs" />
@@ -54,6 +56,8 @@
     <Compile Include="DAO\nhaTroDAO.cs" />
     <Compile Include="DAO\providerDAO.cs" />
     <Compile Include="DAO\thanhToanDAO.cs" />
+    <Compile Include="DTO\chuyenTro.cs" />
+    <Compile Include="DTO\count.cs" />
     <Compile Include="DTO\thongTinTro.cs" />
     <Compile Include="DTO\chuNha.cs" />
     <Compile Include="DTO\hopDong.cs" />

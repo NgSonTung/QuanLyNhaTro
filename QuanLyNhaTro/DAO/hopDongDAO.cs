@@ -42,15 +42,9 @@ namespace QuanLyNhaTro.DAO
             providerDAO.Instance.loadDL(sql);
         }
 
-        public void updateCount(int maThanhToan, int maSinhVien, int soSinhVien)
+        public void updateCount(int maThanhToan)
         {
-            string sql = "update hopDong set count = count +'" + maThanhToan + "' where idBill = '" + maSinhVien + "' and idFood ='" + soSinhVien + "'";
-            providerDAO.Instance.loadDL(sql);
-        }
-
-        public void deleteItem(int maThanhToan, int maSinhVien)
-        {
-            string sql = "delete hopDong where count <=0 and maThanhToan = " + maThanhToan + " and maSinhVien = " + maSinhVien;
+            string sql = "update hopDong set soSinhVien = soSinhVien + 1  where maThanhToan = " + maThanhToan;
             providerDAO.Instance.loadDL(sql);
         }
 
