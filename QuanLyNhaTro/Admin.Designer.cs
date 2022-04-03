@@ -50,25 +50,25 @@
             this.button1 = new System.Windows.Forms.Button();
             this.dgvFood = new System.Windows.Forms.DataGridView();
             this.tabPage5 = new System.Windows.Forms.TabPage();
+            this.panel7 = new System.Windows.Forms.Panel();
+            this.textBox7 = new System.Windows.Forms.TextBox();
+            this.label7 = new System.Windows.Forms.Label();
+            this.panel5 = new System.Windows.Forms.Panel();
+            this.textBox4 = new System.Windows.Forms.TextBox();
+            this.label5 = new System.Windows.Forms.Label();
+            this.panel8 = new System.Windows.Forms.Panel();
+            this.label8 = new System.Windows.Forms.Label();
+            this.textBox8 = new System.Windows.Forms.TextBox();
+            this.panel6 = new System.Windows.Forms.Panel();
+            this.label6 = new System.Windows.Forms.Label();
+            this.textBox5 = new System.Windows.Forms.TextBox();
+            this.textBox6 = new System.Windows.Forms.TextBox();
+            this.button10 = new System.Windows.Forms.Button();
             this.button6 = new System.Windows.Forms.Button();
             this.button7 = new System.Windows.Forms.Button();
             this.button8 = new System.Windows.Forms.Button();
             this.button9 = new System.Windows.Forms.Button();
             this.dgvPart = new System.Windows.Forms.DataGridView();
-            this.textBox6 = new System.Windows.Forms.TextBox();
-            this.button10 = new System.Windows.Forms.Button();
-            this.panel5 = new System.Windows.Forms.Panel();
-            this.label5 = new System.Windows.Forms.Label();
-            this.panel6 = new System.Windows.Forms.Panel();
-            this.label6 = new System.Windows.Forms.Label();
-            this.textBox5 = new System.Windows.Forms.TextBox();
-            this.textBox4 = new System.Windows.Forms.TextBox();
-            this.panel7 = new System.Windows.Forms.Panel();
-            this.textBox7 = new System.Windows.Forms.TextBox();
-            this.label7 = new System.Windows.Forms.Label();
-            this.panel8 = new System.Windows.Forms.Panel();
-            this.label8 = new System.Windows.Forms.Label();
-            this.textBox8 = new System.Windows.Forms.TextBox();
             this.tabControl2.SuspendLayout();
             this.tabPage4.SuspendLayout();
             this.panel4.SuspendLayout();
@@ -78,11 +78,11 @@
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvFood)).BeginInit();
             this.tabPage5.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvPart)).BeginInit();
-            this.panel5.SuspendLayout();
-            this.panel6.SuspendLayout();
             this.panel7.SuspendLayout();
+            this.panel5.SuspendLayout();
             this.panel8.SuspendLayout();
+            this.panel6.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvPart)).BeginInit();
             this.SuspendLayout();
             // 
             // tabControl2
@@ -111,7 +111,7 @@
             this.tabPage4.Location = new System.Drawing.Point(4, 22);
             this.tabPage4.Name = "tabPage4";
             this.tabPage4.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage4.Size = new System.Drawing.Size(708, 366);
+            this.tabPage4.Size = new System.Drawing.Size(845, 366);
             this.tabPage4.TabIndex = 1;
             this.tabPage4.Text = "Học Sinh";
             this.tabPage4.UseVisualStyleBackColor = true;
@@ -305,123 +305,6 @@
             this.tabPage5.UseVisualStyleBackColor = true;
             this.tabPage5.Click += new System.EventHandler(this.tabPage5_Click);
             // 
-            // button6
-            // 
-            this.button6.Location = new System.Drawing.Point(301, 24);
-            this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(75, 35);
-            this.button6.TabIndex = 9;
-            this.button6.Text = "xem";
-            this.button6.UseVisualStyleBackColor = true;
-            // 
-            // button7
-            // 
-            this.button7.Location = new System.Drawing.Point(210, 24);
-            this.button7.Name = "button7";
-            this.button7.Size = new System.Drawing.Size(75, 35);
-            this.button7.TabIndex = 8;
-            this.button7.Text = "xóa";
-            this.button7.UseVisualStyleBackColor = true;
-            // 
-            // button8
-            // 
-            this.button8.Location = new System.Drawing.Point(108, 24);
-            this.button8.Name = "button8";
-            this.button8.Size = new System.Drawing.Size(75, 35);
-            this.button8.TabIndex = 7;
-            this.button8.Text = "sửa";
-            this.button8.UseVisualStyleBackColor = true;
-            // 
-            // button9
-            // 
-            this.button9.Location = new System.Drawing.Point(18, 24);
-            this.button9.Name = "button9";
-            this.button9.Size = new System.Drawing.Size(75, 35);
-            this.button9.TabIndex = 6;
-            this.button9.Text = "Thêm";
-            this.button9.UseVisualStyleBackColor = true;
-            this.button9.Click += new System.EventHandler(this.button9_Click);
-            // 
-            // dgvPart
-            // 
-            this.dgvPart.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvPart.Location = new System.Drawing.Point(18, 82);
-            this.dgvPart.Name = "dgvPart";
-            this.dgvPart.RowHeadersWidth = 51;
-            this.dgvPart.Size = new System.Drawing.Size(451, 247);
-            this.dgvPart.TabIndex = 5;
-            this.dgvPart.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvPart_CellContentClick);
-            this.dgvPart.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvPart_CellContentClick);
-            // 
-            // textBox6
-            // 
-            this.textBox6.Location = new System.Drawing.Point(430, 39);
-            this.textBox6.Name = "textBox6";
-            this.textBox6.Size = new System.Drawing.Size(106, 20);
-            this.textBox6.TabIndex = 13;
-            // 
-            // button10
-            // 
-            this.button10.Location = new System.Drawing.Point(558, 38);
-            this.button10.Name = "button10";
-            this.button10.Size = new System.Drawing.Size(75, 20);
-            this.button10.TabIndex = 12;
-            this.button10.Text = "Tìm kiếm";
-            this.button10.UseVisualStyleBackColor = true;
-            // 
-            // panel5
-            // 
-            this.panel5.Controls.Add(this.textBox4);
-            this.panel5.Controls.Add(this.label5);
-            this.panel5.Location = new System.Drawing.Point(500, 129);
-            this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(316, 31);
-            this.panel5.TabIndex = 15;
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(20, 7);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(54, 16);
-            this.label5.TabIndex = 1;
-            this.label5.Text = "Địa chỉ";
-            // 
-            // panel6
-            // 
-            this.panel6.Controls.Add(this.label6);
-            this.panel6.Controls.Add(this.textBox5);
-            this.panel6.Location = new System.Drawing.Point(500, 92);
-            this.panel6.Name = "panel6";
-            this.panel6.Size = new System.Drawing.Size(316, 31);
-            this.panel6.TabIndex = 14;
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(20, 7);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(22, 16);
-            this.label6.TabIndex = 1;
-            this.label6.Text = "ID";
-            // 
-            // textBox5
-            // 
-            this.textBox5.Location = new System.Drawing.Point(114, 7);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(156, 20);
-            this.textBox5.TabIndex = 0;
-            // 
-            // textBox4
-            // 
-            this.textBox4.Location = new System.Drawing.Point(114, 6);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(156, 20);
-            this.textBox4.TabIndex = 2;
-            this.textBox4.TextChanged += new System.EventHandler(this.textBox4_TextChanged);
-            // 
             // panel7
             // 
             this.panel7.Controls.Add(this.textBox7);
@@ -447,6 +330,33 @@
             this.label7.Size = new System.Drawing.Size(82, 16);
             this.label7.TabIndex = 1;
             this.label7.Text = "Tình Trạng";
+            // 
+            // panel5
+            // 
+            this.panel5.Controls.Add(this.textBox4);
+            this.panel5.Controls.Add(this.label5);
+            this.panel5.Location = new System.Drawing.Point(500, 129);
+            this.panel5.Name = "panel5";
+            this.panel5.Size = new System.Drawing.Size(316, 31);
+            this.panel5.TabIndex = 15;
+            // 
+            // textBox4
+            // 
+            this.textBox4.Location = new System.Drawing.Point(114, 6);
+            this.textBox4.Name = "textBox4";
+            this.textBox4.Size = new System.Drawing.Size(156, 20);
+            this.textBox4.TabIndex = 2;
+            this.textBox4.TextChanged += new System.EventHandler(this.textBox4_TextChanged);
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.Location = new System.Drawing.Point(20, 7);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(54, 16);
+            this.label5.TabIndex = 1;
+            this.label5.Text = "Địa chỉ";
             // 
             // panel8
             // 
@@ -474,6 +384,98 @@
             this.textBox8.Size = new System.Drawing.Size(156, 20);
             this.textBox8.TabIndex = 0;
             // 
+            // panel6
+            // 
+            this.panel6.Controls.Add(this.label6);
+            this.panel6.Controls.Add(this.textBox5);
+            this.panel6.Location = new System.Drawing.Point(500, 92);
+            this.panel6.Name = "panel6";
+            this.panel6.Size = new System.Drawing.Size(316, 31);
+            this.panel6.TabIndex = 14;
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.Location = new System.Drawing.Point(20, 7);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(22, 16);
+            this.label6.TabIndex = 1;
+            this.label6.Text = "ID";
+            // 
+            // textBox5
+            // 
+            this.textBox5.Location = new System.Drawing.Point(114, 7);
+            this.textBox5.Name = "textBox5";
+            this.textBox5.Size = new System.Drawing.Size(156, 20);
+            this.textBox5.TabIndex = 0;
+            // 
+            // textBox6
+            // 
+            this.textBox6.Location = new System.Drawing.Point(430, 39);
+            this.textBox6.Name = "textBox6";
+            this.textBox6.Size = new System.Drawing.Size(106, 20);
+            this.textBox6.TabIndex = 13;
+            // 
+            // button10
+            // 
+            this.button10.Location = new System.Drawing.Point(558, 38);
+            this.button10.Name = "button10";
+            this.button10.Size = new System.Drawing.Size(75, 20);
+            this.button10.TabIndex = 12;
+            this.button10.Text = "Tìm kiếm";
+            this.button10.UseVisualStyleBackColor = true;
+            // 
+            // button6
+            // 
+            this.button6.Location = new System.Drawing.Point(301, 24);
+            this.button6.Name = "button6";
+            this.button6.Size = new System.Drawing.Size(75, 35);
+            this.button6.TabIndex = 9;
+            this.button6.Text = "xem";
+            this.button6.UseVisualStyleBackColor = true;
+            // 
+            // button7
+            // 
+            this.button7.Location = new System.Drawing.Point(210, 24);
+            this.button7.Name = "button7";
+            this.button7.Size = new System.Drawing.Size(75, 35);
+            this.button7.TabIndex = 8;
+            this.button7.Text = "xóa";
+            this.button7.UseVisualStyleBackColor = true;
+            this.button7.Click += new System.EventHandler(this.button7_Click);
+            // 
+            // button8
+            // 
+            this.button8.Location = new System.Drawing.Point(108, 24);
+            this.button8.Name = "button8";
+            this.button8.Size = new System.Drawing.Size(75, 35);
+            this.button8.TabIndex = 7;
+            this.button8.Text = "sửa";
+            this.button8.UseVisualStyleBackColor = true;
+            this.button8.Click += new System.EventHandler(this.button8_Click);
+            // 
+            // button9
+            // 
+            this.button9.Location = new System.Drawing.Point(18, 24);
+            this.button9.Name = "button9";
+            this.button9.Size = new System.Drawing.Size(75, 35);
+            this.button9.TabIndex = 6;
+            this.button9.Text = "Thêm";
+            this.button9.UseVisualStyleBackColor = true;
+            this.button9.Click += new System.EventHandler(this.button9_Click);
+            // 
+            // dgvPart
+            // 
+            this.dgvPart.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvPart.Location = new System.Drawing.Point(18, 82);
+            this.dgvPart.Name = "dgvPart";
+            this.dgvPart.RowHeadersWidth = 51;
+            this.dgvPart.Size = new System.Drawing.Size(451, 247);
+            this.dgvPart.TabIndex = 5;
+            this.dgvPart.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvPart_CellContentClick);
+            this.dgvPart.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvPart_CellContentClick);
+            // 
             // Admin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -498,15 +500,15 @@
             ((System.ComponentModel.ISupportInitialize)(this.dgvFood)).EndInit();
             this.tabPage5.ResumeLayout(false);
             this.tabPage5.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvPart)).EndInit();
-            this.panel5.ResumeLayout(false);
-            this.panel5.PerformLayout();
-            this.panel6.ResumeLayout(false);
-            this.panel6.PerformLayout();
             this.panel7.ResumeLayout(false);
             this.panel7.PerformLayout();
+            this.panel5.ResumeLayout(false);
+            this.panel5.PerformLayout();
             this.panel8.ResumeLayout(false);
             this.panel8.PerformLayout();
+            this.panel6.ResumeLayout(false);
+            this.panel6.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvPart)).EndInit();
             this.ResumeLayout(false);
 
         }

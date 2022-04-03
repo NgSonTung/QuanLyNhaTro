@@ -54,9 +54,11 @@ namespace QuanLyNhaTro
 
         private void button9_Click(object sender, EventArgs e)
         {
-            int maNhaTro = (textBox5.SelectedText as maNhaTro).ID;
-            
-
+            string diaChi = textBox4.Text;
+            float gia = float.Parse(textBox8.Text);
+            string status = textBox7.Text;
+            nhaTroDAO.Instance.INSERT(diaChi, gia, status);
+            LoadDanhmuc();
         }
         
         public void load()
@@ -85,6 +87,23 @@ namespace QuanLyNhaTro
         private void textBox4_TextChanged(object sender, EventArgs e)
         {
             
+        }
+
+        private void button8_Click(object sender, EventArgs e)
+        {
+            string diaChi = textBox4.Text;
+            float gia = float.Parse(textBox8.Text);
+            string status = textBox7.Text;
+            int maNhaTro = int.Parse(textBox5.Text);
+            nhaTroDAO.Instance.UPDATEINSERT(maNhaTro,diaChi, gia, status);
+            LoadDanhmuc();
+        }
+
+        private void button7_Click(object sender, EventArgs e)
+        {
+            int maNhaTro = int.Parse(textBox5.Text);
+            nhaTroDAO.Instance.DELETEINSERT(maNhaTro);
+            LoadDanhmuc();
         }
     }
 }

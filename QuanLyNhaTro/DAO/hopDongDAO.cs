@@ -22,7 +22,10 @@ namespace QuanLyNhaTro.DAO
 
         public hopDongDAO()
         { }
-
+        public void deleteinsert(int maHopDong)
+        {
+            providerDAO.Instance.loadDL("delete hopDong WHERE maHopDong =" + maHopDong);
+        }
         public List<hopDong> getBillInfo()
         {
             string query = "select * from hopDong";
