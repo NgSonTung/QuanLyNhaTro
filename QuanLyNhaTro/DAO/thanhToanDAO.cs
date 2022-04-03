@@ -39,9 +39,19 @@ namespace QuanLyNhaTro.DAO
             string sql = "select max(maThanhToan) from thanhToan";
             return (int)providerDAO.Instance.executeScalar(sql);
         }
+        public int getMaThanhToan(int maNhaTro)
+        {
+            string sql = "select maThanhToan from thanhToan where status = 0 and maNhaTro = " + maNhaTro;
+            return (int)providerDAO.Instance.executeScalar(sql);
+        }
         public void insertBill(int id)
         {
             string sql = "insert into thanhToan(datecheckin,maNhaTro,status) values (getdate()," + id + ",0)";
+            providerDAO.Instance.loadDL(sql);
+        }
+        public void chuyenBill (int maNhaTroMoi, int maThanhToan)
+        {
+            string sql = "UPDATE thanhToan SET maNhaTro = "+ maNhaTroMoi + " WHERE status = 0 and maThanhToan = " + maThanhToan;
             providerDAO.Instance.loadDL(sql);
         }
         public void checkOut(int id)

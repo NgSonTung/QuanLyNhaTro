@@ -20,6 +20,8 @@ namespace QuanLyNhaTro
             loadNhaTro();
             loadKhoa();
         }
+        public int tempMaKhoa;
+        
         void loadNhaTro() /*show table button*/
         {
             List<nhaTro> tableList = nhaTroDAO.Instance.getTable();
@@ -83,10 +85,8 @@ namespace QuanLyNhaTro
 
         private void button4_Click(object sender, EventArgs e)
         {
-            List<count> count = countDAO.Instance.getSVCount(2);
-            comboBox6.Items.Add(count.Count);
+           
         }
-        public int tempMaKhoa;
         
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {   
@@ -111,21 +111,10 @@ namespace QuanLyNhaTro
             comboBox6.DisplayMember = "Name";
         }
 
-        private void button2_Click(object sender, EventArgs e)
-        {
-            int oldId = (dataGridView1.Tag as nhaTro).MaNhaTro;
-            int newId = (comboBox3.SelectedItem as nhaTro).MaNhaTro;
-            nhaTroDAO.Instance.checkOutStatus(oldId);
-            thanhToanDAO.Instance.chuyenStatus(newId, oldId);
-            nhaTroDAO.Instance.checkInStatus(newId);
-            loadNhaTro();
-            loadThongTin(newId);
-        }
-
-        private void button1_Click(object sender, EventArgs e)
+        private void button1_Click(object sender, EventArgs e) /*CheckIn*/
         {
             nhaTro nhaTro = dataGridView1.Tag as nhaTro;
-            List<count> count = countDAO.Instance.getSVCount(nhaTro.MaNhaTro);
+            /*int count = countDAO.Instance.getSVCount(nhaTro.MaNhaTro);*/
             int maThanhToan = thanhToanDAO.Instance.getUncheckBill(nhaTro.MaNhaTro);
             int maSinhVien = (comboBox2.SelectedItem as sinhVien).MaSinhVien;
             if (maThanhToan == -1) /*nếu nhà trọ trống ~ chưa có bill -> thêm bill*/
@@ -137,14 +126,61 @@ namespace QuanLyNhaTro
             }
             else
             {
-                hopDongDAO.Instance.insertBillInfo(maThanhToan, maSinhVien, count.Count);
+                hopDongDAO.Instance.insertBillInfo(maThanhToan, maSinhVien, countDAO.Instance.getSVCount(nhaTro.MaNhaTro));
                 sinhVienDAO.Instance.statusCoTro(maSinhVien);
-                hopDongDAO.Instance.updateCount(maThanhToan);
-
+                hopDongDAO.Instance.updateCountUp(maThanhToan);
             }
             loadThongTin(nhaTro.MaNhaTro);
             loadNhaTro();
             loadSinhVienByKhoa(tempMaKhoa);
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+
+
+            nhaTro nhaTro = dataGridView1.Tag as nhaTro; /*Lấy mã nhà trọ cũ & status*/
+            int maThanhToanCu = thanhToanDAO.Instance.getUncheckBill(nhaTro.MaNhaTro);
+            int maNhaTroMoi = (comboBox3.SelectedItem as nhaTro).MaNhaTro;
+            int checkThanhToan = thanhToanDAO.Instance.getUncheckBill(maNhaTroMoi);
+            int maThanhToanMoi = ((comboBox3.SelectedItem as nhaTro).MaNhaTro);
+            int maHopDong = (comboBox6.SelectedItem as chuyenTro).MaHopDong;
+            if (checkThanhToan == -1) /*nếu nhà trọ mới trống ~ chưa có bill -> thêm bill*/
+            {   
+                thanhToanDAO.Instance.insertBill(maNhaTroMoi); /* tạo thanh toán mới */
+                hopDongDAO.Instance.updateHopDong1(thanhToanDAO.Instance.getMaxID(), maHopDong); /* update hợp đồng*/
+                nhaTroDAO.Instance.checkInStatus(maNhaTroMoi); /* update status nhà trọ mới thành có người*/
+                if (countDAO.Instance.getSVCount(nhaTro.MaNhaTro) == 0) /*Nếu nhà trọ cũ 0 có người*/
+                {
+                    nhaTroDAO.Instance.checkOutStatus(nhaTro.MaNhaTro);  /*update status NT -> trống*/
+                    thanhToanDAO.Instance.checkOut(maThanhToanMoi); /*update status TT -> đã thanh toán*/
+                }
+                else
+                    hopDongDAO.Instance.updateCountDown(maThanhToanCu);/*giảm count ở hợp đồng nhà cũ*/
+                    hopDongDAO.Instance.updateCountUp(maThanhToanMoi);/*tăng count ở hợp đồng nhà mới*/
+            }
+            else
+            {   
+                hopDongDAO.Instance.updateHopDong2(thanhToanDAO.Instance.getMaThanhToan(maNhaTroMoi), maHopDong, countDAO.Instance.getSVCount(maNhaTroMoi)); /* update hợp đồng*/
+                hopDongDAO.Instance.updateCountUp(thanhToanDAO.Instance.getMaThanhToan(maNhaTroMoi));
+                if (countDAO.Instance.getSVCount(nhaTro.MaNhaTro) == 0) /*Nếu nhà trọ cũ 0 có người*/
+                {
+                    nhaTroDAO.Instance.checkOutStatus(nhaTro.MaNhaTro);  /*update status NT -> trống*/
+                    thanhToanDAO.Instance.checkOut(maThanhToanCu); /*update status TT -> đã thanh toán*/
+                }
+                else
+                    hopDongDAO.Instance.updateCountDown(maThanhToanCu);
+            }
+            hopDongDAO.Instance.autoDeleteHopDong();
+            loadThongTin(maNhaTroMoi);
+            loadNhaTro();
+            loadSinhVienByKhoa(tempMaKhoa);
+
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            
         }
     }
 }

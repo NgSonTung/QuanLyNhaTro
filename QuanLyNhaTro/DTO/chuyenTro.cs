@@ -11,14 +11,23 @@ namespace QuanLyNhaTro.DTO
     {
         int maSinhVien;
         string name;
+        int maHopDong;
+        int maThanhToan;
+        int maNhaTro;
 
         public int MaSinhVien { get => maSinhVien; set => maSinhVien = value; }
         public string Name { get => name; set => name = value; }
+        public int MaHopDong { get => maHopDong; set => maHopDong = value; }
+        public int MaThanhToan { get => maThanhToan; set => maThanhToan = value; }
+        public int MaNhaTro { get => maNhaTro; set => maNhaTro = value; }
 
         public chuyenTro(DataRow row)
         {
-            this.MaSinhVien = (int)row["maSinhVien"];
-            this.Name = (string)row["name"];
+            MaSinhVien = (int)row["maSinhVien"];
+            Name = (string)row["name"];
+            MaHopDong = (int)row["maHopDong"];
+            MaThanhToan = (int)row["maThanhToan"];
+            MaNhaTro = (int)row["maNhaTro"];
         }
     }
 }
