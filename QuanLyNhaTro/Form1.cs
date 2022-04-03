@@ -58,9 +58,15 @@ namespace QuanLyNhaTro
 
         private void button2_Click(object sender, EventArgs e)
         {
-            fManager f = new fManager();
-            f.ShowDialog();
-            this.Show();
+            /*if (Login(textBox1.Text, textBox2.Text))*/
+            
+                this.Hide();
+                fManager fManager = new fManager();
+                fManager.Closed += (s, args) => this.Close();
+                fManager.Show();
+            
+            /*else
+                MessageBox.Show("Đăng nhập lại", "Thông Báo", MessageBoxButtons.OK, MessageBoxIcon.Information);*/
         }
 
         private void button3_Click(object sender, EventArgs e)

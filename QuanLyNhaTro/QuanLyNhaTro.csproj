@@ -46,8 +46,15 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="DAO\AccountDAO.cs" />
+    <Compile Include="DAO\accountDAO.cs" />
+    <Compile Include="DAO\thongTinTroDAO.cs" />
+    <Compile Include="DAO\khoaDAO.cs" />
+    <Compile Include="DAO\sinhVienDAO.cs" />
+    <Compile Include="DAO\hopDongDAO.cs" />
+    <Compile Include="DAO\nhaTroDAO.cs" />
     <Compile Include="DAO\providerDAO.cs" />
+    <Compile Include="DAO\thanhToanDAO.cs" />
+    <Compile Include="DTO\thongTinTro.cs" />
     <Compile Include="DTO\chuNha.cs" />
     <Compile Include="DTO\hopDong.cs" />
     <Compile Include="DTO\khoa.cs" />
@@ -106,9 +113,7 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="DTO\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <None Include="Resources\technical-support.png" />
   </ItemGroup>

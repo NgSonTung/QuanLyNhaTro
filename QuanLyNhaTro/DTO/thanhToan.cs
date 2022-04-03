@@ -23,15 +23,15 @@ namespace QuanLyNhaTro.DTO
 
         public thanhToan(DataRow row)
         {
-            maThanhToan = (int)row["maThanhToan"];
-            DateCheckIn = (DateTime?)row["DateCheckIn"];
+            this.maThanhToan = (int)row["maThanhToan"];
+            this.DateCheckIn = (DateTime?)row["DateCheckIn"];
             var dateCheckOutTemp = row["dateCheckOut"];
             if (dateCheckOutTemp.ToString() != "")
             {
                 this.DateCheckOut = (DateTime?)DateCheckOut;
             }
-            maNhaTro = (int)row["maNhaTro"];
-            status = (int)row["status"];
+            this.maNhaTro = (int)row["maNhaTro"];
+            this.status = (int)row["status"];
         }
     }
 }

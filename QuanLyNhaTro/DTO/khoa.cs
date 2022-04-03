@@ -17,10 +17,8 @@ namespace QuanLyNhaTro.DTO
 
         public khoa (DataRow row)
         {
-            maKhoa = (int)row["maKhoa"];
-            name = (string)row["name"];
-
-
+            this.maKhoa = (int)row["maKhoa"];
+            this.name = (string)row["name"];
         }
     }
 }

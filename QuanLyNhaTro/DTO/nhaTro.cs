@@ -13,6 +13,8 @@ namespace QuanLyNhaTro.DTO
         private string diaChi;
         private float gia;
         private string status;
+        public static int TableWidth = 100;
+        public static int TableHeight = 100;
 
         public int MaNhaTro { get => maNhaTro; set => maNhaTro = value; }
         public string DiaChi { get => diaChi; set => diaChi = value; }
