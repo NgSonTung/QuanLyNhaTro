@@ -21,7 +21,7 @@ namespace QuanLyNhaTro.DAO
         public providerDAO()
         { }
 
-        string connectSTR = "Data Source=DESKTOP-NO88C1O;Initial Catalog=doAn;Integrated Security=True";
+        string connectSTR = "Data Source=DESKTOP-2T95NOQ\\NHANDEPTRAI;Initial Catalog=doAn;Integrated Security=True";
 
         public DataTable loadDL(string command)
         {
