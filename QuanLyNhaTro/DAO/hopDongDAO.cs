@@ -25,9 +25,9 @@ namespace QuanLyNhaTro.DAO
 
         public List<hopDong> getBillInfo()
         {
-            string sql = "select * from hopDong";
+            string query = "select * from hopDong";
             List<hopDong> hopDongList = new List<hopDong>();
-            DataTable data = providerDAO.Instance.loadDL(sql);
+            DataTable data = providerDAO.Instance.loadDL(query);
             foreach (DataRow item in data.Rows)
             {
                 hopDong hopDong = new hopDong(item);
@@ -38,22 +38,50 @@ namespace QuanLyNhaTro.DAO
         }
         public void insertBillInfo(int maThanhToan, int maSinhVien, int soSinhVien)
         {
-            string sql = "insert into hopDong values('" + maThanhToan + "','" + maSinhVien + "','" + soSinhVien + "')";
-            providerDAO.Instance.loadDL(sql);
+            string query = "insert into hopDong values('" + maThanhToan + "','" + maSinhVien + "','" + soSinhVien + "')";
+            providerDAO.Instance.loadDL(query);
         }
 
-        public void updateCount(int maThanhToan)
+        public void updateHopDong1(int maThanhToan,int maHopDong)
         {
-            string sql = "update hopDong set soSinhVien = soSinhVien + 1  where maThanhToan = " + maThanhToan;
-            providerDAO.Instance.loadDL(sql);
+            string query = "update hopDong set maThanhToan = " + maThanhToan + ", soSinhVien = 1 where maHopDong = " + maHopDong;
+            providerDAO.Instance.loadDL(query);
+        }
+
+        public void updateHopDong2(int maThanhToan, int maHopDong, int soSinhVien)
+        {
+            string query = "update hopDong set maThanhToan = " + maThanhToan + ", soSinhVien = " + soSinhVien + " where maHopDong = " + maHopDong;
+            providerDAO.Instance.loadDL(query);
+        }
+
+        public void updateCountUp(int maThanhToan)
+        {
+            string query = "update hopDong set soSinhVien = soSinhVien + 1  where maThanhToan = " + maThanhToan;
+            providerDAO.Instance.loadDL(query);
+        }
+
+        public void updateCountDown(int maThanhToan)
+        {
+            string query = "update hopDong set soSinhVien = soSinhVien - 1  where maThanhToan = " + maThanhToan;
+            providerDAO.Instance.loadDL(query);
+        }
+        public void count(int maHopDong)
+        {
+            string query = "select soLuongSinhVien from hopDong where maHopDong = "+ maHopDong;
+            providerDAO.Instance.loadDL(query);
         }
 
         public int checkIdFoodCount(int maThanhToan, int maSinhVien)
         {
-            string sql = "select * from hopDong where maSinhVien = '" + maSinhVien + "' and maThanhToan = '" + maThanhToan + "'";
-            DataTable data = providerDAO.Instance.loadDL(sql);
+            string query = "select * from hopDong where maSinhVien = '" + maSinhVien + "' and maThanhToan = '" + maThanhToan + "'";
+            DataTable data = providerDAO.Instance.loadDL(query);
             return data.Rows.Count; /* kiểm tra xem nếu có sẽ trả dữ liệu => số dòng > 0 */
         }
 
+        public void autoDeleteHopDong()
+        {
+            string query = "DELETE FROM hopDong WHERE soSinhVien = 0 ";
+            providerDAO.Instance.loadDL(query);
+        }
     }
 }
