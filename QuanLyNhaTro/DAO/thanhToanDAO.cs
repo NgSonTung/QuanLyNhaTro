@@ -59,11 +59,5 @@ namespace QuanLyNhaTro.DAO
             string sql = "Update thanhToan set status = 1 where maThanhToan =" + id;
             providerDAO.Instance.loadDL(sql);
         }
-
-        public void chuyenStatus(int idMoi, int idCu)
-        {
-            string sql = "Update thanhToan set maNhaTro = " + idMoi + " where status = 0 and maNhaTro =" + idCu;
-            providerDAO.Instance.loadDL(sql);
-        }
     }
 }

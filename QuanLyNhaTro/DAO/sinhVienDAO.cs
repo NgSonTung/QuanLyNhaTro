@@ -34,8 +34,27 @@ namespace QuanLyNhaTro.DAO
                 sinhVienList.Add(sinhVien); 
             }
             return sinhVienList;
-
         }
+        public int getMaTTFromMaSV(int maSinhVien)
+        {
+            string sql = "select TT.maThanhToan from sinhVien SV, hopDong HD, thanhToan TT, nhaTro NT where SV.status = 1 and SV.maSinhVien = HD.maSinhVien and HD.maThanhToan = TT.maThanhToan and TT.maNhaTro = NT.maNhaTro and TT.status = 0 and SV.maSinhVien =" + maSinhVien;
+            if (providerDAO.Instance.executeScalar(sql) != null)
+            {
+                return (int)providerDAO.Instance.executeScalar(sql);
+            }
+            else return -1;
+        }
+
+        public int getMaNTFromMaSV(int maSinhVien)
+        {
+            string sql = "select TT.maNhaTro from sinhVien SV, hopDong HD, thanhToan TT, nhaTro NT where SV.status = 1 and SV.maSinhVien = HD.maSinhVien and HD.maThanhToan = TT.maThanhToan and TT.maNhaTro = NT.maNhaTro and TT.status = 0 and SV.maSinhVien =" + maSinhVien;
+            if (providerDAO.Instance.executeScalar(sql) != null)
+            {
+                return (int)providerDAO.Instance.executeScalar(sql);
+            }
+            else return -1;
+        }
+
         public void statusCoTro(int maSinhVien)
         {
             string sql = "UPDATE sinhvien SET status = 1 WHERE status = 0 and maSinhVien ="+ maSinhVien;

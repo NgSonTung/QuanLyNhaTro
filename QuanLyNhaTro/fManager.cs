@@ -21,7 +21,14 @@ namespace QuanLyNhaTro
             loadKhoa();
         }
         public int tempMaKhoa;
-        
+
+        private void adminToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            Admin admin = new Admin();
+            admin.Closed += (s, args) => this.Close();
+            admin.Show();
+        }
         void loadNhaTro() /*show table button*/
         {
             List<nhaTro> tableList = nhaTroDAO.Instance.getTable();
@@ -85,7 +92,22 @@ namespace QuanLyNhaTro
 
         private void button4_Click(object sender, EventArgs e)
         {
-           
+
+            nhaTro nhaTro = dataGridView1.Tag as nhaTro; /*Lấy mã nhà trọ cũ & status*/
+            
+            int maSinhVien = (comboBox6.SelectedItem as chuyenTro).MaSinhVien;
+            int maNhaTro = sinhVienDAO.Instance.getMaNTFromMaSV(maSinhVien);
+            int maThanhToan = sinhVienDAO.Instance.getMaTTFromMaSV(maSinhVien);
+            sinhVienDAO.Instance.statusKhongTro(maSinhVien);
+            hopDongDAO.Instance.updateCountDown(maThanhToan);
+            if (countDAO.Instance.getSVCount(maNhaTro) == 0) /*Nếu nhà trọ cũ 0 có người*/
+            {
+                hopDongDAO.Instance.autoDeleteHopDong();
+                thanhToanDAO.Instance.checkOut(maNhaTro); /*đổi status thanh toán thành đã thanh toán*/
+                nhaTroDAO.Instance.checkOutStatus(maNhaTro);  /*update status NT -> trống*/
+            }
+            loadThongTin(maNhaTro);
+            loadNhaTro();
         }
         
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
@@ -137,8 +159,6 @@ namespace QuanLyNhaTro
 
         private void button2_Click(object sender, EventArgs e)
         {
-
-
             nhaTro nhaTro = dataGridView1.Tag as nhaTro; /*Lấy mã nhà trọ cũ & status*/
             int maThanhToanCu = thanhToanDAO.Instance.getUncheckBill(nhaTro.MaNhaTro);
             int maNhaTroMoi = (comboBox3.SelectedItem as nhaTro).MaNhaTro;
@@ -182,5 +202,6 @@ namespace QuanLyNhaTro
         {
             
         }
+
     }
 }
