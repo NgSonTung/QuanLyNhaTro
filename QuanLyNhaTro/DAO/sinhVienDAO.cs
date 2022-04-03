@@ -25,16 +25,27 @@ namespace QuanLyNhaTro.DAO
 
         public List<sinhVien> getFood(int id)
         {
-            string sql = "select * from sinhVien where khoa = " + id;
+            string sql = "select SV.maSinhVien, K.name as khoa, SV.name, SV.dienThoai, SV.lop,SV.queQuan from sinhVien SV, khoa K where SV.khoa = K.maKhoa and SV.status = 0 and SV.khoa = " + id ;
             List<sinhVien> sinhVienList = new List<sinhVien>();
             DataTable data = providerDAO.Instance.loadDL(sql);
             foreach (DataRow item in data.Rows)
             {
                 sinhVien sinhVien = new sinhVien(item);
-                sinhVienList.Add(sinhVien);
+                sinhVienList.Add(sinhVien); 
             }
             return sinhVienList;
 
+        }
+        public void statusCoTro(int maSinhVien)
+        {
+            string sql = "UPDATE sinhvien SET status = 1 WHERE status = 0 and maSinhVien ="+ maSinhVien;
+            providerDAO.Instance.loadDL(sql);
+        }
+
+        public void statusKhongTro(int maSinhVien)
+        {
+            string sql = "UPDATE sinhvien SET status = 0 WHERE status = 1 and maSinhVien =" + maSinhVien;
+            providerDAO.Instance.loadDL(sql);
         }
     }
 }

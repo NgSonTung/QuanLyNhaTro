@@ -38,12 +38,12 @@ namespace QuanLyNhaTro.DAO
         }
         public void checkInStatus(int id)
         {
-            string sql = "update nhaTro set status = N'có người' where id =" + id;
+            string sql = "update nhaTro set status = N'có người' where maNhaTro =" + id;
             providerDAO.Instance.loadDL(sql);
         }
         public void checkOutStatus(int id)
         {
-            string sql = "update nhaTro set status = N'trống' where id =" + id;
+            string sql = "update nhaTro set status = N'trống' where maNhaTro =" + id;
             providerDAO.Instance.loadDL(sql);
         }
     }

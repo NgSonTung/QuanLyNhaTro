@@ -52,7 +52,7 @@ namespace QuanLyNhaTro.DAO
 
         public void chuyenStatus(int idMoi, int idCu)
         {
-            string sql = "Update thanhToan set maNhaTro = " + idMoi + " where maNhaTro =" + idCu;
+            string sql = "Update thanhToan set maNhaTro = " + idMoi + " where status = 0 and maNhaTro =" + idCu;
             providerDAO.Instance.loadDL(sql);
         }
     }

@@ -23,10 +23,10 @@ namespace QuanLyNhaTro.DTO
 
         public nhaTro(DataRow row)
         {
-            maNhaTro = (int)row["maNhaTro"];
-            diaChi = (string)row["diaChi"];
-            gia = float.Parse(row["gia"].ToString());
-            status = (string)row["status"];
+            this.maNhaTro = (int)row["maNhaTro"];
+            this.diaChi = (string)row["diaChi"];
+            this.gia = float.Parse(row["gia"].ToString());
+            this.status = (string)row["status"];
 
         }
     }
