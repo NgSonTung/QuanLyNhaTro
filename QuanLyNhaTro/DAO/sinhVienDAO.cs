@@ -22,7 +22,12 @@ namespace QuanLyNhaTro.DAO
 
         public sinhVienDAO()
         { }
-
+        public bool INSERT(int maNhaTro, string diaChi, int gia, string status)
+        {
+            string query = string.Format("INSERT nhaTro ( maNhaTro, diaChi, gia, status) VALUES (N'{0}', {1}, {2})", maNhaTro, diaChi, gia, status);
+            int result = providerDAO.Instance.ExecuteNonQuery(query);
+            return result > 0;
+        }
         public List<sinhVien> getFood(int id)
         {
             string sql = "select SV.maSinhVien, K.name as khoa, SV.name, SV.dienThoai, SV.lop,SV.queQuan from sinhVien SV, khoa K where SV.khoa = K.maKhoa and SV.status = 0 and SV.khoa = " + id ;

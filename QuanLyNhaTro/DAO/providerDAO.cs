@@ -46,5 +46,15 @@ namespace QuanLyNhaTro.DAO
             connect.Close();
             return dt;
         }
+        public int ExecuteNonQuery(string query)
+        {
+            int dt = 0;
+            SqlConnection connect = new SqlConnection(connectSTR);
+            connect.Open();
+            SqlCommand cmd = new SqlCommand(query, connect);
+            dt = cmd.ExecuteNonQuery();
+            connect.Close();
+            return dt;
+        }
     }
 }
