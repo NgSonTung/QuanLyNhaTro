@@ -92,7 +92,7 @@ namespace QuanLyNhaTro
             int maNhaTro = int.Parse(textBox5.Text);
             nhaTroDAO.Instance.UPDATEINSERT(maNhaTro,diaChi, gia, status);
             LoadDanhmuc();
-            int a = 2;
+            
         }
 
         private void button7_Click(object sender, EventArgs e)
@@ -115,6 +115,49 @@ namespace QuanLyNhaTro
         {
             int khoa = (cbKhoaSV.SelectedItem as khoa).MaKhoa;
             dgvSinhvien.DataSource = sinhVienDAO.Instance.getSinhVienByKhoa(khoa);
+        }
+
+        private void themSV_Click(object sender, EventArgs e)
+        {
+            
+            string name = txtnameSV.Text;
+            int khoa = (cbKhoaSV.SelectedItem as khoa).MaKhoa;
+            string dienThoai = txtDTSV.Text;
+            string lop = txtLopSV.Text;
+            string queQuan = txtQueQuan.Text;
+            int status = 0;
+            if (cbstatusSV.SelectedIndex == 0)
+            {
+                status = 1;
+            }
+            sinhVienDAO.Instance.INSERTSinhvieṇ̣̣(khoa,name,dienThoai,lop,queQuan,status);
+            LoadListsinhVien();
+        }
+
+        private void tabPage4_Click_1(object sender, EventArgs e)
+        {
+
+        }
+
+        private void dgvSinhvien_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex >= 0)
+            {
+                //Lưu lại dòng dữ liệu vừa kích chọn
+                DataGridViewRow row = dgvSinhvien.Rows[e.RowIndex];
+                //Đưa dữ liệu vào textbox
+                txtMSSV.Text = row.Cells[0].Value.ToString();
+                cbKhoaSV.SelectedItem = row.Cells[1].Value.ToString();
+                txtnameSV.Text = row.Cells[2].Value.ToString();
+                txtDTSV.Text = row.Cells[3].Value.ToString();
+                txtLopSV.Text = row.Cells[4].Value.ToString();
+                txtQueQuan.Text = row.Cells[5].Value.ToString();
+                if (int.Parse(row.Cells[6].Value.ToString()) == 1)
+                {
+                    cbstatusSV.SelectedIndex = 0;
+                }else
+                    cbstatusSV.SelectedIndex = 1;
+            }
         }
     }
 }

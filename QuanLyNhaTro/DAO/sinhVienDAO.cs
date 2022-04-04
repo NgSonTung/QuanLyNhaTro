@@ -35,15 +35,15 @@ namespace QuanLyNhaTro.DAO
             }
             return sinhVienList;
         }
-        public List<sinhVien> getSinhVienByKhoa(int id)
+        public List<sinhVienList> getSinhVienByKhoa(int id)
         {
-            string sql = "select SV.maSinhVien, K.name as khoa, SV.name, SV.dienThoai, SV.lop,SV.queQuan from sinhVien SV, khoa K where SV.khoa = K.maKhoa and SV.khoa = " + id;
-            List<sinhVien> sinhVienList = new List<sinhVien>();
+            string sql = "select SV.maSinhVien, K.name as khoa, SV.name, SV.dienThoai, SV.lop,SV.queQuan, SV.status from sinhVien SV, khoa K where SV.khoa = K.maKhoa and SV.khoa = " + id;
+            List<sinhVienList> sinhVienList = new List<sinhVienList>();
             DataTable data = providerDAO.Instance.loadDL(sql);
             foreach (DataRow item in data.Rows)
             {
-                sinhVien sinhVien = new sinhVien(item);
-                sinhVienList.Add(sinhVien);
+                sinhVienList sinhVienListItem = new sinhVienList(item);
+                sinhVienList.Add(sinhVienListItem);
             }
             return sinhVienList;
         }
@@ -79,17 +79,25 @@ namespace QuanLyNhaTro.DAO
             providerDAO.Instance.loadDL(sql);
         }
 
-        public List<sinhVien> GetListSinhVien()
+        public List<sinhVienList> GetListSinhVien()
         {
-            string sql = "select SV.maSinhVien, K.name as khoa, SV.name, SV.dienThoai, SV.lop,SV.queQuan from sinhVien SV, khoa K where SV.Khoa = K.maKhoa ";
-            List<sinhVien> sinhVienList = new List<sinhVien>();
+            string sql = "select SV.maSinhVien, K.name as khoa, SV.name, SV.dienThoai, SV.lop,SV.queQuan, SV.status from sinhVien SV, khoa K where SV.Khoa = K.maKhoa ";
+            List<sinhVienList> sinhVienList = new List<sinhVienList>();
             DataTable data = providerDAO.Instance.loadDL(sql);
             foreach (DataRow item in data.Rows)
             {
-                sinhVien sinhVien = new sinhVien(item);
-                sinhVienList.Add(sinhVien);
+                sinhVienList sinhVienListitem = new sinhVienList(item);
+                sinhVienList.Add(sinhVienListitem);
             }
             return sinhVienList;
+        }
+         public bool INSERTSinhvieṇ̣̣(int khoa,string name,string dienThoai,string lop,string queQuan,int status)
+        {
+            string query = string.Format ("Insert dbo.sinhVien (khoa,name,dienThoai,lop,queQuan,status) Values ({0},N'{1}',N'{2}',N'{3}',N'{4}',{5})",khoa,name,dienThoai,lop,queQuan,status);
+            int result = providerDAO.Instance.ExecuteNonQuery(query);
+
+            return result > 0;
+
         }
     }
 }

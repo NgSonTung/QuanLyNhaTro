@@ -64,6 +64,7 @@
     <Compile Include="DAO\thanhToanDAO.cs" />
     <Compile Include="DTO\chuyenTro.cs" />
     <Compile Include="DTO\count.cs" />
+    <Compile Include="DTO\sinhVienList.cs" />
     <Compile Include="DTO\thongTinTro.cs" />
     <Compile Include="DTO\chuNha.cs" />
     <Compile Include="DTO\hopDong.cs" />
