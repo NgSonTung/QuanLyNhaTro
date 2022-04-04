@@ -99,5 +99,20 @@ namespace QuanLyNhaTro.DAO
             return result > 0;
 
         }
+        public bool DELETESinhVien(int maSinhVien)
+        {
+            hopDongDAO.Instance.deleteinsert(maSinhVien);
+            string query = "delete sinhVien where maSinhVien =" + maSinhVien;
+
+            int result = providerDAO.Instance.ExecuteNonQuery(query);
+            return result > 0;
+        }
+        public bool UPDATESinhVien(int maSinhVien, int khoa, string name, string dienThoai, string lop, string queQuan, int status)
+        {
+            string query = string.Format("updates dbo.sinhVien (maSinhVien,khoa,name,dienThoai,lop,queQuan,status) Values ({0},{1},N'{2}',N'{3}',N'{4}',N'{5}',{6})",maSinhVien, khoa, name, dienThoai, lop, queQuan, status);
+
+            int result = providerDAO.Instance.ExecuteNonQuery(query);
+            return result > 0;
+        }
     }
 }

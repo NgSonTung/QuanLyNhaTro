@@ -74,6 +74,10 @@
             this.button8 = new System.Windows.Forms.Button();
             this.button9 = new System.Windows.Forms.Button();
             this.dgvPart = new System.Windows.Forms.DataGridView();
+            this.suaTTSV = new System.Windows.Forms.Button();
+            this.panel9 = new System.Windows.Forms.Panel();
+            this.panel10 = new System.Windows.Forms.Panel();
+            this.panel11 = new System.Windows.Forms.Panel();
             this.tabControl2.SuspendLayout();
             this.tabPage4.SuspendLayout();
             this.panel4.SuspendLayout();
@@ -87,6 +91,9 @@
             this.panel8.SuspendLayout();
             this.panel6.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvPart)).BeginInit();
+            this.panel9.SuspendLayout();
+            this.panel10.SuspendLayout();
+            this.panel11.SuspendLayout();
             this.SuspendLayout();
             // 
             // tabControl2
@@ -103,12 +110,10 @@
             // 
             // tabPage4
             // 
-            this.tabPage4.Controls.Add(this.cbstatusSV);
-            this.tabPage4.Controls.Add(this.txtLopSV);
-            this.tabPage4.Controls.Add(this.lopSV);
-            this.tabPage4.Controls.Add(this.statusSV);
-            this.tabPage4.Controls.Add(this.txtQueQuan);
-            this.tabPage4.Controls.Add(this.QueQuanSV);
+            this.tabPage4.Controls.Add(this.panel10);
+            this.tabPage4.Controls.Add(this.panel11);
+            this.tabPage4.Controls.Add(this.panel9);
+            this.tabPage4.Controls.Add(this.suaTTSV);
             this.tabPage4.Controls.Add(this.panel4);
             this.tabPage4.Controls.Add(this.panel3);
             this.tabPage4.Controls.Add(this.panel2);
@@ -135,15 +140,16 @@
             this.cbstatusSV.Items.AddRange(new object[] {
             "có trọ",
             "không có trọ"});
-            this.cbstatusSV.Location = new System.Drawing.Point(711, 372);
+            this.cbstatusSV.Location = new System.Drawing.Point(151, 11);
             this.cbstatusSV.Margin = new System.Windows.Forms.Padding(4);
             this.cbstatusSV.Name = "cbstatusSV";
             this.cbstatusSV.Size = new System.Drawing.Size(207, 24);
             this.cbstatusSV.TabIndex = 12;
+            this.cbstatusSV.SelectedIndexChanged += new System.EventHandler(this.cbstatusSV_SelectedIndexChanged);
             // 
             // txtLopSV
             // 
-            this.txtLopSV.Location = new System.Drawing.Point(711, 292);
+            this.txtLopSV.Location = new System.Drawing.Point(151, 8);
             this.txtLopSV.Margin = new System.Windows.Forms.Padding(4);
             this.txtLopSV.Name = "txtLopSV";
             this.txtLopSV.Size = new System.Drawing.Size(207, 22);
@@ -153,7 +159,7 @@
             // 
             this.lopSV.AutoSize = true;
             this.lopSV.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lopSV.Location = new System.Drawing.Point(586, 292);
+            this.lopSV.Location = new System.Drawing.Point(26, 8);
             this.lopSV.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lopSV.Name = "lopSV";
             this.lopSV.Size = new System.Drawing.Size(40, 20);
@@ -164,7 +170,7 @@
             // 
             this.statusSV.AutoSize = true;
             this.statusSV.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.statusSV.Location = new System.Drawing.Point(580, 372);
+            this.statusSV.Location = new System.Drawing.Point(26, 15);
             this.statusSV.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.statusSV.Name = "statusSV";
             this.statusSV.Size = new System.Drawing.Size(99, 20);
@@ -173,7 +179,7 @@
             // 
             // txtQueQuan
             // 
-            this.txtQueQuan.Location = new System.Drawing.Point(711, 333);
+            this.txtQueQuan.Location = new System.Drawing.Point(152, 2);
             this.txtQueQuan.Margin = new System.Windows.Forms.Padding(4);
             this.txtQueQuan.Name = "txtQueQuan";
             this.txtQueQuan.Size = new System.Drawing.Size(207, 22);
@@ -183,7 +189,7 @@
             // 
             this.QueQuanSV.AutoSize = true;
             this.QueQuanSV.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.QueQuanSV.Location = new System.Drawing.Point(586, 333);
+            this.QueQuanSV.Location = new System.Drawing.Point(27, 4);
             this.QueQuanSV.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.QueQuanSV.Name = "QueQuanSV";
             this.QueQuanSV.Size = new System.Drawing.Size(93, 20);
@@ -345,6 +351,7 @@
             this.xoaSV.TabIndex = 3;
             this.xoaSV.Text = "xóa";
             this.xoaSV.UseVisualStyleBackColor = true;
+            this.xoaSV.Click += new System.EventHandler(this.xoaSV_Click);
             // 
             // themSV
             // 
@@ -581,6 +588,44 @@
             this.dgvPart.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvPart_CellContentClick);
             this.dgvPart.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvPart_CellContentClick);
             // 
+            // suaTTSV
+            // 
+            this.suaTTSV.Location = new System.Drawing.Point(432, 32);
+            this.suaTTSV.Margin = new System.Windows.Forms.Padding(4);
+            this.suaTTSV.Name = "suaTTSV";
+            this.suaTTSV.Size = new System.Drawing.Size(100, 43);
+            this.suaTTSV.TabIndex = 13;
+            this.suaTTSV.Text = "Cập Nhật";
+            this.suaTTSV.UseVisualStyleBackColor = true;
+            this.suaTTSV.Click += new System.EventHandler(this.suaTTSV_Click);
+            // 
+            // panel9
+            // 
+            this.panel9.Controls.Add(this.txtLopSV);
+            this.panel9.Controls.Add(this.lopSV);
+            this.panel9.Location = new System.Drawing.Point(560, 284);
+            this.panel9.Name = "panel9";
+            this.panel9.Size = new System.Drawing.Size(420, 38);
+            this.panel9.TabIndex = 14;
+            // 
+            // panel10
+            // 
+            this.panel10.Controls.Add(this.txtQueQuan);
+            this.panel10.Controls.Add(this.QueQuanSV);
+            this.panel10.Location = new System.Drawing.Point(559, 321);
+            this.panel10.Name = "panel10";
+            this.panel10.Size = new System.Drawing.Size(421, 31);
+            this.panel10.TabIndex = 15;
+            // 
+            // panel11
+            // 
+            this.panel11.Controls.Add(this.cbstatusSV);
+            this.panel11.Controls.Add(this.statusSV);
+            this.panel11.Location = new System.Drawing.Point(560, 358);
+            this.panel11.Name = "panel11";
+            this.panel11.Size = new System.Drawing.Size(425, 54);
+            this.panel11.TabIndex = 15;
+            // 
             // Admin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -614,6 +659,12 @@
             this.panel6.ResumeLayout(false);
             this.panel6.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvPart)).EndInit();
+            this.panel9.ResumeLayout(false);
+            this.panel9.PerformLayout();
+            this.panel10.ResumeLayout(false);
+            this.panel10.PerformLayout();
+            this.panel11.ResumeLayout(false);
+            this.panel11.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -666,5 +717,9 @@
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label MSSVid;
         private System.Windows.Forms.TextBox txtMSSV;
+        private System.Windows.Forms.Panel panel10;
+        private System.Windows.Forms.Panel panel11;
+        private System.Windows.Forms.Panel panel9;
+        private System.Windows.Forms.Button suaTTSV;
     }
 }

@@ -165,5 +165,44 @@ namespace QuanLyNhaTro
                     cbstatusSV.SelectedIndex = 1;
             }
         }
+
+        private void xoaSV_Click(object sender, EventArgs e)
+        {
+            
+            if(txtMSSV.Text == "") 
+            {
+                MessageBox.Show("Chưa chọn Mã Sinh Viên", "Thông Báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+            }
+            else {
+                int maSinhVien = int.Parse(txtMSSV.Text);
+                sinhVienDAO.Instance.DELETESinhVien(maSinhVien);
+                LoadListsinhVien();
+            }
+
+            
+        }
+
+        private void cbstatusSV_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void suaTTSV_Click(object sender, EventArgs e)
+        {
+            int maSinhVien = Convert.ToInt32(txtMSSV.Text);
+            string name = txtnameSV.Text;
+            int khoa = (cbKhoaSV.SelectedItem as khoa).MaKhoa;
+            string dienThoai = txtDTSV.Text;
+            string lop = txtLopSV.Text;
+            string queQuan = txtQueQuan.Text;
+            int status = 0;
+            if (cbstatusSV.SelectedIndex == 0)
+            {
+                status = 1;
+            }
+            sinhVienDAO.Instance.UPDATESinhVien(maSinhVien,khoa, name, dienThoai, lop, queQuan, status);
+            LoadListsinhVien();
+        }
     }
 }

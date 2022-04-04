@@ -26,6 +26,11 @@ namespace QuanLyNhaTro.DAO
         {
             providerDAO.Instance.loadDL("delete hopDong WHERE maHopDong =" + maHopDong);
         }
+
+        public void deleteSinhvien(int maHopDong)
+        {
+            providerDAO.Instance.loadDL("delete hopDong WHERE maHopDong =" + maHopDong);
+        }
         public List<hopDong> getBillInfo()
         {
             string query = "select * from hopDong";
