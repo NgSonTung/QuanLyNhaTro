@@ -25,13 +25,25 @@ namespace QuanLyNhaTro.DAO
 
         public List<sinhVien> getFood(int id)
         {
-            string sql = "select SV.maSinhVien, K.name as khoa, SV.name, SV.dienThoai, SV.lop,SV.queQuan from sinhVien SV, khoa K where SV.khoa = K.maKhoa and SV.status = 0 and SV.khoa = " + id ;
+            string sql = "select SV.maSinhVien, K.name as khoa, SV.name, SV.dienThoai, SV.lop,SV.queQuan from sinhVien SV, khoa K where SV.khoa = K.maKhoa and SV.status = 0 and SV.khoa = " + id;
             List<sinhVien> sinhVienList = new List<sinhVien>();
             DataTable data = providerDAO.Instance.loadDL(sql);
             foreach (DataRow item in data.Rows)
             {
                 sinhVien sinhVien = new sinhVien(item);
-                sinhVienList.Add(sinhVien); 
+                sinhVienList.Add(sinhVien);
+            }
+            return sinhVienList;
+        }
+        public List<sinhVien> getSinhVienByKhoa(int id)
+        {
+            string sql = "select SV.maSinhVien, K.name as khoa, SV.name, SV.dienThoai, SV.lop,SV.queQuan from sinhVien SV, khoa K where SV.khoa = K.maKhoa and SV.khoa = " + id;
+            List<sinhVien> sinhVienList = new List<sinhVien>();
+            DataTable data = providerDAO.Instance.loadDL(sql);
+            foreach (DataRow item in data.Rows)
+            {
+                sinhVien sinhVien = new sinhVien(item);
+                sinhVienList.Add(sinhVien);
             }
             return sinhVienList;
         }
@@ -57,7 +69,7 @@ namespace QuanLyNhaTro.DAO
 
         public void statusCoTro(int maSinhVien)
         {
-            string sql = "UPDATE sinhvien SET status = 1 WHERE status = 0 and maSinhVien ="+ maSinhVien;
+            string sql = "UPDATE sinhvien SET status = 1 WHERE status = 0 and maSinhVien =" + maSinhVien;
             providerDAO.Instance.loadDL(sql);
         }
 
@@ -65,6 +77,19 @@ namespace QuanLyNhaTro.DAO
         {
             string sql = "UPDATE sinhvien SET status = 0 WHERE status = 1 and maSinhVien =" + maSinhVien;
             providerDAO.Instance.loadDL(sql);
+        }
+
+        public List<sinhVien> GetListSinhVien()
+        {
+            string sql = "select SV.maSinhVien, K.name as khoa, SV.name, SV.dienThoai, SV.lop,SV.queQuan from sinhVien SV, khoa K where SV.Khoa = K.maKhoa ";
+            List<sinhVien> sinhVienList = new List<sinhVien>();
+            DataTable data = providerDAO.Instance.loadDL(sql);
+            foreach (DataRow item in data.Rows)
+            {
+                sinhVien sinhVien = new sinhVien(item);
+                sinhVienList.Add(sinhVien);
+            }
+            return sinhVienList;
         }
     }
 }
