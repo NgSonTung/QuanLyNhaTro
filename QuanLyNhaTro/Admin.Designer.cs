@@ -30,16 +30,24 @@
         {
             this.tabControl2 = new System.Windows.Forms.TabControl();
             this.tabPage4 = new System.Windows.Forms.TabPage();
+            this.cbstatusSV = new System.Windows.Forms.ComboBox();
+            this.txtLopSV = new System.Windows.Forms.TextBox();
+            this.lopSV = new System.Windows.Forms.Label();
+            this.statusSV = new System.Windows.Forms.Label();
             this.txtQueQuan = new System.Windows.Forms.TextBox();
             this.QueQuanSV = new System.Windows.Forms.Label();
             this.panel4 = new System.Windows.Forms.Panel();
-            this.txtLopSV = new System.Windows.Forms.TextBox();
-            this.lopSV = new System.Windows.Forms.Label();
+            this.DienthoaiSV = new System.Windows.Forms.Label();
+            this.txtDTSV = new System.Windows.Forms.TextBox();
             this.panel3 = new System.Windows.Forms.Panel();
+            this.cbKhoaSV = new System.Windows.Forms.ComboBox();
             this.KhoaSV = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
             this.NameSV = new System.Windows.Forms.Label();
             this.txtnameSV = new System.Windows.Forms.TextBox();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.MSSVid = new System.Windows.Forms.Label();
+            this.txtMSSV = new System.Windows.Forms.TextBox();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.button5 = new System.Windows.Forms.Button();
             this.xemSV = new System.Windows.Forms.Button();
@@ -66,19 +74,12 @@
             this.button8 = new System.Windows.Forms.Button();
             this.button9 = new System.Windows.Forms.Button();
             this.dgvPart = new System.Windows.Forms.DataGridView();
-            this.statusSV = new System.Windows.Forms.Label();
-            this.txtDTSV = new System.Windows.Forms.TextBox();
-            this.DienthoaiSV = new System.Windows.Forms.Label();
-            this.cbKhoaSV = new System.Windows.Forms.ComboBox();
-            this.cbstatusSV = new System.Windows.Forms.ComboBox();
-            this.txtMSSV = new System.Windows.Forms.TextBox();
-            this.MSSVid = new System.Windows.Forms.Label();
-            this.panel1 = new System.Windows.Forms.Panel();
             this.tabControl2.SuspendLayout();
             this.tabPage4.SuspendLayout();
             this.panel4.SuspendLayout();
             this.panel3.SuspendLayout();
             this.panel2.SuspendLayout();
+            this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvSinhvien)).BeginInit();
             this.tabPage5.SuspendLayout();
             this.panel7.SuspendLayout();
@@ -86,7 +87,6 @@
             this.panel8.SuspendLayout();
             this.panel6.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvPart)).BeginInit();
-            this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // tabControl2
@@ -129,6 +129,48 @@
             this.tabPage4.UseVisualStyleBackColor = true;
             this.tabPage4.Click += new System.EventHandler(this.tabPage4_Click_1);
             // 
+            // cbstatusSV
+            // 
+            this.cbstatusSV.FormattingEnabled = true;
+            this.cbstatusSV.Items.AddRange(new object[] {
+            "có trọ",
+            "không có trọ"});
+            this.cbstatusSV.Location = new System.Drawing.Point(711, 372);
+            this.cbstatusSV.Margin = new System.Windows.Forms.Padding(4);
+            this.cbstatusSV.Name = "cbstatusSV";
+            this.cbstatusSV.Size = new System.Drawing.Size(207, 24);
+            this.cbstatusSV.TabIndex = 12;
+            // 
+            // txtLopSV
+            // 
+            this.txtLopSV.Location = new System.Drawing.Point(711, 292);
+            this.txtLopSV.Margin = new System.Windows.Forms.Padding(4);
+            this.txtLopSV.Name = "txtLopSV";
+            this.txtLopSV.Size = new System.Drawing.Size(207, 22);
+            this.txtLopSV.TabIndex = 2;
+            // 
+            // lopSV
+            // 
+            this.lopSV.AutoSize = true;
+            this.lopSV.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lopSV.Location = new System.Drawing.Point(586, 292);
+            this.lopSV.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lopSV.Name = "lopSV";
+            this.lopSV.Size = new System.Drawing.Size(40, 20);
+            this.lopSV.TabIndex = 1;
+            this.lopSV.Text = "Lớp";
+            // 
+            // statusSV
+            // 
+            this.statusSV.AutoSize = true;
+            this.statusSV.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.statusSV.Location = new System.Drawing.Point(580, 372);
+            this.statusSV.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.statusSV.Name = "statusSV";
+            this.statusSV.Size = new System.Drawing.Size(99, 20);
+            this.statusSV.TabIndex = 11;
+            this.statusSV.Text = "Tình Trạng";
+            // 
             // txtQueQuan
             // 
             this.txtQueQuan.Location = new System.Drawing.Point(711, 333);
@@ -158,24 +200,24 @@
             this.panel4.Size = new System.Drawing.Size(421, 38);
             this.panel4.TabIndex = 10;
             // 
-            // txtLopSV
+            // DienthoaiSV
             // 
-            this.txtLopSV.Location = new System.Drawing.Point(711, 292);
-            this.txtLopSV.Margin = new System.Windows.Forms.Padding(4);
-            this.txtLopSV.Name = "txtLopSV";
-            this.txtLopSV.Size = new System.Drawing.Size(207, 22);
-            this.txtLopSV.TabIndex = 2;
+            this.DienthoaiSV.AutoSize = true;
+            this.DienthoaiSV.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.DienthoaiSV.Location = new System.Drawing.Point(27, 12);
+            this.DienthoaiSV.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.DienthoaiSV.Name = "DienthoaiSV";
+            this.DienthoaiSV.Size = new System.Drawing.Size(99, 20);
+            this.DienthoaiSV.TabIndex = 13;
+            this.DienthoaiSV.Text = "Điện Thoại";
             // 
-            // lopSV
+            // txtDTSV
             // 
-            this.lopSV.AutoSize = true;
-            this.lopSV.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lopSV.Location = new System.Drawing.Point(586, 292);
-            this.lopSV.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.lopSV.Name = "lopSV";
-            this.lopSV.Size = new System.Drawing.Size(40, 20);
-            this.lopSV.TabIndex = 1;
-            this.lopSV.Text = "Lớp";
+            this.txtDTSV.Location = new System.Drawing.Point(152, 12);
+            this.txtDTSV.Margin = new System.Windows.Forms.Padding(4);
+            this.txtDTSV.Name = "txtDTSV";
+            this.txtDTSV.Size = new System.Drawing.Size(207, 22);
+            this.txtDTSV.TabIndex = 13;
             // 
             // panel3
             // 
@@ -186,6 +228,15 @@
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(421, 38);
             this.panel3.TabIndex = 9;
+            // 
+            // cbKhoaSV
+            // 
+            this.cbKhoaSV.FormattingEnabled = true;
+            this.cbKhoaSV.Location = new System.Drawing.Point(152, 7);
+            this.cbKhoaSV.Margin = new System.Windows.Forms.Padding(4);
+            this.cbKhoaSV.Name = "cbKhoaSV";
+            this.cbKhoaSV.Size = new System.Drawing.Size(207, 24);
+            this.cbKhoaSV.TabIndex = 11;
             // 
             // KhoaSV
             // 
@@ -226,6 +277,35 @@
             this.txtnameSV.Name = "txtnameSV";
             this.txtnameSV.Size = new System.Drawing.Size(207, 22);
             this.txtnameSV.TabIndex = 0;
+            // 
+            // panel1
+            // 
+            this.panel1.Controls.Add(this.MSSVid);
+            this.panel1.Controls.Add(this.txtMSSV);
+            this.panel1.Location = new System.Drawing.Point(559, 103);
+            this.panel1.Margin = new System.Windows.Forms.Padding(4);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(421, 38);
+            this.panel1.TabIndex = 7;
+            // 
+            // MSSVid
+            // 
+            this.MSSVid.AutoSize = true;
+            this.MSSVid.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.MSSVid.Location = new System.Drawing.Point(27, 9);
+            this.MSSVid.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.MSSVid.Name = "MSSVid";
+            this.MSSVid.Size = new System.Drawing.Size(60, 20);
+            this.MSSVid.TabIndex = 1;
+            this.MSSVid.Text = "MSSV";
+            // 
+            // txtMSSV
+            // 
+            this.txtMSSV.Location = new System.Drawing.Point(152, 9);
+            this.txtMSSV.Margin = new System.Windows.Forms.Padding(4);
+            this.txtMSSV.Name = "txtMSSV";
+            this.txtMSSV.Size = new System.Drawing.Size(207, 22);
+            this.txtMSSV.TabIndex = 0;
             // 
             // textBox1
             // 
@@ -286,7 +366,7 @@
             this.dgvSinhvien.RowHeadersWidth = 51;
             this.dgvSinhvien.Size = new System.Drawing.Size(505, 342);
             this.dgvSinhvien.TabIndex = 0;
-            this.dgvSinhvien.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvSinhvien_CellContentClick);
+            this.dgvSinhvien.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvSinhvien_CellClick);
             // 
             // tabPage5
             // 
@@ -501,86 +581,6 @@
             this.dgvPart.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvPart_CellContentClick);
             this.dgvPart.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvPart_CellContentClick);
             // 
-            // statusSV
-            // 
-            this.statusSV.AutoSize = true;
-            this.statusSV.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.statusSV.Location = new System.Drawing.Point(580, 372);
-            this.statusSV.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.statusSV.Name = "statusSV";
-            this.statusSV.Size = new System.Drawing.Size(99, 20);
-            this.statusSV.TabIndex = 11;
-            this.statusSV.Text = "Tình Trạng";
-            // 
-            // txtDTSV
-            // 
-            this.txtDTSV.Location = new System.Drawing.Point(152, 12);
-            this.txtDTSV.Margin = new System.Windows.Forms.Padding(4);
-            this.txtDTSV.Name = "txtDTSV";
-            this.txtDTSV.Size = new System.Drawing.Size(207, 22);
-            this.txtDTSV.TabIndex = 13;
-            // 
-            // DienthoaiSV
-            // 
-            this.DienthoaiSV.AutoSize = true;
-            this.DienthoaiSV.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.DienthoaiSV.Location = new System.Drawing.Point(27, 12);
-            this.DienthoaiSV.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.DienthoaiSV.Name = "DienthoaiSV";
-            this.DienthoaiSV.Size = new System.Drawing.Size(99, 20);
-            this.DienthoaiSV.TabIndex = 13;
-            this.DienthoaiSV.Text = "Điện Thoại";
-            // 
-            // cbKhoaSV
-            // 
-            this.cbKhoaSV.FormattingEnabled = true;
-            this.cbKhoaSV.Location = new System.Drawing.Point(152, 7);
-            this.cbKhoaSV.Margin = new System.Windows.Forms.Padding(4);
-            this.cbKhoaSV.Name = "cbKhoaSV";
-            this.cbKhoaSV.Size = new System.Drawing.Size(207, 24);
-            this.cbKhoaSV.TabIndex = 11;
-            // 
-            // cbstatusSV
-            // 
-            this.cbstatusSV.FormattingEnabled = true;
-            this.cbstatusSV.Items.AddRange(new object[] {
-            "có trọ",
-            "không có trọ"});
-            this.cbstatusSV.Location = new System.Drawing.Point(711, 372);
-            this.cbstatusSV.Margin = new System.Windows.Forms.Padding(4);
-            this.cbstatusSV.Name = "cbstatusSV";
-            this.cbstatusSV.Size = new System.Drawing.Size(207, 24);
-            this.cbstatusSV.TabIndex = 12;
-            // 
-            // txtMSSV
-            // 
-            this.txtMSSV.Location = new System.Drawing.Point(152, 9);
-            this.txtMSSV.Margin = new System.Windows.Forms.Padding(4);
-            this.txtMSSV.Name = "txtMSSV";
-            this.txtMSSV.Size = new System.Drawing.Size(207, 22);
-            this.txtMSSV.TabIndex = 0;
-            // 
-            // MSSVid
-            // 
-            this.MSSVid.AutoSize = true;
-            this.MSSVid.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.MSSVid.Location = new System.Drawing.Point(27, 9);
-            this.MSSVid.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.MSSVid.Name = "MSSVid";
-            this.MSSVid.Size = new System.Drawing.Size(60, 20);
-            this.MSSVid.TabIndex = 1;
-            this.MSSVid.Text = "MSSV";
-            // 
-            // panel1
-            // 
-            this.panel1.Controls.Add(this.MSSVid);
-            this.panel1.Controls.Add(this.txtMSSV);
-            this.panel1.Location = new System.Drawing.Point(559, 103);
-            this.panel1.Margin = new System.Windows.Forms.Padding(4);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(421, 38);
-            this.panel1.TabIndex = 7;
-            // 
             // Admin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -600,6 +600,8 @@
             this.panel3.PerformLayout();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvSinhvien)).EndInit();
             this.tabPage5.ResumeLayout(false);
             this.tabPage5.PerformLayout();
@@ -612,8 +614,6 @@
             this.panel6.ResumeLayout(false);
             this.panel6.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvPart)).EndInit();
-            this.panel1.ResumeLayout(false);
-            this.panel1.PerformLayout();
             this.ResumeLayout(false);
 
         }

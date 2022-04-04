@@ -141,6 +141,11 @@ namespace QuanLyNhaTro
 
         private void dgvSinhvien_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
+
+        }
+
+        private void dgvSinhvien_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
             if (e.RowIndex >= 0)
             {
                 //Lưu lại dòng dữ liệu vừa kích chọn
@@ -155,7 +160,8 @@ namespace QuanLyNhaTro
                 if (int.Parse(row.Cells[6].Value.ToString()) == 1)
                 {
                     cbstatusSV.SelectedIndex = 0;
-                }else
+                }
+                else
                     cbstatusSV.SelectedIndex = 1;
             }
         }
