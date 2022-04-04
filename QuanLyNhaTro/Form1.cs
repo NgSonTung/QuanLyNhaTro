@@ -1,4 +1,5 @@
-﻿using System;
+﻿using QuanLyNhaTro.DAO;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -7,6 +8,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Data.SqlClient;
+using System.Configuration;
+
 
 namespace QuanLyNhaTro
 {
@@ -58,17 +62,21 @@ namespace QuanLyNhaTro
 
         private void button2_Click(object sender, EventArgs e)
         {
-            /*if (Login(textBox1.Text, textBox2.Text))*/
-            
+            if (Login(textBox1.Text, textBox2.Text))
+            {
                 this.Hide();
                 fManager fManager = new fManager();
                 fManager.Closed += (s, args) => this.Close();
                 fManager.Show();
-            
-            /*else
-                MessageBox.Show("Đăng nhập lại", "Thông Báo", MessageBoxButtons.OK, MessageBoxIcon.Information);*/
+            }    
+            else
+                MessageBox.Show("Đăng nhập lại", "Thông Báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
+        bool Login(string user, string pass)
+        {
+            return accountDAO.Instance.Login(user, pass);
 
+        }
         private void button3_Click(object sender, EventArgs e)
         {
             Application.Exit();
