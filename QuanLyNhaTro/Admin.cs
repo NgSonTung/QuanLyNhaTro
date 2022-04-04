@@ -19,16 +19,6 @@ namespace QuanLyNhaTro
         {
             InitializeComponent();
         }
-
-        private void Admin_Load(object sender, EventArgs e)
-        {
-
-        }
-        void LoadAccount()
-        {
-
-        }
-
         void LoadDanhmuc()
         {
             List<nhaTro> nhatro = nhaTroDAO.Instance.getTable();
@@ -38,8 +28,8 @@ namespace QuanLyNhaTro
 
         private void Admin_Load_1(object sender, EventArgs e)
         {
-            LoadAccount();
             LoadDanhmuc();
+            LoadListsinhVien();
         }
 
         private void tabPage4_Click(object sender, EventArgs e)
@@ -79,6 +69,11 @@ namespace QuanLyNhaTro
             }
         }
 
+        void loadKhoa()
+        {
+            cbKhoaSV.DataSource = khoaDAO.Instance.getCategory();
+            cbKhoaSV.DisplayMember = "name";
+;        }
         private void tabPage5_Click(object sender, EventArgs e)
         {
 
@@ -105,6 +100,21 @@ namespace QuanLyNhaTro
             int maNhaTro = int.Parse(textBox5.Text);
             nhaTroDAO.Instance.DELETEINSERT(maNhaTro);
             LoadDanhmuc();
+        }
+
+        private void tabControl2_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+        void LoadListsinhVien()
+        {
+            dgvSinhvien.DataSource = sinhVienDAO.Instance.GetListSinhVien();
+            loadKhoa();
+        }
+        private void xemSV_Click(object sender, EventArgs e)
+        {
+            int khoa = (cbKhoaSV.SelectedItem as khoa).MaKhoa;
+            dgvSinhvien.DataSource = sinhVienDAO.Instance.getSinhVienByKhoa(khoa);
         }
     }
 }
