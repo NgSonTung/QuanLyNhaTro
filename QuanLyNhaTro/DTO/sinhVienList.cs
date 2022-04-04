@@ -16,6 +16,7 @@ namespace QuanLyNhaTro.DTO
         private string lop;
         private string queQuan;
         private int status;
+        internal static List<sinhVien> DataSource;
 
         public int MaSinhVien { get => maSinhVien; set => maSinhVien = value; }
         public string Khoa { get => khoa; set => khoa = value; }

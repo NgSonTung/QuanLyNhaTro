@@ -94,7 +94,7 @@ namespace QuanLyNhaTro.DAO
          public bool INSERTSinhvieṇ̣̣(int khoa,string name,string dienThoai,string lop,string queQuan,int status)
         {
             string query = string.Format ("Insert dbo.sinhVien (khoa,name,dienThoai,lop,queQuan,status) Values ({0},N'{1}',N'{2}',N'{3}',N'{4}',{5})",khoa,name,dienThoai,lop,queQuan,status);
-            int result = providerDAO.Instance.ExecuteNonQuery(query);
+            int result = providerDAO.Instance.ExecuteQuery(query);
 
             return result > 0;
 
@@ -104,15 +104,27 @@ namespace QuanLyNhaTro.DAO
             hopDongDAO.Instance.deleteinsert(maSinhVien);
             string query = "delete sinhVien where maSinhVien =" + maSinhVien;
 
-            int result = providerDAO.Instance.ExecuteNonQuery(query);
+            int result = providerDAO.Instance.ExecuteQuery(query);
             return result > 0;
         }
         public bool UPDATESinhVien(int maSinhVien, int khoa, string name, string dienThoai, string lop, string queQuan, int status)
         {
             string query = string.Format("updates dbo.sinhVien (maSinhVien,khoa,name,dienThoai,lop,queQuan,status) Values ({0},{1},N'{2}',N'{3}',N'{4}',N'{5}',{6})",maSinhVien, khoa, name, dienThoai, lop, queQuan, status);
 
-            int result = providerDAO.Instance.ExecuteNonQuery(query);
+            int result = providerDAO.Instance.ExecuteQuery(query);
             return result > 0;
+        }
+        public List<sinhVien> SearchSinhVien(string name)
+        {
+            List<sinhVien> list = new List<sinhVien>();
+            string sql =string.Format("select* from sinhVien where maSinhvien,name,lop,queQuan = N'{1}'" +  name );
+            DataTable data = providerDAO.Instance.loadDL(sql);
+            foreach(DataRow item in data.Rows)
+            {
+                sinhVien SinhVien = new sinhVien(item);
+                list.Add(SinhVien);
+            }
+            return list;
         }
     }
 }

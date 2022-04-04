@@ -204,5 +204,14 @@ namespace QuanLyNhaTro
             sinhVienDAO.Instance.UPDATESinhVien(maSinhVien,khoa, name, dienThoai, lop, queQuan, status);
             LoadListsinhVien();
         }
+        List<sinhVien> SearchSinhVien(string name)
+        {
+            List<sinhVien> listSinhVien = sinhVienDAO.Instance.SearchSinhVien(name);
+            return listSinhVien;
+        }
+        private void searchSV_Click(object sender, EventArgs e)
+        {
+           sinhVienList.DataSource = SearchSinhVien(txtSearch.Text);
+        }
     }
 }

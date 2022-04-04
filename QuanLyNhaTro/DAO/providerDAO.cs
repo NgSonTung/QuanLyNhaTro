@@ -46,7 +46,7 @@ namespace QuanLyNhaTro.DAO
             connect.Close();
             return dt;
         }
-        public int ExecuteNonQuery(string query)
+        public int ExecuteQuery(string query)
         {
             int dt = 0;
             SqlConnection connect = new SqlConnection(connectSTR);
