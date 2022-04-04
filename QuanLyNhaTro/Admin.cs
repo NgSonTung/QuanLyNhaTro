@@ -92,6 +92,7 @@ namespace QuanLyNhaTro
             int maNhaTro = int.Parse(textBox5.Text);
             nhaTroDAO.Instance.UPDATEINSERT(maNhaTro,diaChi, gia, status);
             LoadDanhmuc();
+            int a = 2;
         }
 
         private void button7_Click(object sender, EventArgs e)
