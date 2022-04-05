@@ -53,6 +53,7 @@
       <DependentUpon>Admin.cs</DependentUpon>
     </Compile>
     <Compile Include="DAO\accountDAO.cs" />
+    <Compile Include="DAO\chunhaDAO.cs" />
     <Compile Include="DAO\chuyenTroDAO.cs" />
     <Compile Include="DAO\countDAO.cs" />
     <Compile Include="DAO\thongTinTroDAO.cs" />
