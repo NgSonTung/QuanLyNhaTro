@@ -91,9 +91,9 @@ namespace QuanLyNhaTro.DAO
             }
             return sinhVienList;
         }
-         public bool INSERTSinhvieṇ̣̣(int khoa,string name,string dienThoai,string lop,string queQuan,int status)
+         public bool INSERTSinhvieṇ̣̣(int khoa,string name,string dienThoai,string lop,string queQuan)
         {
-            string query = string.Format ("Insert dbo.sinhVien (khoa,name,dienThoai,lop,queQuan,status) Values ({0},N'{1}',N'{2}',N'{3}',N'{4}',{5})",khoa,name,dienThoai,lop,queQuan,status);
+            string query = string.Format ("Insert dbo.sinhVien (khoa,name,dienThoai,lop,queQuan,status) Values ({0},N'{1}',N'{2}',N'{3}',N'{4}',{5})",khoa,name,dienThoai,lop,queQuan,0);
             int result = providerDAO.Instance.ExecuteQuery(query);
 
             return result > 0;
@@ -107,9 +107,9 @@ namespace QuanLyNhaTro.DAO
             int result = providerDAO.Instance.ExecuteQuery(query);
             return result > 0;
         }
-        public bool UPDATESinhVien(int maSinhVien, int khoa, string name, string dienThoai, string lop, string queQuan, int status)
+        public bool UPDATESinhVien(int maSinhVien, int khoa, string name, string dienThoai, string lop, string queQuan)
         {
-            string query = string.Format("updates dbo.sinhVien (maSinhVien,khoa,name,dienThoai,lop,queQuan,status) Values ({0},{1},N'{2}',N'{3}',N'{4}',N'{5}',{6})",maSinhVien, khoa, name, dienThoai, lop, queQuan, status);
+            string query = string.Format("update SINHVIEN set khoa  = " + khoa + ",  NAME = N'" + name + "' ,dienThoai = '" + dienThoai + "',lop = N'" + lop + "',queQuan = N'" + queQuan + "' WHERE maSinhVien = ") + maSinhVien;
 
             int result = providerDAO.Instance.ExecuteQuery(query);
             return result > 0;
@@ -117,7 +117,7 @@ namespace QuanLyNhaTro.DAO
         public List<sinhVien> SearchSinhVien(string name)
         {
             List<sinhVien> list = new List<sinhVien>();
-            string sql =string.Format("select* from sinhVien where maSinhvien,name,lop,queQuan = N'{1}'" +  name );
+            string sql =string.Format("select SV.maSinhVien, K.name as khoa, SV.name, SV.dienThoai, SV.lop,SV.queQuan, SV.status from sinhVien SV, khoa K where SV.Khoa = K.maKhoa  and SV.name = N'" + name +"'");
             DataTable data = providerDAO.Instance.loadDL(sql);
             foreach(DataRow item in data.Rows)
             {
@@ -126,5 +126,7 @@ namespace QuanLyNhaTro.DAO
             }
             return list;
         }
+
+        
     }
 }
