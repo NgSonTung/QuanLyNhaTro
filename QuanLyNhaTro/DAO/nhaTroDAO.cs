@@ -51,8 +51,8 @@ namespace QuanLyNhaTro.DAO
         }
         public bool DELETEINSERT(int maNhaTro)
         {
-            hopDongDAO.Instance.deleteinsert(maNhaTro); 
-            string query = "delete nhaTro where maNhaTro =" + maNhaTro;
+            chunhaDAO.Instance.deletechunha(maNhaTro);
+            string query = "delete from nhaTro where maNhaTro =" + maNhaTro;
 
             int result = providerDAO.Instance.ExecuteQuery(query);
             return result > 0;

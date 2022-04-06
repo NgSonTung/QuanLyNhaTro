@@ -59,5 +59,9 @@ namespace QuanLyNhaTro.DAO
             string sql = "Update thanhToan set status = 1 where maThanhToan =" + id;
             providerDAO.Instance.loadDL(sql);
         }
+        public void deletethanhtoan(int maNhaTro)
+        {
+            string query = "delete from thanhToan where maNhaTro =" + maNhaTro;
+        }
     }
 }

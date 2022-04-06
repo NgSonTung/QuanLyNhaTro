@@ -31,7 +31,11 @@ namespace QuanLyNhaTro.DAO
                 chunhalist.Add(chuNha);
             }
             return chunhalist;
-            
+        }
+        public void deletechunha(int maNhaTro)
+        {
+            thanhToanDAO.Instance.deletethanhtoan(maNhaTro);
+            string query = "delete from chuNha where maNhaTro =" + maNhaTro;
         }
     }
     

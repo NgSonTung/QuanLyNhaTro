@@ -36,5 +36,9 @@ namespace QuanLyNhaTro.DAO
             return khoaList;
 
         }
+        public void deletekhoa(int khoa)
+        {
+            string query = "delete from khoa where khoa =" + khoa;
+        }
     }
 }
