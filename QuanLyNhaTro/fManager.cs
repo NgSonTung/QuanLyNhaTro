@@ -121,7 +121,7 @@ namespace QuanLyNhaTro
                 hopDongDAO.Instance.updateCountDown(maThanhToan);
                 if (countDAO.Instance.getSVCount(maNhaTro) == 0) /*Nếu nhà trọ cũ 0 có người*/
                 {
-                    hopDongDAO.Instance.autoDeleteHopDong();
+                    /*hopDongDAO.Instance.autoDeleteHopDong();*/
                     thanhToanDAO.Instance.checkOut(maNhaTro); /*đổi status thanh toán thành đã thanh toán*/
                     nhaTroDAO.Instance.checkOutStatus(maNhaTro);  /*update status NT -> trống*/
                 }
@@ -238,7 +238,7 @@ namespace QuanLyNhaTro
                     else
                         hopDongDAO.Instance.updateCountDown(maThanhToanCu);
                 }
-                hopDongDAO.Instance.autoDeleteHopDong();
+               /* hopDongDAO.Instance.autoDeleteHopDong();*/
                 loadThongTin(maNhaTroMoi);
                 loadNhaTro();
                 loadSinhVienByKhoa(tempMaKhoa);
