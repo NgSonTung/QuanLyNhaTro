@@ -368,6 +368,7 @@
             this.searchSV.TabIndex = 5;
             this.searchSV.Text = "Tìm kiếm";
             this.searchSV.UseVisualStyleBackColor = true;
+            this.searchSV.Click += new System.EventHandler(this.searchSV_Click);
             // 
             // xemSV
             // 

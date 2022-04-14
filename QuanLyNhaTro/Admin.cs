@@ -125,12 +125,8 @@ namespace QuanLyNhaTro
             string dienThoai = txtDTSV.Text;
             string lop = txtLopSV.Text;
             string queQuan = txtQueQuan.Text;
-            int status = 0;
-            if (cbstatusSV.SelectedIndex == 0)
-            {
-                status = 1;
-            }
-            sinhVienDAO.Instance.INSERTSinhvieṇ̣̣(khoa,name,dienThoai,lop,queQuan,status);
+            
+            sinhVienDAO.Instance.INSERTSinhvieṇ̣̣(khoa,name,dienThoai,lop,queQuan);
             LoadListsinhVien();
         }
 
@@ -196,22 +192,21 @@ namespace QuanLyNhaTro
             string dienThoai = txtDTSV.Text;
             string lop = txtLopSV.Text;
             string queQuan = txtQueQuan.Text;
-            int status = 0;
-            if (cbstatusSV.SelectedIndex == 0)
-            {
-                status = 1;
-            }
-            sinhVienDAO.Instance.UPDATESinhVien(maSinhVien,khoa, name, dienThoai, lop, queQuan, status);
+            
+            
+            sinhVienDAO.Instance.UPDATESinhVien(maSinhVien,khoa, name, dienThoai, lop, queQuan);
             LoadListsinhVien();
         }
-        List<sinhVien> SearchSinhVien(string name)
-        {
-            List<sinhVien> listSinhVien = sinhVienDAO.Instance.SearchSinhVien(name);
-            return listSinhVien;
-        }
+
         private void searchSV_Click(object sender, EventArgs e)
         {
-           sinhVienList.DataSource = SearchSinhVien(txtSearch.Text);
+           dgvSinhvien.DataSource = sinhVienDAO.Instance.SearchSinhVien(txtSearch.Text);
+        }
+        private event EventHandler deleteSinhVien;
+            public event EventHandler DeleteSinhVien
+        {
+            add { deleteSinhVien += value; }
+            remove { deleteSinhVien -= value; }
         }
     }
 }
