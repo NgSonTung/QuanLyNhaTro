@@ -19,6 +19,7 @@ namespace QuanLyNhaTro
             InitializeComponent();
             loadNhaTro();
             loadKhoa();
+            loadLop(tempMaKhoa);
         }
         public int tempMaKhoa;
 
@@ -77,16 +78,40 @@ namespace QuanLyNhaTro
             comboBox3.DisplayMember = "diachi";
         }
 
+        void loadLop(int maKhoa)
+        {   
+            List<lop> lopList = sinhVienDAO.Instance.getLopSV(maKhoa);
+            comboBox4.DataSource = lopList;
+            if (comboBox4.Items.Count == 0)
+            {
+                comboBox4.Text = "trống";
+                loadSinhVienByKhoa(1, maKhoa);
+            }
+            else
+            {
+                comboBox4.DisplayMember = "lopSV";
+                comboBox4.SelectedIndex = 0;
+            }
+        }
+
         void loadKhoa()
         {
             List<khoa> listCategory = khoaDAO.Instance.getCategory();
             comboBox1.DataSource = listCategory;
-            comboBox1.DisplayMember = "Name";
+            if (comboBox1.Items.Count == 0)
+            {
+                comboBox1.Text = "trống";
+            }
+            else
+            {
+                comboBox1.DisplayMember = "name";
+                comboBox1.SelectedIndex = 0;
+            }
         }
 
-        void loadSinhVienByKhoa(int id)
+        void loadSinhVienByKhoa(int lop, int khoa)
         {
-            List<sinhVien> listSinhVien = sinhVienDAO.Instance.getFood(id);
+            List<sinhVien> listSinhVien = sinhVienDAO.Instance.getFood(lop,khoa);
             comboBox2.DataSource = listSinhVien;
             if (comboBox2.Items.Count == 0)
             {
@@ -98,11 +123,16 @@ namespace QuanLyNhaTro
 
         private void button4_Click(object sender, EventArgs e)
         {
-                        if (comboBox6.Text == null)
+
+            if (comboBox6.Text == null)
             {
                 MessageBox.Show("Chưa chọn sinh viên", "Thông Báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
-            if (comboBox6.Items.Count == 0)
+            else if (comboBox6.SelectedItem == null)
+            {
+                MessageBox.Show("Chưa chọn sinh viên", "Thông Báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            else if (comboBox6.Items.Count == 0)
             {
                 MessageBox.Show("Không có sinh viên", "Thông Báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
@@ -110,36 +140,68 @@ namespace QuanLyNhaTro
             {
                 MessageBox.Show("Chưa chọn nhà trọ", "Thông Báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
-            else
+            else /*bat loi*/
             {
-                nhaTro nhaTro = dataGridView1.Tag as nhaTro; /*Lấy mã nhà trọ cũ & status*/
-
                 int maSinhVien = (comboBox6.SelectedItem as chuyenTro).MaSinhVien;
                 int maNhaTro = sinhVienDAO.Instance.getMaNTFromMaSV(maSinhVien);
                 int maThanhToan = sinhVienDAO.Instance.getMaTTFromMaSV(maSinhVien);
+                int lopSinhVien = (comboBox4.SelectedItem as lop).LopSV;
                 sinhVienDAO.Instance.statusKhongTro(maSinhVien);
                 hopDongDAO.Instance.updateCountDown(maThanhToan);
                 if (countDAO.Instance.getSVCount(maNhaTro) == 0) /*Nếu nhà trọ cũ 0 có người*/
                 {
-                    /*hopDongDAO.Instance.autoDeleteHopDong();*/
-                    thanhToanDAO.Instance.checkOut(maNhaTro); /*đổi status thanh toán thành đã thanh toán*/
+                    thanhToanDAO.Instance.checkOut(maThanhToan); /*đổi status thanh toán thành đã thanh toán*/
                     nhaTroDAO.Instance.checkOutStatus(maNhaTro);  /*update status NT -> trống*/
                 }
                 loadThongTin(maNhaTro);
+                loadSinhVienByKhoa(lopSinhVien,tempMaKhoa);
                 loadNhaTro();
+                List<chuyenTro> listChuyenTro = chuyenTroDAO.Instance.getChuyenTro(maNhaTro);
+                comboBox6.DataSource = listChuyenTro;
+                comboBox6.DisplayMember = "Name";
             }
         }
         
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {   
             int maKhoa;
+            int lopSinhVien;
             ComboBox cb = sender as ComboBox;
             if (cb.SelectedItem == null)
                 return;
-            khoa select = cb.SelectedItem as khoa;
-            maKhoa = select.MaKhoa;
-            loadSinhVienByKhoa(maKhoa);
-            tempMaKhoa = maKhoa;
+            else
+            {
+                khoa select = cb.SelectedItem as khoa;
+                maKhoa = select.MaKhoa;
+                tempMaKhoa = maKhoa;
+                loadLop(maKhoa);
+                if (comboBox4.SelectedItem != null)
+                {
+                    lopSinhVien = (comboBox4.SelectedItem as lop).LopSV;
+                    loadSinhVienByKhoa(lopSinhVien, maKhoa);
+                }
+            }
+        }
+        private void comboBox4_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            int maKhoa;
+            int lopSinhVien;
+            ComboBox cb = comboBox1 as ComboBox;
+            if (cb.SelectedItem == null)
+                return;
+            else if (comboBox4.SelectedItem == null)
+            {
+                return;
+            }
+            else
+            {
+                lopSinhVien = (comboBox4.SelectedItem as lop).LopSV;
+                khoa select = cb.SelectedItem as khoa;
+                maKhoa = select.MaKhoa;
+                loadSinhVienByKhoa(lopSinhVien, maKhoa);
+                tempMaKhoa = maKhoa;
+                label4.Text = lopSinhVien.ToString();
+            }
         }
 
         private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
@@ -147,16 +209,14 @@ namespace QuanLyNhaTro
             List<nhaTro> nhaTroList = nhaTroDAO.Instance.getTable();
             comboBox3.DataSource = nhaTroList;
             comboBox3.DisplayMember = "diachi";
-            int tableID = (dataGridView1.Tag as nhaTro).MaNhaTro;
-            List<chuyenTro> listChuyenTro = chuyenTroDAO.Instance.getChuyenTro(tableID);
+            int maNhaTro = (dataGridView1.Tag as nhaTro).MaNhaTro;
+            List<chuyenTro> listChuyenTro = chuyenTroDAO.Instance.getChuyenTro(maNhaTro);
             comboBox6.DataSource = listChuyenTro;
             comboBox6.DisplayMember = "Name";
         }
 
         private void button1_Click(object sender, EventArgs e) /*CheckIn*/
-        {
-            
-            /*int count = countDAO.Instance.getSVCount(nhaTro.MaNhaTro);*/
+        {       
             if (dataGridView1.Tag as nhaTro == null)
             {
                 MessageBox.Show("Chưa chọn nhà trọ", "Thông Báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -165,11 +225,17 @@ namespace QuanLyNhaTro
             {
                 MessageBox.Show("Không có sinh viên", "Thông Báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
-            else
+            else if (comboBox4.SelectedItem == null)
+            {
+                MessageBox.Show("Không có lớp", "Thông Báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            else /*bat loi*/
             {
                 nhaTro nhaTro = dataGridView1.Tag as nhaTro;
                 int maThanhToan = thanhToanDAO.Instance.getUncheckBill(nhaTro.MaNhaTro);
                 int maSinhVien = (comboBox2.SelectedItem as sinhVien).MaSinhVien;
+                int maNhaTro = (dataGridView1.Tag as nhaTro).MaNhaTro;
+                int lopSinhVien = (comboBox4.SelectedItem as lop).LopSV;
                 if (maThanhToan == -1) /*nếu nhà trọ trống ~ chưa có bill -> thêm bill*/
                 {
                     thanhToanDAO.Instance.insertBill(nhaTro.MaNhaTro); /* Tạo thanh toán */
@@ -185,25 +251,39 @@ namespace QuanLyNhaTro
                 }
                 loadThongTin(nhaTro.MaNhaTro);
                 loadNhaTro();
-                loadSinhVienByKhoa(tempMaKhoa);
+                loadLop(tempMaKhoa);
+                List<chuyenTro> listChuyenTro = chuyenTroDAO.Instance.getChuyenTro(maNhaTro);
+                comboBox6.DataSource = listChuyenTro;
+                comboBox6.DisplayMember = "Name";
             }
-            
         }
 
         private void button2_Click(object sender, EventArgs e)
-        {   
+        {
             if (comboBox6.Text == null)
             {
                 MessageBox.Show("Chưa chọn sinh viên", "Thông Báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            } else if (comboBox6.SelectedItem == null)
+            {
+                MessageBox.Show("Chưa chọn sinh viên", "Thông Báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
-            if (comboBox6.Items.Count == 0)
+            else if (comboBox6.SelectedItem == null)
+            {
+                MessageBox.Show("Chưa chọn sinh viên", "Thông Báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            else if (comboBox6.Items.Count == 0)
             {
                 MessageBox.Show("Không có sinh viên", "Thông Báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             else if (dataGridView1.Tag as nhaTro == null)
             {
                 MessageBox.Show("Chưa chọn nhà trọ", "Thông Báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            }else
+            }
+            else if ((dataGridView1.Tag as nhaTro).MaNhaTro == (comboBox3.SelectedItem as nhaTro).MaNhaTro)
+            {
+                MessageBox.Show("Trùng nhà trọ", "Thông Báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            else /*bat loi*/
             {
                 int maHopDong = (comboBox6.SelectedItem as chuyenTro).MaHopDong;
                 nhaTro nhaTro = dataGridView1.Tag as nhaTro; /*Lấy mã nhà trọ cũ & status*/
@@ -211,7 +291,7 @@ namespace QuanLyNhaTro
                 int maNhaTroMoi = (comboBox3.SelectedItem as nhaTro).MaNhaTro;
                 int checkThanhToan = thanhToanDAO.Instance.getUncheckBill(maNhaTroMoi);
                 int maThanhToanMoi = ((comboBox3.SelectedItem as nhaTro).MaNhaTro);
-
+                int lopSinhVien = (comboBox4.SelectedItem as lop).LopSV;
                 if (checkThanhToan == -1) /*nếu nhà trọ mới trống ~ chưa có bill -> thêm bill*/
                 {
                     thanhToanDAO.Instance.insertBill(maNhaTroMoi); /* tạo thanh toán mới */
@@ -238,18 +318,14 @@ namespace QuanLyNhaTro
                     else
                         hopDongDAO.Instance.updateCountDown(maThanhToanCu);
                 }
-               /* hopDongDAO.Instance.autoDeleteHopDong();*/
-                loadThongTin(maNhaTroMoi);
+                loadThongTin(nhaTro.MaNhaTro);
                 loadNhaTro();
-                loadSinhVienByKhoa(tempMaKhoa);
+                loadSinhVienByKhoa(lopSinhVien, tempMaKhoa);
+                List<chuyenTro> listChuyenTro = chuyenTroDAO.Instance.getChuyenTro(nhaTro.MaNhaTro);
+                comboBox6.DataSource = listChuyenTro;
+                comboBox6.DisplayMember = "Name";
             }
-            
-        }
-
-        private void button3_Click(object sender, EventArgs e)
-        {
-            
         }
 
     }
-}
+} 
