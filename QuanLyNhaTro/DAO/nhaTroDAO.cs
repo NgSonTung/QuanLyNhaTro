@@ -23,9 +23,20 @@ namespace QuanLyNhaTro.DAO
         public nhaTroDAO()
         { }
 
+        public int checkNhaTro(int maNhaTro)
+        {
+            string sql = "select limit from nhaTro where maNhaTro = " + maNhaTro;
+            if (providerDAO.Instance.executeScalar(sql) != null)
+            {
+                return (int)providerDAO.Instance.executeScalar(sql);
+            }
+            else
+                return 0;
+        }
+
         public List<nhaTro> getTable()
         {
-            string sql = "select * from nhaTro";
+            string sql = "select distinct NT.maNhaTro, NT.maChuNha, NT.diaChi, NT.gia, NT.limit , NT.status, HDTT.soSinhVien from nhaTro NT left join ( select HD.soSinhVien ,TT.maNhaTro from hopDong HD, thanhToan TT where HD.maThanhToan = TT.maNhaTro and TT.status = 0 ) HDTT on NT.maNhaTro = HDTT.maNhaTro";
             List<nhaTro> listTable1 = new List<nhaTro>();
             DataTable data = providerDAO.Instance.loadDL(sql);
             foreach (DataRow item in data.Rows)
@@ -57,14 +68,14 @@ namespace QuanLyNhaTro.DAO
             int result = providerDAO.Instance.ExecuteQuery(query);
             return result > 0;
         }
-        public void checkInStatus(int id)
+        public void fullStatus(int id)
         {
-            string sql = "update nhaTro set status = N'có người' where maNhaTro =" + id;
+            string sql = "update nhaTro set status = N'hết chỗ' where maNhaTro =" + id;
             providerDAO.Instance.loadDL(sql);
         }
-        public void checkOutStatus(int id)
+        public void availStatus(int id)
         {
-            string sql = "update nhaTro set status = N'trống' where maNhaTro =" + id;
+            string sql = "update nhaTro set status = N'còn chỗ' where maNhaTro =" + id;
             providerDAO.Instance.loadDL(sql);
         }
     }
