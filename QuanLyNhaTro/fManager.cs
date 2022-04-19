@@ -251,5 +251,14 @@ namespace QuanLyNhaTro
             
         }
 
+        private void button3_Click_1(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
+
+        private void fManager_Load(object sender, EventArgs e)
+        {
+            int a = 1;
+        }
     }
 }

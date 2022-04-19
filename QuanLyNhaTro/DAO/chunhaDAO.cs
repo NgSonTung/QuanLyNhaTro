@@ -23,19 +23,15 @@ namespace QuanLyNhaTro.DAO
         public List<chuNha> chunha()
         {
             string query = "select * from chuNha";
-            List<chuNha> chunhalist = new List<chuNha>();
+            List<chuNha> chuNhaList = new List<chuNha>();
             DataTable data = providerDAO.Instance.loadDL(query);
             foreach (DataRow item in data.Rows)
             {
                 chuNha chuNha = new chuNha(item);
-                chunhalist.Add(chuNha);
+                chuNhaList.Add(chuNha);
             }
-            return chunhalist;
-        }
-        public void deletechunha(int maNhaTro)
-        {
-            thanhToanDAO.Instance.deletethanhtoan(maNhaTro);
-            string query = "delete from chuNha where maNhaTro =" + maNhaTro;
+            return chuNhaList;
+
         }
     }
     
