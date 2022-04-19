@@ -12,12 +12,20 @@ using System.Windows.Forms;
 
 namespace QuanLyNhaTro
 {
-    public partial class Admin : Form
+    public partial class fDataManage : Form
     {
-        public Admin()
+        private void managerToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            fManager manager = new fManager();
+            manager.Closed += (s, args) => this.Close();
+            manager.Show();
+        }
+        public fDataManage()
         {
             InitializeComponent();
-            LoadDate();
+            loadDate();
+            loadHistory();
         }
         void LoadDanhmuc()
         {
@@ -214,7 +222,7 @@ namespace QuanLyNhaTro
            dgvSinhvien.DataSource = sinhVienDAO.Instance.SearchSinhVien(txtSearch.Text);
         }
         private event EventHandler deleteSinhVien;
-            public event EventHandler DeleteSinhVien
+        public event EventHandler DeleteSinhVien
         {
             add { deleteSinhVien += value; }
             remove { deleteSinhVien -= value; }
@@ -254,11 +262,52 @@ namespace QuanLyNhaTro
 
         }
 
-        void LoadDate()
+        void loadDate()
         {
             DateTime today = DateTime.Now;
             dateFrom.Value = new DateTime(today.Year, today.Month, 1);
             dateTo.Value = dateFrom.Value.AddMonths(1).AddDays(-1);
         }
+        void loadHistory()
+        {   
+            if (dateFrom.Value < dateTo.Value)
+            {
+                List<history> historyList = historyDAO.Instance.getHistory(dateFrom.Value.Date.ToString("yyyyMMdd"), dateTo.Value.Date.ToString("yyyyMMdd"));
+                historyDGV.DataSource = historyList;
+            }
+            else
+                MessageBox.Show("chọn lại ngày", "Thông Báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+        }
+
+        private void btnHopDong_Click(object sender, EventArgs e)
+        {
+            loadHistory();
+        }
+
+        void checkDate()
+        {
+            if (dateFrom.Value > dateTo.Value)
+            {
+                MessageBox.Show("chọn lại ngày", "Thông Báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                loadDate();
+            }
+
+        }
+
+        private void dateFrom_ValueChanged(object sender, EventArgs e)
+        {
+            checkDate();
+        }
+
+        private void dateTo_ValueChanged(object sender, EventArgs e)
+        {
+            checkDate();
+        }
+
+        private void đăngXuấtToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
+
     }
 }
