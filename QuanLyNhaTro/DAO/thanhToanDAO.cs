@@ -31,7 +31,7 @@ namespace QuanLyNhaTro.DAO
             {
                 thanhToan bill = new thanhToan(data.Rows[0]);
                 return bill.MaThanhToan;
-            }
+            } else
             return -1;
         }
         public int getMaxID()

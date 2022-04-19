@@ -10,8 +10,10 @@ namespace QuanLyNhaTro.DTO
     public class nhaTro
     {
         private int maNhaTro;
+        private int maChuNha;
         private string diaChi;
         private float gia;
+        private int limit;
         private string status;
         public static int TableWidth = 100;
         public static int TableHeight = 100;
@@ -20,14 +22,18 @@ namespace QuanLyNhaTro.DTO
         public string DiaChi { get => diaChi; set => diaChi = value; }
         public float Gia { get => gia; set => gia = value; }
         public string Status { get => status; set => status = value; }
+        public int Limit { get => limit; set => limit = value; }
+        public int MaChuNha { get => maChuNha; set => maChuNha = value; }
 
         public nhaTro(DataRow row)
-        {
-            this.maNhaTro = (int)row["maNhaTro"];
-            this.diaChi = (string)row["diaChi"];
-            this.gia = float.Parse(row["gia"].ToString());
-            this.status = (string)row["status"];
+        {   
 
+            this.MaNhaTro = (int)row["maNhaTro"];
+            this.maChuNha = (int)row["maChuNha"];
+            this.DiaChi = (string)row["diaChi"];
+            this.Gia = float.Parse(row["gia"].ToString());
+            this.Limit = (int)row["limit"];
+            this.Status = (string)row["status"];
         }
     }
 }

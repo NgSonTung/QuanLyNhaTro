@@ -25,7 +25,7 @@ namespace QuanLyNhaTro.DAO
 
         public int getSVCount(int maNhaTro)
         {
-            string sql = "select HD.soSinhVien from hopDong HD, thanhToan TT, nhaTro NT where HD.maThanhToan = TT.maThanhToan and TT.maNhaTro = NT.maNhaTro and NT.status = N'có người' and TT.status = 0 and TT.maNhaTro = " + maNhaTro;
+            string sql = "select HD.soSinhVien from hopDong HD, thanhToan TT, nhaTro NT where HD.maThanhToan = TT.maThanhToan and TT.maNhaTro = NT.maNhaTro and TT.status = 0 and TT.maNhaTro = " + maNhaTro;
             if (providerDAO.Instance.executeScalar(sql) != null)
             {
                 return (int)providerDAO.Instance.executeScalar(sql);
