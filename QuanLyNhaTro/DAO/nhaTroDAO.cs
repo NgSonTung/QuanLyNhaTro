@@ -47,11 +47,17 @@ namespace QuanLyNhaTro.DAO
             return listTable1;
 
         }
-        public bool INSERT(string diaChi, float gia, string status)
+        public bool INSERT(string diaChi, float gia)
         {
-            string query = "INSERT nhaTro VALUES (N'" + diaChi + "'," + gia + ", N'"+ status +"')";
+            string query = string.Format("Insert dbo.nhaTro (diaChi,gia,status) Values (N'{0}',{1},{2})", diaChi,gia,0);
             int result = providerDAO.Instance.ExecuteQuery(query);
+
             return result > 0;
+            /*
+            string query = string.Format ("Insert dbo.sinhVien (khoa,name,dienThoai,lop,queQuan,status) Values ({0},N'{1}',N'{2}',N'{3}',N'{4}',{5})",khoa,name,dienThoai,lop,queQuan,0);
+            int result = providerDAO.Instance.ExecuteQuery(query);
+
+            return result > 0;*/
         }
         public bool UPDATEINSERT(int maNhaTro, string diaChi, float gia, string status)
         {
@@ -77,6 +83,23 @@ namespace QuanLyNhaTro.DAO
         {
             string sql = "update nhaTro set status = N'còn chỗ' where maNhaTro =" + id;
             providerDAO.Instance.loadDL(sql);
+        }
+
+        public List<nhaTro> SearchNhaTro(string name)
+        {
+            List<nhaTro> list = new List<nhaTro>();
+            string sql = string.Format("select SV.maSinhVien, K.name as khoa, SV.name, SV.dienThoai, SV.lop,SV.queQuan, SV.status from sinhVien SV, khoa K where SV.Khoa = K.maKhoa  and SV.name = N'" + name + "'");
+            DataTable data = providerDAO.Instance.loadDL(sql);
+            foreach (DataRow item in data.Rows)
+            {
+                nhaTro NhaTro = new nhaTro(item);
+                list.Add(NhaTro);
+            }
+            return list;
+        }
+        public void deletenhatro(int maNhaTro)
+        {
+            providerDAO.Instance.loadDL("delete nhaTro WHERE maNhaTro =" + maNhaTro);
         }
     }
 }

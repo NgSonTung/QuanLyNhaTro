@@ -91,5 +91,6 @@ namespace QuanLyNhaTro.DAO
             string query = "DELETE FROM hopDong WHERE soSinhVien = 0 ";
             providerDAO.Instance.loadDL(query);
         }
+
     }
 }

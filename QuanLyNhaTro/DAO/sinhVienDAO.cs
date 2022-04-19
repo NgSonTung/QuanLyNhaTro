@@ -139,7 +139,10 @@ namespace QuanLyNhaTro.DAO
             }
             return list;
         }
-
-        
+        public void deletesinhvien(int maSinhVien)
+        {
+            khoaDAO.Instance.deletekhoa(maSinhVien);
+            string query = "delete from sinhVien where maSinhVien =" + maSinhVien;
+        }
     }
 }

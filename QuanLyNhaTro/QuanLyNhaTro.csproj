@@ -53,6 +53,7 @@
       <DependentUpon>Admin.cs</DependentUpon>
     </Compile>
     <Compile Include="DAO\accountDAO.cs" />
+    <Compile Include="DAO\chunhaDAO.cs" />
     <Compile Include="DAO\chuyenTroDAO.cs" />
     <Compile Include="DAO\countDAO.cs" />
     <Compile Include="DAO\thongTinTroDAO.cs" />
@@ -119,7 +120,9 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <None Include="Resources\graduation-hat.png" />
+  </ItemGroup>
   <ItemGroup>
     <None Include="Resources\technical-support.png" />
   </ItemGroup>
@@ -129,6 +132,14 @@
   <ItemGroup>
     <None Include="Resources\padlock.png" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <None Include="Resources\write.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\write1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\motel.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
