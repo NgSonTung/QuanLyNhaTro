@@ -14,10 +14,10 @@ namespace QuanLyNhaTro
 {
     public partial class Admin : Form
     {
-
         public Admin()
         {
             InitializeComponent();
+            LoadDate();
         }
         void LoadDanhmuc()
         {
@@ -252,6 +252,13 @@ namespace QuanLyNhaTro
         private void button6_Click(object sender, EventArgs e)
         {
 
+        }
+
+        void LoadDate()
+        {
+            DateTime today = DateTime.Now;
+            dateFrom.Value = new DateTime(today.Year, today.Month, 1);
+            dateTo.Value = dateFrom.Value.AddMonths(1).AddDays(-1);
         }
     }
 }

@@ -21,19 +21,6 @@ namespace QuanLyNhaTro
             InitializeComponent();
         }
 
-        private void Form1_FormClosing(object sender, FormClosingEventArgs e)
-        {
-            DialogResult dialogResult = MessageBox.Show("Do you want to exit?", "Notification", MessageBoxButtons.YesNo, MessageBoxIcon.Information);
-            if (dialogResult == DialogResult.Yes)
-            {
-            }
-            else if (dialogResult == DialogResult.No)
-            {
-                e.Cancel = true;
-            }
-            
-        }
-
         private void Form1_Load(object sender, EventArgs e)
         {
             

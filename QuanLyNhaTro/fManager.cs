@@ -29,6 +29,14 @@ namespace QuanLyNhaTro
             admin.Closed += (s, args) => this.Close();
             admin.Show();
         }
+
+        private void đăngXuấtToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            Form1 fLogin = new Form1();
+            fLogin.Closed += (s, args) => this.Close();
+            fLogin.Show();
+        }
         void loadNhaTro() /*show table button*/
         {
             List<nhaTro> tableList = nhaTroDAO.Instance.getTable();
@@ -42,10 +50,10 @@ namespace QuanLyNhaTro
                 switch (item.Status)
                 {
                     case "còn chỗ":
-                        btn.BackColor = Color.Green;
+                        btn.BackColor = Color.FromArgb(90, 176, 127);
                         break;
                     default:
-                        btn.BackColor = Color.Red;
+                        btn.BackColor = Color.FromArgb(194, 60, 60);
                         break;
                 }
                 flowLayoutPanel1.Controls.Add(btn);
@@ -246,7 +254,6 @@ namespace QuanLyNhaTro
                     {
                         thanhToanDAO.Instance.insertBill(nhaTro.MaNhaTro); /* Tạo thanh toán */
                         hopDongDAO.Instance.insertBillInfo(thanhToanDAO.Instance.getMaxID(), maSinhVien, 1); /* tạo hợp đồng*/
-                        nhaTroDAO.Instance.fullStatus(nhaTro.MaNhaTro); /* update status nhà trọ thành có người*/
                         sinhVienDAO.Instance.statusCoTro(maSinhVien);  /*update status sinh viên thành có trọ*/
                     }
                     else /*nếu nhà trọ mới không trống*/
@@ -327,7 +334,6 @@ namespace QuanLyNhaTro
                         {
                             nhaTroDAO.Instance.availStatus(nhaTro.MaNhaTro);  /*update status NT -> trống*/
                             thanhToanDAO.Instance.checkOut(maThanhToanCu); /*update status TT -> đã thanh toán*/
-                            label4.Text = maThanhToanCu.ToString();
                         }
                         else
                             hopDongDAO.Instance.updateCountDown(maThanhToanCu);
@@ -352,9 +358,5 @@ namespace QuanLyNhaTro
             Application.Exit();
         }
 
-        private void fManager_Load(object sender, EventArgs e)
-        {
-            int a = 1;
-        }
     }
 } 
