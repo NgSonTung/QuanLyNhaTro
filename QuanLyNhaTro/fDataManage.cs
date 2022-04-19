@@ -12,12 +12,20 @@ using System.Windows.Forms;
 
 namespace QuanLyNhaTro
 {
-    public partial class Admin : Form
+    public partial class fDataManage : Form
     {
-
-        public Admin()
+        private void managerToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            fManager manager = new fManager();
+            manager.Closed += (s, args) => this.Close();
+            manager.Show();
+        }
+        public fDataManage()
         {
             InitializeComponent();
+            loadDate();
+            loadHistory();
         }
         void LoadDanhmuc()
         {
@@ -46,8 +54,7 @@ namespace QuanLyNhaTro
         {
             string diaChi = textBox4.Text;
             float gia = float.Parse(textBox8.Text);
-            string status = textBox7.Text;
-            nhaTroDAO.Instance.INSERT(diaChi, gia, status);
+            nhaTroDAO.Instance.INSERT(diaChi, gia);
             LoadDanhmuc();
         }
         
@@ -65,7 +72,7 @@ namespace QuanLyNhaTro
                 textBox5.Text = row.Cells[0].Value.ToString();
                 textBox4.Text = row.Cells[1].Value.ToString();
                 textBox8.Text = row.Cells[2].Value.ToString();
-                textBox7.Text = row.Cells[3].Value.ToString();
+                cbstatusSV.Text = row.Cells[3].Value.ToString();
             }
         }
 
@@ -88,7 +95,7 @@ namespace QuanLyNhaTro
         {
             string diaChi = textBox4.Text;
             float gia = float.Parse(textBox8.Text);
-            string status = textBox7.Text;
+            string status = cbstatusSV.Text;
             int maNhaTro = int.Parse(textBox5.Text);
             nhaTroDAO.Instance.UPDATEINSERT(maNhaTro,diaChi, gia, status);
             LoadDanhmuc();
@@ -97,9 +104,21 @@ namespace QuanLyNhaTro
 
         private void button7_Click(object sender, EventArgs e)
         {
-            int maNhaTro = int.Parse(textBox5.Text);
+            /*int maNhaTro = int.Parse(textBox5.Text);
             nhaTroDAO.Instance.DELETEINSERT(maNhaTro);
-            LoadDanhmuc();
+            LoadDanhmuc();*/
+            if (textBox5.Text == "")
+            {
+                MessageBox.Show("Chưa chọn ID", "Thông Báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+            }
+            else
+            {
+                int maNhaTro = int.Parse(textBox5.Text);
+                nhaTroDAO.Instance.deletenhatro(maNhaTro);
+                LoadListsinhVien();
+            }
+
         }
 
         private void tabControl2_SelectedIndexChanged(object sender, EventArgs e)
@@ -205,10 +224,92 @@ namespace QuanLyNhaTro
 
 
         private event EventHandler deleteSinhVien;
-            public event EventHandler DeleteSinhVien
+        public event EventHandler DeleteSinhVien
         {
             add { deleteSinhVien += value; }
             remove { deleteSinhVien -= value; }
         }
+
+        private void textBox7_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void textBox6_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+        private void txtSearch_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button10_Click(object sender, EventArgs e)
+        {
+            dgvPart.DataSource = nhaTroDAO.Instance.SearchNhaTro(textBox6.Text);
+        }
+
+        private void panel11_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void dgvSinhvien_CellContentClick_1(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void button6_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        void loadDate()
+        {
+            DateTime today = DateTime.Now;
+            dateFrom.Value = new DateTime(today.Year, today.Month, 1);
+            dateTo.Value = dateFrom.Value.AddMonths(1).AddDays(-1);
+        }
+        void loadHistory()
+        {   
+            if (dateFrom.Value < dateTo.Value)
+            {
+                List<history> historyList = historyDAO.Instance.getHistory(dateFrom.Value.Date.ToString("yyyyMMdd"), dateTo.Value.Date.ToString("yyyyMMdd"));
+                historyDGV.DataSource = historyList;
+            }
+            else
+                MessageBox.Show("chọn lại ngày", "Thông Báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+        }
+
+        private void btnHopDong_Click(object sender, EventArgs e)
+        {
+            loadHistory();
+        }
+
+        void checkDate()
+        {
+            if (dateFrom.Value > dateTo.Value)
+            {
+                MessageBox.Show("chọn lại ngày", "Thông Báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                loadDate();
+            }
+
+        }
+
+        private void dateFrom_ValueChanged(object sender, EventArgs e)
+        {
+            checkDate();
+        }
+
+        private void dateTo_ValueChanged(object sender, EventArgs e)
+        {
+            checkDate();
+        }
+
+        private void đăngXuấtToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
+
     }
 }

@@ -23,9 +23,22 @@ namespace QuanLyNhaTro.DAO
         public sinhVienDAO()
         { }
 
-        public List<sinhVien> getFood(int id)
+        public List<lop> getLopSV(int maKhoa)
         {
-            string sql = "select SV.maSinhVien, K.name as khoa, SV.name, SV.dienThoai, SV.lop,SV.queQuan from sinhVien SV, khoa K where SV.khoa = K.maKhoa and SV.status = 0 and SV.khoa = " + id;
+            string sql = "select lop from sinhvien where status = 0 and khoa = "+ maKhoa +" group by lop order by cast(lop as int) asc ";
+            DataTable data = providerDAO.Instance.loadDL(sql);
+            List<lop> lopList = new List<lop>();
+            foreach (DataRow item in data.Rows)
+            {
+                lop lop = new lop(item);
+                lopList.Add(lop);
+            }
+            return lopList;
+        }
+
+        public List<sinhVien> getFood(int lop, int khoa)
+        {
+            string sql = "select SV.maSinhVien, K.name as khoa, SV.name, SV.dienThoai, SV.lop,SV.queQuan from sinhVien SV, khoa K where SV.khoa = K.maKhoa and SV.status = 0 and SV.lop = '"+ lop +"' and SV.khoa = " + khoa;
             List<sinhVien> sinhVienList = new List<sinhVien>();
             DataTable data = providerDAO.Instance.loadDL(sql);
             foreach (DataRow item in data.Rows)
@@ -127,6 +140,5 @@ namespace QuanLyNhaTro.DAO
             return list;
         }
 
-        
     }
 }
