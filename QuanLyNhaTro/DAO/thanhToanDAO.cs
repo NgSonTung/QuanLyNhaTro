@@ -59,9 +59,13 @@ namespace QuanLyNhaTro.DAO
             string sql = "Update thanhToan set status = 1, dateCheckOut = GETDATE()  where maThanhToan =" + id;
             providerDAO.Instance.loadDL(sql);
         }
-        public void DeletethanhToan(int maThanhToan)
+        public void DeletethanhToan(int maNhaTro)
         {
-            providerDAO.Instance.ExecuteQuery("DELETE thanhToan WHERE maThanhToan = " + maThanhToan);
+            hopDongDAO.Instance.deleteSinhvien(maThanhToan); 
+            string query = "delete thanhToan where maNhaTro =" + maNhaTro;
+
+            int result = providerDAO.Instance.ExecuteQuery(query);
+            return result > 0;
         }
 
     }
