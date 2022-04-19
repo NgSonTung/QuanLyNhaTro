@@ -56,7 +56,7 @@ namespace QuanLyNhaTro.DAO
         }
         public void checkOut(int id)
         {
-            string sql = "Update thanhToan set status = 1 where maThanhToan =" + id;
+            string sql = "Update thanhToan set status = 1, dateCheckOut = GETDATE()  where maThanhToan =" + id;
             providerDAO.Instance.loadDL(sql);
         }
     }

@@ -22,7 +22,6 @@ namespace QuanLyNhaTro
             loadLop(tempMaKhoa);
         }
         public int tempMaKhoa;
-
         private void adminToolStripMenuItem_Click(object sender, EventArgs e)
         {
             this.Hide();
@@ -145,7 +144,6 @@ namespace QuanLyNhaTro
                 int maSinhVien = (comboBox6.SelectedItem as chuyenTro).MaSinhVien;
                 int maNhaTro = sinhVienDAO.Instance.getMaNTFromMaSV(maSinhVien);
                 int maThanhToan = sinhVienDAO.Instance.getMaTTFromMaSV(maSinhVien);
-                int lopSinhVien = (comboBox4.SelectedItem as lop).LopSV;
                 sinhVienDAO.Instance.statusKhongTro(maSinhVien);
                 hopDongDAO.Instance.updateCountDown(maThanhToan);
                 if (countDAO.Instance.getSVCount(maNhaTro) == 0) /*Nếu nhà trọ cũ 0 có người*/
@@ -155,8 +153,13 @@ namespace QuanLyNhaTro
                 }
                 if (countDAO.Instance.getSVCount(maNhaTro) < nhaTroDAO.Instance.checkNhaTro(maNhaTro))
                     nhaTroDAO.Instance.availStatus(maNhaTro);
+                if (comboBox4.SelectedItem != null)
+                {
+                    int lopSinhVien = (comboBox4.SelectedItem as lop).LopSV;
+                    loadSinhVienByKhoa(lopSinhVien, tempMaKhoa);
+                }
+                loadLop(tempMaKhoa);
                 loadThongTin(maNhaTro);
-                loadSinhVienByKhoa(lopSinhVien,tempMaKhoa);
                 loadNhaTro();
                 List<chuyenTro> listChuyenTro = chuyenTroDAO.Instance.getChuyenTro(maNhaTro);
                 comboBox6.DataSource = listChuyenTro;
@@ -335,7 +338,6 @@ namespace QuanLyNhaTro
                         nhaTroDAO.Instance.availStatus(nhaTro.MaNhaTro);
                     loadThongTin(nhaTro.MaNhaTro);
                     loadNhaTro();
-                    /*loadSinhVienByKhoa(lopSinhVien, tempMaKhoa);*/
                     List<chuyenTro> listChuyenTro = chuyenTroDAO.Instance.getChuyenTro(nhaTro.MaNhaTro);
                     comboBox6.DataSource = listChuyenTro;
                     comboBox6.DisplayMember = "Name";
