@@ -25,7 +25,7 @@ namespace QuanLyNhaTro
         private void adminToolStripMenuItem_Click(object sender, EventArgs e)
         {
             this.Hide();
-            Admin admin = new Admin();
+            fDataManage admin = new fDataManage();
             admin.Closed += (s, args) => this.Close();
             admin.Show();
         }

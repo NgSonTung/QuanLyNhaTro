@@ -1,6 +1,6 @@
 ﻿namespace QuanLyNhaTro
 {
-    partial class Admin
+    partial class fDataManage
     {
         /// <summary>
         /// Required designer variable.
@@ -78,10 +78,15 @@
             this.button9 = new System.Windows.Forms.Button();
             this.dgvPart = new System.Windows.Forms.DataGridView();
             this.tabPage1 = new System.Windows.Forms.TabPage();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.dateFrom = new System.Windows.Forms.DateTimePicker();
-            this.btnHopDong = new System.Windows.Forms.Button();
             this.dateTo = new System.Windows.Forms.DateTimePicker();
+            this.btnHopDong = new System.Windows.Forms.Button();
+            this.dateFrom = new System.Windows.Forms.DateTimePicker();
+            this.historyDGV = new System.Windows.Forms.DataGridView();
+            this.menuStrip1 = new System.Windows.Forms.MenuStrip();
+            this.managerToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.accountInformationToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.thôngTinCáNhânToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.đăngXuấtToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.tabControl2.SuspendLayout();
             this.tabPage4.SuspendLayout();
             this.panel10.SuspendLayout();
@@ -99,7 +104,8 @@
             this.panel6.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvPart)).BeginInit();
             this.tabPage1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.historyDGV)).BeginInit();
+            this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // tabControl2
@@ -107,11 +113,11 @@
             this.tabControl2.Controls.Add(this.tabPage4);
             this.tabControl2.Controls.Add(this.tabPage5);
             this.tabControl2.Controls.Add(this.tabPage1);
-            this.tabControl2.Location = new System.Drawing.Point(16, 15);
-            this.tabControl2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tabControl2.Location = new System.Drawing.Point(13, 32);
+            this.tabControl2.Margin = new System.Windows.Forms.Padding(4);
             this.tabControl2.Name = "tabControl2";
             this.tabControl2.SelectedIndex = 0;
-            this.tabControl2.Size = new System.Drawing.Size(1137, 594);
+            this.tabControl2.Size = new System.Drawing.Size(1137, 585);
             this.tabControl2.TabIndex = 3;
             this.tabControl2.SelectedIndexChanged += new System.EventHandler(this.tabControl2_SelectedIndexChanged);
             // 
@@ -132,10 +138,10 @@
             this.tabPage4.Controls.Add(this.themSV);
             this.tabPage4.Controls.Add(this.dgvSinhvien);
             this.tabPage4.Location = new System.Drawing.Point(4, 25);
-            this.tabPage4.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tabPage4.Margin = new System.Windows.Forms.Padding(4);
             this.tabPage4.Name = "tabPage4";
-            this.tabPage4.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.tabPage4.Size = new System.Drawing.Size(1129, 565);
+            this.tabPage4.Padding = new System.Windows.Forms.Padding(4);
+            this.tabPage4.Size = new System.Drawing.Size(1129, 525);
             this.tabPage4.TabIndex = 1;
             this.tabPage4.Text = "Học Sinh";
             this.tabPage4.UseVisualStyleBackColor = true;
@@ -154,7 +160,7 @@
             // txtQueQuan
             // 
             this.txtQueQuan.Location = new System.Drawing.Point(152, 2);
-            this.txtQueQuan.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtQueQuan.Margin = new System.Windows.Forms.Padding(4);
             this.txtQueQuan.Name = "txtQueQuan";
             this.txtQueQuan.Size = new System.Drawing.Size(207, 22);
             this.txtQueQuan.TabIndex = 3;
@@ -188,7 +194,7 @@
             "có trọ",
             "không có trọ"});
             this.cbstatusSV.Location = new System.Drawing.Point(151, 11);
-            this.cbstatusSV.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.cbstatusSV.Margin = new System.Windows.Forms.Padding(4);
             this.cbstatusSV.Name = "cbstatusSV";
             this.cbstatusSV.Size = new System.Drawing.Size(207, 24);
             this.cbstatusSV.TabIndex = 12;
@@ -218,7 +224,7 @@
             // txtLopSV
             // 
             this.txtLopSV.Location = new System.Drawing.Point(151, 7);
-            this.txtLopSV.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtLopSV.Margin = new System.Windows.Forms.Padding(4);
             this.txtLopSV.Name = "txtLopSV";
             this.txtLopSV.Size = new System.Drawing.Size(207, 22);
             this.txtLopSV.TabIndex = 2;
@@ -237,7 +243,7 @@
             // suaTTSV
             // 
             this.suaTTSV.Location = new System.Drawing.Point(432, 32);
-            this.suaTTSV.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.suaTTSV.Margin = new System.Windows.Forms.Padding(4);
             this.suaTTSV.Name = "suaTTSV";
             this.suaTTSV.Size = new System.Drawing.Size(100, 43);
             this.suaTTSV.TabIndex = 13;
@@ -250,7 +256,7 @@
             this.panel4.Controls.Add(this.DienthoaiSV);
             this.panel4.Controls.Add(this.txtDTSV);
             this.panel4.Location = new System.Drawing.Point(559, 240);
-            this.panel4.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panel4.Margin = new System.Windows.Forms.Padding(4);
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(421, 38);
             this.panel4.TabIndex = 10;
@@ -269,7 +275,7 @@
             // txtDTSV
             // 
             this.txtDTSV.Location = new System.Drawing.Point(152, 12);
-            this.txtDTSV.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtDTSV.Margin = new System.Windows.Forms.Padding(4);
             this.txtDTSV.Name = "txtDTSV";
             this.txtDTSV.Size = new System.Drawing.Size(207, 22);
             this.txtDTSV.TabIndex = 13;
@@ -279,7 +285,7 @@
             this.panel3.Controls.Add(this.cbKhoaSV);
             this.panel3.Controls.Add(this.KhoaSV);
             this.panel3.Location = new System.Drawing.Point(559, 148);
-            this.panel3.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panel3.Margin = new System.Windows.Forms.Padding(4);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(421, 38);
             this.panel3.TabIndex = 9;
@@ -288,7 +294,7 @@
             // 
             this.cbKhoaSV.FormattingEnabled = true;
             this.cbKhoaSV.Location = new System.Drawing.Point(152, 7);
-            this.cbKhoaSV.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.cbKhoaSV.Margin = new System.Windows.Forms.Padding(4);
             this.cbKhoaSV.Name = "cbKhoaSV";
             this.cbKhoaSV.Size = new System.Drawing.Size(207, 24);
             this.cbKhoaSV.TabIndex = 11;
@@ -309,7 +315,7 @@
             this.panel2.Controls.Add(this.NameSV);
             this.panel2.Controls.Add(this.txtnameSV);
             this.panel2.Location = new System.Drawing.Point(559, 194);
-            this.panel2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panel2.Margin = new System.Windows.Forms.Padding(4);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(421, 38);
             this.panel2.TabIndex = 8;
@@ -328,7 +334,7 @@
             // txtnameSV
             // 
             this.txtnameSV.Location = new System.Drawing.Point(152, 4);
-            this.txtnameSV.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtnameSV.Margin = new System.Windows.Forms.Padding(4);
             this.txtnameSV.Name = "txtnameSV";
             this.txtnameSV.Size = new System.Drawing.Size(207, 22);
             this.txtnameSV.TabIndex = 0;
@@ -338,7 +344,7 @@
             this.panel1.Controls.Add(this.MSSVid);
             this.panel1.Controls.Add(this.txtMSSV);
             this.panel1.Location = new System.Drawing.Point(559, 103);
-            this.panel1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panel1.Margin = new System.Windows.Forms.Padding(4);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(421, 38);
             this.panel1.TabIndex = 7;
@@ -357,7 +363,7 @@
             // txtMSSV
             // 
             this.txtMSSV.Location = new System.Drawing.Point(152, 9);
-            this.txtMSSV.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtMSSV.Margin = new System.Windows.Forms.Padding(4);
             this.txtMSSV.Name = "txtMSSV";
             this.txtMSSV.Size = new System.Drawing.Size(207, 22);
             this.txtMSSV.TabIndex = 0;
@@ -365,7 +371,7 @@
             // txtSearch
             // 
             this.txtSearch.Location = new System.Drawing.Point(559, 42);
-            this.txtSearch.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtSearch.Margin = new System.Windows.Forms.Padding(4);
             this.txtSearch.Name = "txtSearch";
             this.txtSearch.Size = new System.Drawing.Size(224, 22);
             this.txtSearch.TabIndex = 6;
@@ -374,7 +380,7 @@
             // searchSV
             // 
             this.searchSV.Location = new System.Drawing.Point(791, 41);
-            this.searchSV.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.searchSV.Margin = new System.Windows.Forms.Padding(4);
             this.searchSV.Name = "searchSV";
             this.searchSV.Size = new System.Drawing.Size(100, 25);
             this.searchSV.TabIndex = 5;
@@ -385,7 +391,7 @@
             // xemSV
             // 
             this.xemSV.Location = new System.Drawing.Point(299, 32);
-            this.xemSV.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.xemSV.Margin = new System.Windows.Forms.Padding(4);
             this.xemSV.Name = "xemSV";
             this.xemSV.Size = new System.Drawing.Size(100, 43);
             this.xemSV.TabIndex = 4;
@@ -396,7 +402,7 @@
             // xoaSV
             // 
             this.xoaSV.Location = new System.Drawing.Point(160, 32);
-            this.xoaSV.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.xoaSV.Margin = new System.Windows.Forms.Padding(4);
             this.xoaSV.Name = "xoaSV";
             this.xoaSV.Size = new System.Drawing.Size(100, 43);
             this.xoaSV.TabIndex = 3;
@@ -407,7 +413,7 @@
             // themSV
             // 
             this.themSV.Location = new System.Drawing.Point(27, 32);
-            this.themSV.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.themSV.Margin = new System.Windows.Forms.Padding(4);
             this.themSV.Name = "themSV";
             this.themSV.Size = new System.Drawing.Size(100, 43);
             this.themSV.TabIndex = 1;
@@ -419,7 +425,7 @@
             // 
             this.dgvSinhvien.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvSinhvien.Location = new System.Drawing.Point(27, 103);
-            this.dgvSinhvien.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dgvSinhvien.Margin = new System.Windows.Forms.Padding(4);
             this.dgvSinhvien.Name = "dgvSinhvien";
             this.dgvSinhvien.RowHeadersWidth = 51;
             this.dgvSinhvien.Size = new System.Drawing.Size(505, 342);
@@ -440,10 +446,10 @@
             this.tabPage5.Controls.Add(this.button9);
             this.tabPage5.Controls.Add(this.dgvPart);
             this.tabPage5.Location = new System.Drawing.Point(4, 25);
-            this.tabPage5.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tabPage5.Margin = new System.Windows.Forms.Padding(4);
             this.tabPage5.Name = "tabPage5";
-            this.tabPage5.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.tabPage5.Size = new System.Drawing.Size(1129, 565);
+            this.tabPage5.Padding = new System.Windows.Forms.Padding(4);
+            this.tabPage5.Size = new System.Drawing.Size(1129, 525);
             this.tabPage5.TabIndex = 2;
             this.tabPage5.Text = "Phòng trọ";
             this.tabPage5.UseVisualStyleBackColor = true;
@@ -454,7 +460,7 @@
             this.panel7.Controls.Add(this.comboBox1);
             this.panel7.Controls.Add(this.label7);
             this.panel7.Location = new System.Drawing.Point(667, 250);
-            this.panel7.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panel7.Margin = new System.Windows.Forms.Padding(4);
             this.panel7.Name = "panel7";
             this.panel7.Size = new System.Drawing.Size(421, 38);
             this.panel7.TabIndex = 17;
@@ -466,7 +472,7 @@
             "có trọ",
             "không có trọ"});
             this.comboBox1.Location = new System.Drawing.Point(152, 7);
-            this.comboBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.comboBox1.Margin = new System.Windows.Forms.Padding(4);
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(207, 24);
             this.comboBox1.TabIndex = 18;
@@ -487,7 +493,7 @@
             this.panel5.Controls.Add(this.textBox4);
             this.panel5.Controls.Add(this.label5);
             this.panel5.Location = new System.Drawing.Point(667, 159);
-            this.panel5.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panel5.Margin = new System.Windows.Forms.Padding(4);
             this.panel5.Name = "panel5";
             this.panel5.Size = new System.Drawing.Size(421, 38);
             this.panel5.TabIndex = 15;
@@ -495,7 +501,7 @@
             // textBox4
             // 
             this.textBox4.Location = new System.Drawing.Point(152, 7);
-            this.textBox4.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.textBox4.Margin = new System.Windows.Forms.Padding(4);
             this.textBox4.Name = "textBox4";
             this.textBox4.Size = new System.Drawing.Size(207, 22);
             this.textBox4.TabIndex = 2;
@@ -517,7 +523,7 @@
             this.panel8.Controls.Add(this.label8);
             this.panel8.Controls.Add(this.textBox8);
             this.panel8.Location = new System.Drawing.Point(667, 204);
-            this.panel8.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panel8.Margin = new System.Windows.Forms.Padding(4);
             this.panel8.Name = "panel8";
             this.panel8.Size = new System.Drawing.Size(421, 38);
             this.panel8.TabIndex = 16;
@@ -536,7 +542,7 @@
             // textBox8
             // 
             this.textBox8.Location = new System.Drawing.Point(152, 9);
-            this.textBox8.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.textBox8.Margin = new System.Windows.Forms.Padding(4);
             this.textBox8.Name = "textBox8";
             this.textBox8.Size = new System.Drawing.Size(207, 22);
             this.textBox8.TabIndex = 0;
@@ -546,7 +552,7 @@
             this.panel6.Controls.Add(this.label6);
             this.panel6.Controls.Add(this.textBox5);
             this.panel6.Location = new System.Drawing.Point(667, 113);
-            this.panel6.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panel6.Margin = new System.Windows.Forms.Padding(4);
             this.panel6.Name = "panel6";
             this.panel6.Size = new System.Drawing.Size(421, 38);
             this.panel6.TabIndex = 14;
@@ -565,7 +571,7 @@
             // textBox5
             // 
             this.textBox5.Location = new System.Drawing.Point(152, 9);
-            this.textBox5.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.textBox5.Margin = new System.Windows.Forms.Padding(4);
             this.textBox5.Name = "textBox5";
             this.textBox5.Size = new System.Drawing.Size(207, 22);
             this.textBox5.TabIndex = 0;
@@ -573,7 +579,7 @@
             // textBox6
             // 
             this.textBox6.Location = new System.Drawing.Point(573, 48);
-            this.textBox6.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.textBox6.Margin = new System.Windows.Forms.Padding(4);
             this.textBox6.Name = "textBox6";
             this.textBox6.Size = new System.Drawing.Size(140, 22);
             this.textBox6.TabIndex = 13;
@@ -582,7 +588,7 @@
             // button10
             // 
             this.button10.Location = new System.Drawing.Point(744, 47);
-            this.button10.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.button10.Margin = new System.Windows.Forms.Padding(4);
             this.button10.Name = "button10";
             this.button10.Size = new System.Drawing.Size(100, 25);
             this.button10.TabIndex = 12;
@@ -593,7 +599,7 @@
             // button7
             // 
             this.button7.Location = new System.Drawing.Point(280, 30);
-            this.button7.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.button7.Margin = new System.Windows.Forms.Padding(4);
             this.button7.Name = "button7";
             this.button7.Size = new System.Drawing.Size(100, 43);
             this.button7.TabIndex = 8;
@@ -604,7 +610,7 @@
             // button8
             // 
             this.button8.Location = new System.Drawing.Point(144, 30);
-            this.button8.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.button8.Margin = new System.Windows.Forms.Padding(4);
             this.button8.Name = "button8";
             this.button8.Size = new System.Drawing.Size(100, 43);
             this.button8.TabIndex = 7;
@@ -615,7 +621,7 @@
             // button9
             // 
             this.button9.Location = new System.Drawing.Point(24, 30);
-            this.button9.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.button9.Margin = new System.Windows.Forms.Padding(4);
             this.button9.Name = "button9";
             this.button9.Size = new System.Drawing.Size(100, 43);
             this.button9.TabIndex = 6;
@@ -627,7 +633,7 @@
             // 
             this.dgvPart.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvPart.Location = new System.Drawing.Point(24, 101);
-            this.dgvPart.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dgvPart.Margin = new System.Windows.Forms.Padding(4);
             this.dgvPart.Name = "dgvPart";
             this.dgvPart.RowHeadersWidth = 51;
             this.dgvPart.Size = new System.Drawing.Size(601, 304);
@@ -640,42 +646,14 @@
             this.tabPage1.Controls.Add(this.dateTo);
             this.tabPage1.Controls.Add(this.btnHopDong);
             this.tabPage1.Controls.Add(this.dateFrom);
-            this.tabPage1.Controls.Add(this.dataGridView1);
+            this.tabPage1.Controls.Add(this.historyDGV);
             this.tabPage1.Location = new System.Drawing.Point(4, 25);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(1129, 565);
+            this.tabPage1.Size = new System.Drawing.Size(1129, 556);
             this.tabPage1.TabIndex = 3;
             this.tabPage1.Text = "Hợp Đồng";
             this.tabPage1.UseVisualStyleBackColor = true;
-            // 
-            // dataGridView1
-            // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(36, 94);
-            this.dataGridView1.Margin = new System.Windows.Forms.Padding(4);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.RowHeadersWidth = 51;
-            this.dataGridView1.Size = new System.Drawing.Size(1061, 439);
-            this.dataGridView1.TabIndex = 18;
-            // 
-            // dateFrom
-            // 
-            this.dateFrom.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dateFrom.Location = new System.Drawing.Point(36, 35);
-            this.dateFrom.Name = "dateFrom";
-            this.dateFrom.Size = new System.Drawing.Size(200, 22);
-            this.dateFrom.TabIndex = 19;
-            this.dateFrom.Value = new System.DateTime(2022, 4, 19, 16, 18, 38, 0);
-            // 
-            // btnHopDong
-            // 
-            this.btnHopDong.Location = new System.Drawing.Point(480, 23);
-            this.btnHopDong.Name = "btnHopDong";
-            this.btnHopDong.Size = new System.Drawing.Size(193, 50);
-            this.btnHopDong.TabIndex = 20;
-            this.btnHopDong.Text = "button1";
-            this.btnHopDong.UseVisualStyleBackColor = true;
             // 
             // dateTo
             // 
@@ -685,16 +663,91 @@
             this.dateTo.Size = new System.Drawing.Size(200, 22);
             this.dateTo.TabIndex = 21;
             this.dateTo.Value = new System.DateTime(2022, 4, 19, 16, 18, 38, 0);
+            this.dateTo.ValueChanged += new System.EventHandler(this.dateTo_ValueChanged);
             // 
-            // Admin
+            // btnHopDong
+            // 
+            this.btnHopDong.Location = new System.Drawing.Point(480, 23);
+            this.btnHopDong.Name = "btnHopDong";
+            this.btnHopDong.Size = new System.Drawing.Size(193, 50);
+            this.btnHopDong.TabIndex = 20;
+            this.btnHopDong.Text = "Hiển thị hợp đồng";
+            this.btnHopDong.UseVisualStyleBackColor = true;
+            this.btnHopDong.Click += new System.EventHandler(this.btnHopDong_Click);
+            // 
+            // dateFrom
+            // 
+            this.dateFrom.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.dateFrom.Location = new System.Drawing.Point(36, 35);
+            this.dateFrom.Name = "dateFrom";
+            this.dateFrom.Size = new System.Drawing.Size(200, 22);
+            this.dateFrom.TabIndex = 19;
+            this.dateFrom.Value = new System.DateTime(2022, 4, 19, 16, 18, 38, 0);
+            this.dateFrom.ValueChanged += new System.EventHandler(this.dateFrom_ValueChanged);
+            // 
+            // historyDGV
+            // 
+            this.historyDGV.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.historyDGV.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.historyDGV.EnableHeadersVisualStyles = false;
+            this.historyDGV.Location = new System.Drawing.Point(36, 94);
+            this.historyDGV.Margin = new System.Windows.Forms.Padding(4);
+            this.historyDGV.Name = "historyDGV";
+            this.historyDGV.RowHeadersWidth = 51;
+            this.historyDGV.Size = new System.Drawing.Size(1061, 439);
+            this.historyDGV.TabIndex = 18;
+            // 
+            // menuStrip1
+            // 
+            this.menuStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
+            this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.managerToolStripMenuItem,
+            this.accountInformationToolStripMenuItem});
+            this.menuStrip1.Location = new System.Drawing.Point(0, 0);
+            this.menuStrip1.Name = "menuStrip1";
+            this.menuStrip1.Size = new System.Drawing.Size(1175, 28);
+            this.menuStrip1.TabIndex = 4;
+            this.menuStrip1.Text = "menuStrip1";
+            // 
+            // managerToolStripMenuItem
+            // 
+            this.managerToolStripMenuItem.Name = "managerToolStripMenuItem";
+            this.managerToolStripMenuItem.Size = new System.Drawing.Size(67, 24);
+            this.managerToolStripMenuItem.Text = "Admin";
+            this.managerToolStripMenuItem.Click += new System.EventHandler(this.managerToolStripMenuItem_Click);
+            // 
+            // accountInformationToolStripMenuItem
+            // 
+            this.accountInformationToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.thôngTinCáNhânToolStripMenuItem,
+            this.đăngXuấtToolStripMenuItem});
+            this.accountInformationToolStripMenuItem.Name = "accountInformationToolStripMenuItem";
+            this.accountInformationToolStripMenuItem.Size = new System.Drawing.Size(159, 24);
+            this.accountInformationToolStripMenuItem.Text = "Account Information";
+            // 
+            // thôngTinCáNhânToolStripMenuItem
+            // 
+            this.thôngTinCáNhânToolStripMenuItem.Name = "thôngTinCáNhânToolStripMenuItem";
+            this.thôngTinCáNhânToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.thôngTinCáNhânToolStripMenuItem.Text = "Thông Tin Cá Nhân";
+            // 
+            // đăngXuấtToolStripMenuItem
+            // 
+            this.đăngXuấtToolStripMenuItem.Name = "đăngXuấtToolStripMenuItem";
+            this.đăngXuấtToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.đăngXuấtToolStripMenuItem.Text = "Đăng Xuất";
+            // 
+            // fDataManage
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(935, 510);
+            this.ClientSize = new System.Drawing.Size(1175, 630);
             this.Controls.Add(this.tabControl2);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.Name = "Admin";
-            this.Text = "Admin";
+            this.Controls.Add(this.menuStrip1);
+            this.MainMenuStrip = this.menuStrip1;
+            this.Margin = new System.Windows.Forms.Padding(4);
+            this.Name = "fDataManage";
+            this.Text = "Data Manager";
             this.Load += new System.EventHandler(this.Admin_Load_1);
             this.tabControl2.ResumeLayout(false);
             this.tabPage4.ResumeLayout(false);
@@ -726,8 +779,11 @@
             this.panel6.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvPart)).EndInit();
             this.tabPage1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.historyDGV)).EndInit();
+            this.menuStrip1.ResumeLayout(false);
+            this.menuStrip1.PerformLayout();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -784,8 +840,13 @@
         private System.Windows.Forms.ComboBox comboBox1;
         private System.Windows.Forms.TabPage tabPage1;
         private System.Windows.Forms.DateTimePicker dateFrom;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView historyDGV;
         private System.Windows.Forms.DateTimePicker dateTo;
         private System.Windows.Forms.Button btnHopDong;
+        private System.Windows.Forms.MenuStrip menuStrip1;
+        private System.Windows.Forms.ToolStripMenuItem managerToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem accountInformationToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem thôngTinCáNhânToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem đăngXuấtToolStripMenuItem;
     }
 }
