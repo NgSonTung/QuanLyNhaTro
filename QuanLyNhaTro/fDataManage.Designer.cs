@@ -78,6 +78,7 @@
             this.button9 = new System.Windows.Forms.Button();
             this.dgvPart = new System.Windows.Forms.DataGridView();
             this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.label3 = new System.Windows.Forms.Label();
             this.dateTo = new System.Windows.Forms.DateTimePicker();
             this.btnHopDong = new System.Windows.Forms.Button();
             this.dateFrom = new System.Windows.Forms.DateTimePicker();
@@ -92,7 +93,7 @@
             this.label10 = new System.Windows.Forms.Label();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.button3 = new System.Windows.Forms.Button();
-            this.label3 = new System.Windows.Forms.Label();
+            this.button1 = new System.Windows.Forms.Button();
             this.tabControl2.SuspendLayout();
             this.tabPage4.SuspendLayout();
             this.panel10.SuspendLayout();
@@ -131,7 +132,7 @@
             // 
             // tabPage4
             // 
-            this.tabPage4.Controls.Add(this.btnXemSV);
+            this.tabPage4.Controls.Add(this.button1);
             this.tabPage4.Controls.Add(this.panel10);
             this.tabPage4.Controls.Add(this.panel11);
             this.tabPage4.Controls.Add(this.panel9);
@@ -148,8 +149,8 @@
             this.tabPage4.Controls.Add(this.dgvSinhvien);
             this.tabPage4.Location = new System.Drawing.Point(4, 22);
             this.tabPage4.Name = "tabPage4";
-            this.tabPage4.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
-            this.tabPage4.Size = new System.Drawing.Size(931, 370);
+            this.tabPage4.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage4.Size = new System.Drawing.Size(971, 370);
             this.tabPage4.TabIndex = 1;
             this.tabPage4.Text = "Sinh Viên";
             this.tabPage4.UseVisualStyleBackColor = true;
@@ -160,7 +161,7 @@
             this.panel10.Controls.Add(this.txtQueQuan);
             this.panel10.Controls.Add(this.QueQuanSV);
             this.panel10.Location = new System.Drawing.Point(419, 261);
-            this.panel10.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panel10.Margin = new System.Windows.Forms.Padding(2);
             this.panel10.Name = "panel10";
             this.panel10.Size = new System.Drawing.Size(316, 25);
             this.panel10.TabIndex = 15;
@@ -187,7 +188,7 @@
             this.panel11.Controls.Add(this.cbstatusSV);
             this.panel11.Controls.Add(this.statusSV);
             this.panel11.Location = new System.Drawing.Point(420, 291);
-            this.panel11.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panel11.Margin = new System.Windows.Forms.Padding(2);
             this.panel11.Name = "panel11";
             this.panel11.Size = new System.Drawing.Size(319, 44);
             this.panel11.TabIndex = 15;
@@ -220,7 +221,7 @@
             this.panel9.Controls.Add(this.txtLopSV);
             this.panel9.Controls.Add(this.lopSV);
             this.panel9.Location = new System.Drawing.Point(420, 231);
-            this.panel9.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panel9.Margin = new System.Windows.Forms.Padding(2);
             this.panel9.Name = "panel9";
             this.panel9.Size = new System.Drawing.Size(315, 31);
             this.panel9.TabIndex = 14;
@@ -431,8 +432,8 @@
             this.tabPage5.Controls.Add(this.dgvPart);
             this.tabPage5.Location = new System.Drawing.Point(4, 22);
             this.tabPage5.Name = "tabPage5";
-            this.tabPage5.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
-            this.tabPage5.Size = new System.Drawing.Size(931, 370);
+            this.tabPage5.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage5.Size = new System.Drawing.Size(971, 370);
             this.tabPage5.TabIndex = 2;
             this.tabPage5.Text = "Phòng trọ";
             this.tabPage5.UseVisualStyleBackColor = true;
@@ -615,19 +616,31 @@
             this.tabPage1.Controls.Add(this.dateFrom);
             this.tabPage1.Controls.Add(this.historyDGV);
             this.tabPage1.Location = new System.Drawing.Point(4, 22);
-            this.tabPage1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tabPage1.Margin = new System.Windows.Forms.Padding(2);
             this.tabPage1.Name = "tabPage1";
-            this.tabPage1.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tabPage1.Padding = new System.Windows.Forms.Padding(2);
             this.tabPage1.Size = new System.Drawing.Size(971, 370);
             this.tabPage1.TabIndex = 3;
             this.tabPage1.Text = "Hợp Đồng";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.BackColor = System.Drawing.Color.Azure;
+            this.label3.Font = new System.Drawing.Font("Century Gothic", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.ForeColor = System.Drawing.Color.DimGray;
+            this.label3.Location = new System.Drawing.Point(776, 19);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(177, 33);
+            this.label3.TabIndex = 47;
+            this.label3.Text = "Motel Room";
             // 
             // dateTo
             // 
             this.dateTo.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dateTo.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.dateTo.Location = new System.Drawing.Point(54, 46);
-            this.dateTo.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dateTo.Margin = new System.Windows.Forms.Padding(2);
             this.dateTo.Name = "dateTo";
             this.dateTo.Size = new System.Drawing.Size(151, 23);
             this.dateTo.TabIndex = 21;
@@ -640,7 +653,7 @@
             this.btnHopDong.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnHopDong.ForeColor = System.Drawing.Color.White;
             this.btnHopDong.Location = new System.Drawing.Point(229, 19);
-            this.btnHopDong.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnHopDong.Margin = new System.Windows.Forms.Padding(2);
             this.btnHopDong.Name = "btnHopDong";
             this.btnHopDong.Size = new System.Drawing.Size(134, 33);
             this.btnHopDong.TabIndex = 20;
@@ -654,7 +667,7 @@
             this.dateFrom.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dateFrom.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.dateFrom.Location = new System.Drawing.Point(54, 19);
-            this.dateFrom.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dateFrom.Margin = new System.Windows.Forms.Padding(2);
             this.dateFrom.Name = "dateFrom";
             this.dateFrom.Size = new System.Drawing.Size(151, 23);
             this.dateFrom.TabIndex = 19;
@@ -777,17 +790,15 @@
             this.button3.Text = "X";
             this.button3.UseVisualStyleBackColor = false;
             // 
-            // label3
+            // button1
             // 
-            this.label3.AutoSize = true;
-            this.label3.BackColor = System.Drawing.Color.Azure;
-            this.label3.Font = new System.Drawing.Font("Century Gothic", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.ForeColor = System.Drawing.Color.DimGray;
-            this.label3.Location = new System.Drawing.Point(776, 19);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(177, 33);
-            this.label3.TabIndex = 47;
-            this.label3.Text = "Motel Room";
+            this.button1.Location = new System.Drawing.Point(690, 18);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(75, 35);
+            this.button1.TabIndex = 16;
+            this.button1.Text = "Xem";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // fDataManage
             // 
@@ -912,5 +923,6 @@
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Button button1;
     }
 }

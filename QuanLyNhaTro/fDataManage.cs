@@ -44,7 +44,8 @@ namespace QuanLyNhaTro
         {
             string diaChi = textBox4.Text;
             float gia = float.Parse(textBox8.Text);
-            nhaTroDAO.Instance.INSERT(diaChi, gia);
+            
+            /*nhaTroDAO.Instance.INSERT(diaChi, gia);*/
             LoadDanhmuc();
 
         }
@@ -102,7 +103,7 @@ namespace QuanLyNhaTro
             else
             {
                 int maNhaTro = int.Parse(textBox5.Text);
-                nhaTroDAO.Instance.deletenhatro(maNhaTro);
+                /*nhaTroDAO.Instance.deletenhatro(maNhaTro);*/
                 LoadListsinhVien();
             }
 
@@ -352,6 +353,11 @@ namespace QuanLyNhaTro
         }
 
         private void btnXemSV_Click(object sender, EventArgs e)
+        {
+            LoadListsinhVien();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
         {
             LoadListsinhVien();
         }

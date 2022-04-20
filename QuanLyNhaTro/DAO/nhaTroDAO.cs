@@ -97,13 +97,13 @@ namespace QuanLyNhaTro.DAO
             }
             return list;
         }
-        public bool deletenhatro(int maNhaTro)
+        /*public bool deletenhatro(int maNhaTro)
         {
             thanhToanDAO.Instance.DeletethanhToan(maNhaTro); 
             string query = "delete nhaTro where maNhaTro =" + maNhaTro;
 
             int result = providerDAO.Instance.ExecuteQuery(query);
             return result > 0;
-        }
+        }*/
     }
 }
