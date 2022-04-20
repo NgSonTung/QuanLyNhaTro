@@ -40,16 +40,6 @@ namespace QuanLyNhaTro
             LoadListsinhVien();
         }
 
-        private void tabPage4_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label8_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void button9_Click(object sender, EventArgs e)
         {
             string diaChi = textBox4.Text;
@@ -58,10 +48,6 @@ namespace QuanLyNhaTro
             LoadDanhmuc();
         }
         
-        public void load()
-        {
-            
-        }
         private void dgvPart_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
             if (e.RowIndex >= 0)
@@ -137,24 +123,41 @@ namespace QuanLyNhaTro
         }
 
         private void themSV_Click(object sender, EventArgs e)
-        {
-            
-            string name = txtnameSV.Text;
-            int khoa = (cbKhoaSV.SelectedItem as khoa).MaKhoa;
-            string dienThoai = txtDTSV.Text;
-            string lop = txtLopSV.Text;
-            string queQuan = txtQueQuan.Text;
-            
-            sinhVienDAO.Instance.INSERTSinhvieṇ̣̣(khoa,name,dienThoai,lop,queQuan);
-            LoadListsinhVien();
+        {   
+            if (txtnameSV.Text == "")
+            {
+                MessageBox.Show("Chưa nhập sinh viên", "Thông Báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            else if (txtDTSV.Text == "")
+            {
+                MessageBox.Show("Chưa nhập điện thoại sinh viên", "Thông Báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            else if (txtLopSV.Text == "")
+            {
+                MessageBox.Show("Chưa nhập lớp sinh viên", "Thông Báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            else if (txtQueQuan.Text == "")
+            {
+                MessageBox.Show("Chưa nhập quê quán sinh viên", "Thông Báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            else
+            {
+                string name = txtnameSV.Text;
+                int khoa = (cbKhoaSV.SelectedItem as khoa).MaKhoa;
+                string dienThoai = txtDTSV.Text;
+                string lop = txtLopSV.Text;
+                string queQuan = txtQueQuan.Text;
+                sinhVienDAO.Instance.INSERTSinhvieṇ̣̣(khoa,name,dienThoai,lop,queQuan);
+                LoadListsinhVien();
+                txtMSSV.Clear();
+                txtnameSV.Clear();
+                txtDTSV.Clear();
+                txtLopSV.Clear();
+                txtQueQuan.Clear();
+            }
         }
 
         private void tabPage4_Click_1(object sender, EventArgs e)
-        {
-
-        }
-
-        private void dgvSinhvien_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 
         }
@@ -183,19 +186,30 @@ namespace QuanLyNhaTro
 
         private void xoaSV_Click(object sender, EventArgs e)
         {
-            
             if(txtMSSV.Text == "") 
             {
                 MessageBox.Show("Chưa chọn Mã Sinh Viên", "Thông Báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
-
             }
             else {
                 int maSinhVien = int.Parse(txtMSSV.Text);
-                sinhVienDAO.Instance.DELETESinhVien(maSinhVien);
+                int maThanhToan = sinhVienDAO.Instance.getMaTTFromMaSV(maSinhVien);
+                int maNhaTro = sinhVienDAO.Instance.getMaNTFromMaSV(maSinhVien);
+                hopDongDAO.Instance.updateCountDown(maThanhToan);
+                if (countDAO.Instance.getSVCount(maNhaTro) == 0) /*Nếu nhà trọ cũ 0 có người*/
+                {
+                    thanhToanDAO.Instance.checkOut(maThanhToan); /*đổi status thanh toán thành đã thanh toán*/
+                    nhaTroDAO.Instance.availStatus(maNhaTro);  /*update status NT -> trống*/
+                }
+                sinhVienDAO.Instance.DELETESinhVien(maSinhVien); /*xóa cả sinh viên và hợp đồng của sinh viên*/
+                if (countDAO.Instance.getSVCount(maNhaTro) < nhaTroDAO.Instance.checkNhaTro(maNhaTro))
+                    nhaTroDAO.Instance.availStatus(maNhaTro);
                 LoadListsinhVien();
-            }
-
-            
+                txtMSSV.Clear();
+                txtnameSV.Clear();
+                txtDTSV.Clear();
+                txtLopSV.Clear();
+                txtQueQuan.Clear();
+            }  
         }
 
         private void cbstatusSV_SelectedIndexChanged(object sender, EventArgs e)
@@ -205,21 +219,51 @@ namespace QuanLyNhaTro
 
         private void suaTTSV_Click(object sender, EventArgs e)
         {
-            int maSinhVien = Convert.ToInt32(txtMSSV.Text);
-            string name = txtnameSV.Text;
-            int khoa = (cbKhoaSV.SelectedItem as khoa).MaKhoa;
-            string dienThoai = txtDTSV.Text;
-            string lop = txtLopSV.Text;
-            string queQuan = txtQueQuan.Text;
-            
-            
-            sinhVienDAO.Instance.UPDATESinhVien(maSinhVien,khoa, name, dienThoai, lop, queQuan);
-            LoadListsinhVien();
+            if (txtMSSV.Text == "")
+            {
+                MessageBox.Show("Chưa nhập mã sinh viên", "Thông Báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            else if (txtnameSV.Text == "")
+            {
+                MessageBox.Show("Chưa nhập sinh viên", "Thông Báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            else if (txtDTSV.Text == "")
+            {
+                MessageBox.Show("Chưa nhập điện thoại sinh viên", "Thông Báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            else if (txtLopSV.Text == "")
+            {
+                MessageBox.Show("Chưa nhập lớp sinh viên", "Thông Báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            else if (txtQueQuan.Text == "")
+            {
+                MessageBox.Show("Chưa nhập quê quán sinh viên", "Thông Báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            else
+            {
+                int maSinhVien = Convert.ToInt32(txtMSSV.Text);
+                string name = txtnameSV.Text;
+                int khoa = (cbKhoaSV.SelectedItem as khoa).MaKhoa;
+                string dienThoai = txtDTSV.Text;
+                string lop = txtLopSV.Text;
+                string queQuan = txtQueQuan.Text;
+                sinhVienDAO.Instance.UPDATESinhVien(maSinhVien,khoa, name, dienThoai, lop, queQuan);
+                LoadListsinhVien();
+                txtMSSV.Clear();
+                txtnameSV.Clear();
+                txtDTSV.Clear();
+                txtLopSV.Clear();
+                txtQueQuan.Clear();
+            }
         }
 
         private void searchSV_Click(object sender, EventArgs e)
         {
-           dgvSinhvien.DataSource = sinhVienDAO.Instance.SearchSinhVien(txtSearch.Text);
+            if (txtSearch.Text == "")
+            {
+                MessageBox.Show("Chưa nhập từ khóa", "Thông Báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            dgvSinhvien.DataSource = sinhVienDAO.Instance.SearchSinhVien(txtSearch.Text);
         }
 
 
@@ -228,11 +272,6 @@ namespace QuanLyNhaTro
         {
             add { deleteSinhVien += value; }
             remove { deleteSinhVien -= value; }
-        }
-
-        private void textBox7_TextChanged(object sender, EventArgs e)
-        {
-
         }
 
         private void textBox6_TextChanged(object sender, EventArgs e)
@@ -311,5 +350,9 @@ namespace QuanLyNhaTro
 
         }
 
+        private void btnXemSV_Click(object sender, EventArgs e)
+        {
+            LoadListsinhVien();
+        }
     }
 }

@@ -50,15 +50,15 @@ namespace QuanLyNhaTro.DAO
             providerDAO.Instance.loadDL(query);
         }
 
-        public void updateHopDong1(int maThanhToan,int maHopDong)
+        public void updateHopDong1(int maThanhToan,int maSinhVien)
         {
-            string query = "update hopDong set maThanhToan = " + maThanhToan + ", soSinhVien = 1 where maHopDong = " + maHopDong;
+            string query = "insert into hopDong values(" + maThanhToan + ",'" + maSinhVien + "',1)";
             providerDAO.Instance.loadDL(query);
         }
 
-        public void updateHopDong2(int maThanhToan, int maHopDong, int soSinhVien)
+        public void updateHopDong2(int maThanhToan, int maSinhVien, int soSinhVien)
         {
-            string query = "update hopDong set maThanhToan = " + maThanhToan + ", soSinhVien = " + soSinhVien + " where maHopDong = " + maHopDong;
+            string query = "insert into hopDong values (" + maThanhToan + ","+ maSinhVien +", " + soSinhVien + ")";
             providerDAO.Instance.loadDL(query);
         }
 

@@ -61,11 +61,11 @@ namespace QuanLyNhaTro.DAO
         }
         public void DeletethanhToan(int maNhaTro)
         {
-            hopDongDAO.Instance.deleteSinhvien(maThanhToan); 
+/*            hopDongDAO.Instance.deleteSinhvien(maThanhToan); 
             string query = "delete thanhToan where maNhaTro =" + maNhaTro;
 
             int result = providerDAO.Instance.ExecuteQuery(query);
-            return result > 0;
+            return result > 0;*/
         }
 
     }

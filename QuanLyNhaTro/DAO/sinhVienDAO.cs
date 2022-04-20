@@ -5,6 +5,7 @@ using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace QuanLyNhaTro.DAO
 {
@@ -38,7 +39,7 @@ namespace QuanLyNhaTro.DAO
 
         public List<sinhVien> getFood(int lop, int khoa)
         {
-            string sql = "select SV.maSinhVien, K.name as khoa, SV.name, SV.dienThoai, SV.lop,SV.queQuan from sinhVien SV, khoa K where SV.khoa = K.maKhoa and SV.status = 0 and SV.lop = '"+ lop +"' and SV.khoa = " + khoa;
+            string sql = "select SV.maSinhVien, SV.status, K.name as khoa, SV.name, SV.dienThoai, SV.lop,SV.queQuan from sinhVien SV, khoa K where SV.khoa = K.maKhoa and SV.status = 0 and SV.lop = '"+ lop +"' and SV.khoa = " + khoa;
             List<sinhVien> sinhVienList = new List<sinhVien>();
             DataTable data = providerDAO.Instance.loadDL(sql);
             foreach (DataRow item in data.Rows)
@@ -127,17 +128,46 @@ namespace QuanLyNhaTro.DAO
             int result = providerDAO.Instance.ExecuteQuery(query);
             return result > 0;
         }
-        public List<sinhVien> SearchSinhVien(int maSoSinhVien, string name,string lop,string queQuan)
-        {
-            List<sinhVien> list = new List<sinhVien>();
-            string sql =string.Format("select SV.maSinhVien, K.name as khoa, SV.name, SV.dienThoai, SV.lop,SV.queQuan, SV.status from sinhVien SV, khoa K where SV.Khoa = K.maKhoa  and SV.maSinhVien = "+ maSinhVien +" or SV.name = N'" + name +"' or SV.lop = N'"+ lop +"' or SV.queQuan = N'"+ queQuan"'");
-            DataTable data = providerDAO.Instance.loadDL(sql);
-            foreach(DataRow item in data.Rows)
+        public List<sinhVienList> SearchSinhVien(string searchItem)
+        {   
+            List<sinhVienList> list = new List<sinhVienList>();
+            string cmdMSSV = "select SV.maSinhVien, K.name as khoa, SV.name, SV.dienThoai, SV.lop,SV.queQuan, SV.status from sinhVien SV, khoa K where SV.Khoa = K.maKhoa  and SV.maSinhVien like '%" + searchItem+"%'";
+            string cmdLop = "select SV.maSinhVien, K.name as khoa, SV.name, SV.dienThoai, SV.lop,SV.queQuan, SV.status from sinhVien SV, khoa K where SV.Khoa = K.maKhoa  and SV.lop like '%" + searchItem+"%'";
+            string cmdName = "select SV.maSinhVien, K.name as khoa, SV.name, SV.dienThoai, SV.lop,SV.queQuan, SV.status from sinhVien SV, khoa K where dbo.fuConvertToUnsign1 (SV.name) LIKE N'%' + dbo.fuConvertToUnsign1 (N'"+searchItem+"') + '%' ";
+            string cmdQue = "select SV.maSinhVien, K.name as khoa, SV.name, SV.dienThoai, SV.lop,SV.queQuan, SV.status from sinhVien SV, khoa K where dbo.fuConvertToUnsign1 (SV.queQuan) LIKE N'%' + dbo.fuConvertToUnsign1 (N'" + searchItem + "') + '%' ";
+            DataTable data;
+            List<sinhVienList> listTemp = GetListSinhVien();
+            if (int.TryParse(searchItem, out int _))
             {
-                sinhVien SinhVien = new sinhVien(item);
-                list.Add(SinhVien);
+                data = providerDAO.Instance.loadDL(cmdMSSV);
+                if (data.Rows.Count == 0)
+                {
+                    data = providerDAO.Instance.loadDL(cmdLop);
+                    if (data.Rows.Count == 0)
+                        MessageBox.Show("Không có kết quả", "Thông Báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+            }else
+            {
+                data = providerDAO.Instance.loadDL(cmdName);
+                if (data.Rows.Count == 0)
+                {
+                    data = providerDAO.Instance.loadDL(cmdQue);
+                    if (data.Rows.Count == 0)
+                        MessageBox.Show("Không có kết quả", "Thông Báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
             }
-            return list;
+            if (data.Rows.Count != 0)
+            {
+                foreach (DataRow item in data.Rows)
+                {
+                    sinhVienList SinhVien = new sinhVienList(item);
+                    list.Add(SinhVien);
+                }
+                return list;
+            }
+            else 
+                return listTemp;
+                
         }
 
     }
