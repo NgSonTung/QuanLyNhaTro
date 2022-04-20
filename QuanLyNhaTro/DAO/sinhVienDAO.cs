@@ -130,7 +130,7 @@ namespace QuanLyNhaTro.DAO
         public List<sinhVien> SearchSinhVien(int maSoSinhVien, string name,string lop,string queQuan)
         {
             List<sinhVien> list = new List<sinhVien>();
-            string sql =string.Format("select SV.maSinhVien, K.name as khoa, SV.name, SV.dienThoai, SV.lop,SV.queQuan, SV.status from sinhVien SV, khoa K where SV.Khoa = K.maKhoa  and SV.maSinhVien = "+ maSinhVien +" or SV.name = N'" + name +"' or SV.lop = N'"+ lop +"' or SV.queQuan = N'"+ queQuan"'");
+            string sql =string.Format("select SV.maSinhVien, K.name as khoa, SV.name, SV.dienThoai, SV.lop,SV.queQuan, SV.status from sinhVien SV, khoa K where SV.Khoa = K.maKhoa  and SV.maSinhVien = "+ maSinhVien +" or SV.name = N'" + name +"' or SV.lop = N'"+ lop +"' or SV.queQuan = N'"+ queQuan "'");
             DataTable data = providerDAO.Instance.loadDL(sql);
             foreach(DataRow item in data.Rows)
             {
