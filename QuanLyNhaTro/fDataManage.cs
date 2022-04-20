@@ -222,6 +222,8 @@ namespace QuanLyNhaTro
         {
            dgvSinhvien.DataSource = sinhVienDAO.Instance.SearchSinhVien(txtSearch.Text);
         }
+
+
         private event EventHandler deleteSinhVien;
         public event EventHandler DeleteSinhVien
         {
