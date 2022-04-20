@@ -49,19 +49,14 @@ namespace QuanLyNhaTro.DAO
             string sql = "insert into thanhToan(datecheckin,maNhaTro,status) values (getdate()," + id + ",0)";
             providerDAO.Instance.loadDL(sql);
         }
-        public void chuyenBill (int maNhaTroMoi, int maThanhToan)
-        {
-            string sql = "UPDATE thanhToan SET maNhaTro = "+ maNhaTroMoi + " WHERE status = 0 and maThanhToan = " + maThanhToan;
-            providerDAO.Instance.loadDL(sql);
-        }
         public void checkOut(int id)
         {
             string sql = "Update thanhToan set status = 1, dateCheckOut = GETDATE()  where maThanhToan =" + id;
             providerDAO.Instance.loadDL(sql);
         }
-        public void DeletethanhToan(int maNhaTro)
+        public bool DeletethanhToan(int maNhaTro)
         {
-            hopDongDAO.Instance.deleteSinhvien(maThanhToan); 
+            hopDongDAO.Instance.deleteSinhvien(maNhaTro); 
             string query = "delete thanhToan where maNhaTro =" + maNhaTro;
 
             int result = providerDAO.Instance.ExecuteQuery(query);

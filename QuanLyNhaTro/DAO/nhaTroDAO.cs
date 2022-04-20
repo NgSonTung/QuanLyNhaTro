@@ -47,7 +47,7 @@ namespace QuanLyNhaTro.DAO
             return listTable1;
 
         }
-        public bool INSERT(string diaChi, float gia)
+        public bool INSERT(string diaChi, float gia, int limit)
         {
             string query = string.Format("Insert dbo.nhaTro (diaChi,gia,status) Values (N'{0}',{1},{2})", diaChi,gia,0);
             int result = providerDAO.Instance.ExecuteQuery(query);

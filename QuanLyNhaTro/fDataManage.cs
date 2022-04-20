@@ -56,6 +56,7 @@ namespace QuanLyNhaTro
             float gia = float.Parse(textBox8.Text);
             nhaTroDAO.Instance.INSERT(diaChi, gia);
             LoadDanhmuc();
+
         }
         
         public void load()
