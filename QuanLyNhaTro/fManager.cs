@@ -357,5 +357,14 @@ namespace QuanLyNhaTro
             Application.Exit();
         }
 
+        private void menuStrip1_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
+        {
+
+        }
+
+        private void fManager_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 } 

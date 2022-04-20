@@ -46,6 +46,7 @@ namespace QuanLyNhaTro
             float gia = float.Parse(textBox8.Text);
             nhaTroDAO.Instance.INSERT(diaChi, gia);
             LoadDanhmuc();
+
         }
         
         private void dgvPart_CellContentClick(object sender, DataGridViewCellEventArgs e)
