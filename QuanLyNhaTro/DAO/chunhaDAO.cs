@@ -20,7 +20,7 @@ namespace QuanLyNhaTro.DAO
         public object DataProvider { get; private set; }
         public chunhaDAO()
         { }
-        public List<chuNha> chunha()
+        public List<chuNha> getChuNha()
         {
             string query = "select * from chuNha";
             List<chuNha> chuNhaList = new List<chuNha>();
@@ -31,7 +31,17 @@ namespace QuanLyNhaTro.DAO
                 chuNhaList.Add(chuNha);
             }
             return chuNhaList;
+        }
 
+        public int getChuNhaIndex(string name)
+        {
+            string sql = "WITH myTable AS (SELECT *, ROW_NUMBER() OVER ( ORDER BY maChuNha ) as a FROM chuNha )  SELECT a    FROM MyTable  WHERE ten = N'"+name+"' ";
+            if (providerDAO.Instance.executeScalar(sql) != null)
+            {
+                return Convert.ToInt32(providerDAO.Instance.executeScalar(sql)) -1;
+            }
+            else
+                return -1;
         }
     }
     

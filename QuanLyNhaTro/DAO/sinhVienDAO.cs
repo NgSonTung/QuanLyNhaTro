@@ -115,8 +115,8 @@ namespace QuanLyNhaTro.DAO
         }
         public bool DELETESinhVien(int maSinhVien)
         {
-            hopDongDAO.Instance.deleteinsert(maSinhVien);
-            string query = "delete sinhVien where maSinhVien =" + maSinhVien;
+/*            hopDongDAO.Instance.deleteinsert(maSinhVien);
+*/            string query = "delete sinhVien where maSinhVien =" + maSinhVien;
 
             int result = providerDAO.Instance.ExecuteQuery(query);
             return result > 0;
