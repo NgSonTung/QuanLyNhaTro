@@ -74,6 +74,7 @@ namespace QuanLyNhaTro
         }
         private void Btn_Click(object sender, EventArgs e)
         {
+            comboBox6.Text = "";
             int tableID = ((sender as Button).Tag as nhaTro).MaNhaTro;
             dataGridView1.Tag = (sender as Button).Tag;
             loadThongTin(tableID);
@@ -318,7 +319,8 @@ namespace QuanLyNhaTro
                     {
                         thanhToanDAO.Instance.insertBill(maNhaTroMoi); /* tạo thanh toán mới */
                         hopDongDAO.Instance.updateHopDong1(thanhToanDAO.Instance.getMaxID(), maSinhVien); /* tạo hợp đồng mới */
-                        hopDongDAO.Instance.updateCountDown(maThanhToanCu);/*giảm count ở hợp đồng nhà cũ*/
+                        hopDongDAO.Instance.updateChuyenTro(maThanhToanCu, maSinhVien);/* Doi soSV o hop dong cu thanh -1*/
+                        hopDongDAO.Instance.updateCountDown(maThanhToanCu); /*giảm count ở nhà cũ*/
                         if (countDAO.Instance.getSVCount(nhaTro.MaNhaTro) == 0) /*Nếu nhà trọ cũ 0 có người*/
                         {
                             nhaTroDAO.Instance.availStatus(nhaTro.MaNhaTro);  /*update status NTcu -> trống*/
@@ -330,6 +332,7 @@ namespace QuanLyNhaTro
                     {
                         hopDongDAO.Instance.updateHopDong2(thanhToanDAO.Instance.getMaThanhToan(maNhaTroMoi), maSinhVien, countDAO.Instance.getSVCount(maNhaTroMoi)); /* update hợp đồng*/
                         hopDongDAO.Instance.updateCountUp(thanhToanDAO.Instance.getMaThanhToan(maNhaTroMoi)); /*tăng count ở hợp đồng nhà mới*/
+                        hopDongDAO.Instance.updateChuyenTro(maThanhToanCu, maSinhVien);/* Doi soSV o hop dong cu thanh -1*/
                         hopDongDAO.Instance.updateCountDown(maThanhToanCu); /*giảm count ở nhà cũ*/
                         if (countDAO.Instance.getSVCount(nhaTro.MaNhaTro) == 0) /*Nếu nhà trọ cũ 0 có người*/
                         {
@@ -341,11 +344,11 @@ namespace QuanLyNhaTro
                         nhaTroDAO.Instance.fullStatus(maNhaTroMoi); /* update status nhà trọ mới thành full*/
                     if (countDAO.Instance.getSVCount(nhaTro.MaNhaTro) < nhaTroDAO.Instance.checkNhaTro(nhaTro.MaNhaTro))
                         nhaTroDAO.Instance.availStatus(nhaTro.MaNhaTro);
-                    loadThongTin(nhaTro.MaNhaTro);
-                    loadNhaTro();
                     List<chuyenTro> listChuyenTro = chuyenTroDAO.Instance.getChuyenTro(nhaTro.MaNhaTro);
                     comboBox6.DataSource = listChuyenTro;
                     comboBox6.DisplayMember = "Name";
+                    loadThongTin(nhaTro.MaNhaTro);
+                    loadNhaTro();
                 }
                 else /*Nếu nhà trọ mới 0 còn chỗ*/
                     MessageBox.Show("Nhà trọ đã hết chỗ", "Thông Báo", MessageBoxButtons.OK, MessageBoxIcon.Information);

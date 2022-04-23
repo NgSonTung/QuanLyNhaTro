@@ -63,7 +63,7 @@ namespace QuanLyNhaTro.DAO
         }
         public int getMaTTFromMaSV(int maSinhVien)
         {
-            string sql = "select TT.maThanhToan from sinhVien SV, hopDong HD, thanhToan TT, nhaTro NT where SV.status = 1 and SV.maSinhVien = HD.maSinhVien and HD.maThanhToan = TT.maThanhToan and TT.maNhaTro = NT.maNhaTro and TT.status = 0 and SV.maSinhVien =" + maSinhVien;
+            string sql = "select TT.maThanhToan from sinhVien SV, hopDong HD, thanhToan TT, nhaTro NT where SV.status = 1 and SV.maSinhVien = HD.maSinhVien and HD.maThanhToan = TT.maThanhToan and TT.maNhaTro = NT.maNhaTro and TT.status = 0 and HD.soSinhVien >= 0 and SV.maSinhVien =" + maSinhVien;
             if (providerDAO.Instance.executeScalar(sql) != null)
             {
                 return (int)providerDAO.Instance.executeScalar(sql);
@@ -73,7 +73,7 @@ namespace QuanLyNhaTro.DAO
 
         public int getMaNTFromMaSV(int maSinhVien)
         {
-            string sql = "select TT.maNhaTro from sinhVien SV, hopDong HD, thanhToan TT, nhaTro NT where SV.status = 1 and SV.maSinhVien = HD.maSinhVien and HD.maThanhToan = TT.maThanhToan and TT.maNhaTro = NT.maNhaTro and TT.status = 0 and SV.maSinhVien =" + maSinhVien;
+            string sql = "select TT.maNhaTro from sinhVien SV, hopDong HD, thanhToan TT, nhaTro NT where SV.status = 1 and SV.maSinhVien = HD.maSinhVien and HD.maThanhToan = TT.maThanhToan and TT.maNhaTro = NT.maNhaTro and TT.status = 0 and HD.sosinhvien >= 0 and SV.maSinhVien =" + maSinhVien;
             if (providerDAO.Instance.executeScalar(sql) != null)
             {
                 return (int)providerDAO.Instance.executeScalar(sql);
@@ -115,8 +115,7 @@ namespace QuanLyNhaTro.DAO
         }
         public bool DELETESinhVien(int maSinhVien)
         {
-/*            hopDongDAO.Instance.deleteinsert(maSinhVien);
-*/            string query = "delete sinhVien where maSinhVien =" + maSinhVien;
+            string query = "delete sinhVien where maSinhVien =" + maSinhVien;
 
             int result = providerDAO.Instance.ExecuteQuery(query);
             return result > 0;
@@ -133,8 +132,8 @@ namespace QuanLyNhaTro.DAO
             List<sinhVienList> list = new List<sinhVienList>();
             string cmdMSSV = "select SV.maSinhVien, K.name as khoa, SV.name, SV.dienThoai, SV.lop,SV.queQuan, SV.status from sinhVien SV, khoa K where SV.Khoa = K.maKhoa  and SV.maSinhVien like '%" + searchItem+"%'";
             string cmdLop = "select SV.maSinhVien, K.name as khoa, SV.name, SV.dienThoai, SV.lop,SV.queQuan, SV.status from sinhVien SV, khoa K where SV.Khoa = K.maKhoa  and SV.lop like '%" + searchItem+"%'";
-            string cmdName = "select SV.maSinhVien, K.name as khoa, SV.name, SV.dienThoai, SV.lop,SV.queQuan, SV.status from sinhVien SV, khoa K where dbo.fuConvertToUnsign1 (SV.name) LIKE N'%' + dbo.fuConvertToUnsign1 (N'"+searchItem+"') + '%' ";
-            string cmdQue = "select SV.maSinhVien, K.name as khoa, SV.name, SV.dienThoai, SV.lop,SV.queQuan, SV.status from sinhVien SV, khoa K where dbo.fuConvertToUnsign1 (SV.queQuan) LIKE N'%' + dbo.fuConvertToUnsign1 (N'" + searchItem + "') + '%' ";
+            string cmdName = "select SV.maSinhVien, K.name as khoa, SV.name, SV.dienThoai, SV.lop,SV.queQuan, SV.status from sinhVien SV, khoa K where SV.Khoa = K.maKhoa and dbo.fuConvertToUnsign1 (SV.name) LIKE N'%' + dbo.fuConvertToUnsign1 (N'" + searchItem+"') + '%' ";
+            string cmdQue = "select SV.maSinhVien, K.name as khoa, SV.name, SV.dienThoai, SV.lop,SV.queQuan, SV.status from sinhVien SV, khoa K where SV.Khoa = K.maKhoa and dbo.fuConvertToUnsign1 (SV.queQuan) LIKE N'%' + dbo.fuConvertToUnsign1 (N'" + searchItem + "') + '%' ";
             DataTable data;
             List<sinhVienList> listTemp = GetListSinhVien();
             if (int.TryParse(searchItem, out int _))

@@ -30,6 +30,19 @@
         {
             this.tabControl2 = new System.Windows.Forms.TabControl();
             this.tabPage4 = new System.Windows.Forms.TabPage();
+            this.panel16 = new System.Windows.Forms.Panel();
+            this.panel20 = new System.Windows.Forms.Panel();
+            this.button11 = new System.Windows.Forms.Button();
+            this.label16 = new System.Windows.Forms.Label();
+            this.panel19 = new System.Windows.Forms.Panel();
+            this.button6 = new System.Windows.Forms.Button();
+            this.label15 = new System.Windows.Forms.Label();
+            this.panel18 = new System.Windows.Forms.Panel();
+            this.button5 = new System.Windows.Forms.Button();
+            this.label14 = new System.Windows.Forms.Label();
+            this.panel17 = new System.Windows.Forms.Panel();
+            this.label13 = new System.Windows.Forms.Label();
+            this.button4 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.panel10 = new System.Windows.Forms.Panel();
             this.txtQueQuan = new System.Windows.Forms.TextBox();
@@ -60,6 +73,16 @@
             this.themSV = new System.Windows.Forms.Button();
             this.dgvSinhvien = new System.Windows.Forms.DataGridView();
             this.tabPage5 = new System.Windows.Forms.TabPage();
+            this.panel21 = new System.Windows.Forms.Panel();
+            this.panel24 = new System.Windows.Forms.Panel();
+            this.label21 = new System.Windows.Forms.Label();
+            this.button14 = new System.Windows.Forms.Button();
+            this.panel23 = new System.Windows.Forms.Panel();
+            this.label20 = new System.Windows.Forms.Label();
+            this.button13 = new System.Windows.Forms.Button();
+            this.panel22 = new System.Windows.Forms.Panel();
+            this.label19 = new System.Windows.Forms.Label();
+            this.button12 = new System.Windows.Forms.Button();
             this.panel15 = new System.Windows.Forms.Panel();
             this.textBox3 = new System.Windows.Forms.TextBox();
             this.label12 = new System.Windows.Forms.Label();
@@ -68,8 +91,10 @@
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.label11 = new System.Windows.Forms.Label();
             this.panel13 = new System.Windows.Forms.Panel();
+            this.label17 = new System.Windows.Forms.Label();
             this.numericUpDown1 = new System.Windows.Forms.NumericUpDown();
             this.panel12 = new System.Windows.Forms.Panel();
+            this.label18 = new System.Windows.Forms.Label();
             this.comboBox2 = new System.Windows.Forms.ComboBox();
             this.panel5 = new System.Windows.Forms.Panel();
             this.textBox4 = new System.Windows.Forms.TextBox();
@@ -104,35 +129,15 @@
             this.label10 = new System.Windows.Forms.Label();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.button3 = new System.Windows.Forms.Button();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.panel16 = new System.Windows.Forms.Panel();
-            this.button4 = new System.Windows.Forms.Button();
-            this.button5 = new System.Windows.Forms.Button();
-            this.button6 = new System.Windows.Forms.Button();
-            this.label14 = new System.Windows.Forms.Label();
-            this.label15 = new System.Windows.Forms.Label();
-            this.button11 = new System.Windows.Forms.Button();
-            this.label16 = new System.Windows.Forms.Label();
-            this.label13 = new System.Windows.Forms.Label();
-            this.panel17 = new System.Windows.Forms.Panel();
-            this.panel18 = new System.Windows.Forms.Panel();
-            this.panel19 = new System.Windows.Forms.Panel();
-            this.panel20 = new System.Windows.Forms.Panel();
-            this.label17 = new System.Windows.Forms.Label();
-            this.label18 = new System.Windows.Forms.Label();
-            this.panel21 = new System.Windows.Forms.Panel();
-            this.button12 = new System.Windows.Forms.Button();
-            this.panel22 = new System.Windows.Forms.Panel();
-            this.label19 = new System.Windows.Forms.Label();
-            this.button13 = new System.Windows.Forms.Button();
-            this.panel23 = new System.Windows.Forms.Panel();
-            this.label20 = new System.Windows.Forms.Label();
-            this.button14 = new System.Windows.Forms.Button();
-            this.panel24 = new System.Windows.Forms.Panel();
-            this.label21 = new System.Windows.Forms.Label();
             this.label22 = new System.Windows.Forms.Label();
+            this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.tabControl2.SuspendLayout();
             this.tabPage4.SuspendLayout();
+            this.panel16.SuspendLayout();
+            this.panel20.SuspendLayout();
+            this.panel19.SuspendLayout();
+            this.panel18.SuspendLayout();
+            this.panel17.SuspendLayout();
             this.panel10.SuspendLayout();
             this.panel11.SuspendLayout();
             this.panel9.SuspendLayout();
@@ -142,6 +147,10 @@
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvSinhvien)).BeginInit();
             this.tabPage5.SuspendLayout();
+            this.panel21.SuspendLayout();
+            this.panel24.SuspendLayout();
+            this.panel23.SuspendLayout();
+            this.panel22.SuspendLayout();
             this.panel15.SuspendLayout();
             this.panel14.SuspendLayout();
             this.panel13.SuspendLayout();
@@ -155,16 +164,6 @@
             this.tabPage1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.historyDGV)).BeginInit();
             this.menuStrip1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            this.panel16.SuspendLayout();
-            this.panel17.SuspendLayout();
-            this.panel18.SuspendLayout();
-            this.panel19.SuspendLayout();
-            this.panel20.SuspendLayout();
-            this.panel21.SuspendLayout();
-            this.panel22.SuspendLayout();
-            this.panel23.SuspendLayout();
-            this.panel24.SuspendLayout();
             this.SuspendLayout();
             // 
             // tabControl2
@@ -178,7 +177,7 @@
             this.tabControl2.Multiline = true;
             this.tabControl2.Name = "tabControl2";
             this.tabControl2.SelectedIndex = 0;
-            this.tabControl2.Size = new System.Drawing.Size(971, 533);
+            this.tabControl2.Size = new System.Drawing.Size(1285, 533);
             this.tabControl2.TabIndex = 3;
             this.tabControl2.SelectedIndexChanged += new System.EventHandler(this.tabControl2_SelectedIndexChanged);
             // 
@@ -204,26 +203,201 @@
             this.tabPage4.Location = new System.Drawing.Point(4, 27);
             this.tabPage4.Name = "tabPage4";
             this.tabPage4.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage4.Size = new System.Drawing.Size(963, 502);
+            this.tabPage4.Size = new System.Drawing.Size(1277, 502);
             this.tabPage4.TabIndex = 1;
             this.tabPage4.Text = "Sinh Viên";
             this.tabPage4.Click += new System.EventHandler(this.tabPage4_Click_1);
             // 
+            // panel16
+            // 
+            this.panel16.Controls.Add(this.panel20);
+            this.panel16.Controls.Add(this.panel19);
+            this.panel16.Controls.Add(this.panel18);
+            this.panel16.Controls.Add(this.panel17);
+            this.panel16.Location = new System.Drawing.Point(3, 3);
+            this.panel16.Name = "panel16";
+            this.panel16.Size = new System.Drawing.Size(146, 495);
+            this.panel16.TabIndex = 50;
+            this.panel16.Paint += new System.Windows.Forms.PaintEventHandler(this.panel16_Paint);
+            // 
+            // panel20
+            // 
+            this.panel20.Controls.Add(this.button11);
+            this.panel20.Controls.Add(this.label16);
+            this.panel20.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel20.Location = new System.Drawing.Point(0, 332);
+            this.panel20.Name = "panel20";
+            this.panel20.Size = new System.Drawing.Size(146, 163);
+            this.panel20.TabIndex = 17;
+            // 
+            // button11
+            // 
+            this.button11.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(59)))), ((int)(((byte)(122)))));
+            this.button11.Dock = System.Windows.Forms.DockStyle.Top;
+            this.button11.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(59)))), ((int)(((byte)(122)))));
+            this.button11.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button11.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F);
+            this.button11.ForeColor = System.Drawing.Color.White;
+            this.button11.Location = new System.Drawing.Point(0, 0);
+            this.button11.Name = "button11";
+            this.button11.Size = new System.Drawing.Size(146, 51);
+            this.button11.TabIndex = 6;
+            this.button11.Text = "Cập Nhật";
+            this.button11.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.button11.UseVisualStyleBackColor = false;
+            this.button11.Click += new System.EventHandler(this.button11_Click);
+            // 
+            // label16
+            // 
+            this.label16.AutoSize = true;
+            this.label16.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(59)))), ((int)(((byte)(59)))), ((int)(((byte)(122)))));
+            this.label16.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label16.ForeColor = System.Drawing.Color.White;
+            this.label16.Location = new System.Drawing.Point(0, 54);
+            this.label16.Name = "label16";
+            this.label16.Size = new System.Drawing.Size(145, 120);
+            this.label16.TabIndex = 7;
+            this.label16.Text = "Vui lòng nhập theo thứ tự \r\nKhoa\r\nHọ và Tên\r\nĐiện Thoại\r\nLớp \r\nQuê Quán\r\n\r\n\r\n";
+            this.label16.Click += new System.EventHandler(this.label16_Click);
+            // 
+            // panel19
+            // 
+            this.panel19.Controls.Add(this.button6);
+            this.panel19.Controls.Add(this.label15);
+            this.panel19.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel19.Location = new System.Drawing.Point(0, 232);
+            this.panel19.Name = "panel19";
+            this.panel19.Size = new System.Drawing.Size(146, 100);
+            this.panel19.TabIndex = 17;
+            // 
+            // button6
+            // 
+            this.button6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(59)))), ((int)(((byte)(122)))));
+            this.button6.Dock = System.Windows.Forms.DockStyle.Top;
+            this.button6.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(59)))), ((int)(((byte)(122)))));
+            this.button6.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button6.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F);
+            this.button6.ForeColor = System.Drawing.Color.White;
+            this.button6.Location = new System.Drawing.Point(0, 0);
+            this.button6.Name = "button6";
+            this.button6.Size = new System.Drawing.Size(146, 51);
+            this.button6.TabIndex = 2;
+            this.button6.Text = "Liệt Kê";
+            this.button6.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.button6.UseVisualStyleBackColor = false;
+            this.button6.Click += new System.EventHandler(this.button6_Click_1);
+            // 
+            // label15
+            // 
+            this.label15.AutoSize = true;
+            this.label15.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(59)))), ((int)(((byte)(59)))), ((int)(((byte)(122)))));
+            this.label15.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label15.ForeColor = System.Drawing.Color.White;
+            this.label15.Location = new System.Drawing.Point(0, 54);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(145, 45);
+            this.label15.TabIndex = 5;
+            this.label15.Text = "Vui lòng nhập theo thứ tự \r\nKhoa\r\n\r\n";
+            this.label15.Click += new System.EventHandler(this.label15_Click);
+            // 
+            // panel18
+            // 
+            this.panel18.Controls.Add(this.button5);
+            this.panel18.Controls.Add(this.label14);
+            this.panel18.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel18.Location = new System.Drawing.Point(0, 145);
+            this.panel18.Name = "panel18";
+            this.panel18.Size = new System.Drawing.Size(146, 87);
+            this.panel18.TabIndex = 3;
+            // 
+            // button5
+            // 
+            this.button5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(59)))), ((int)(((byte)(122)))));
+            this.button5.Dock = System.Windows.Forms.DockStyle.Top;
+            this.button5.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(59)))), ((int)(((byte)(122)))));
+            this.button5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button5.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F);
+            this.button5.ForeColor = System.Drawing.Color.White;
+            this.button5.Location = new System.Drawing.Point(0, 0);
+            this.button5.Name = "button5";
+            this.button5.Size = new System.Drawing.Size(146, 51);
+            this.button5.TabIndex = 2;
+            this.button5.Text = "Xoá";
+            this.button5.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.button5.UseVisualStyleBackColor = false;
+            this.button5.Click += new System.EventHandler(this.button5_Click);
+            // 
+            // label14
+            // 
+            this.label14.AutoSize = true;
+            this.label14.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(59)))), ((int)(((byte)(59)))), ((int)(((byte)(122)))));
+            this.label14.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label14.ForeColor = System.Drawing.Color.White;
+            this.label14.Location = new System.Drawing.Point(1, 54);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(145, 30);
+            this.label14.TabIndex = 4;
+            this.label14.Text = "Vui lòng nhập theo thứ tự \r\nMSSV\r\n";
+            this.label14.Click += new System.EventHandler(this.label14_Click);
+            // 
+            // panel17
+            // 
+            this.panel17.Controls.Add(this.label13);
+            this.panel17.Controls.Add(this.button4);
+            this.panel17.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel17.Location = new System.Drawing.Point(0, 0);
+            this.panel17.Name = "panel17";
+            this.panel17.Size = new System.Drawing.Size(146, 145);
+            this.panel17.TabIndex = 17;
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(59)))), ((int)(((byte)(59)))), ((int)(((byte)(122)))));
+            this.label13.Dock = System.Windows.Forms.DockStyle.Top;
+            this.label13.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label13.ForeColor = System.Drawing.Color.White;
+            this.label13.Location = new System.Drawing.Point(0, 54);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(145, 90);
+            this.label13.TabIndex = 1;
+            this.label13.Text = "Vui lòng nhập theo thứ tự \r\nKhoa \r\nHọ và Tên\r\nĐiện Thoại\r\nLớp\r\nQuê Quán";
+            this.label13.Click += new System.EventHandler(this.label13_Click);
+            // 
+            // button4
+            // 
+            this.button4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(59)))), ((int)(((byte)(122)))));
+            this.button4.Dock = System.Windows.Forms.DockStyle.Top;
+            this.button4.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(59)))), ((int)(((byte)(122)))));
+            this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button4.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F);
+            this.button4.ForeColor = System.Drawing.Color.White;
+            this.button4.Location = new System.Drawing.Point(0, 0);
+            this.button4.Name = "button4";
+            this.button4.Size = new System.Drawing.Size(146, 54);
+            this.button4.TabIndex = 0;
+            this.button4.Text = "Thêm";
+            this.button4.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.button4.UseVisualStyleBackColor = false;
+            this.button4.Click += new System.EventHandler(this.button4_Click);
+            // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(751, 114);
+            this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(59)))), ((int)(((byte)(122)))));
+            this.button1.ForeColor = System.Drawing.Color.White;
+            this.button1.Location = new System.Drawing.Point(1102, 116);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(105, 35);
+            this.button1.Size = new System.Drawing.Size(153, 35);
             this.button1.TabIndex = 16;
             this.button1.Text = "Xem";
-            this.button1.UseVisualStyleBackColor = true;
+            this.button1.UseVisualStyleBackColor = false;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // panel10
             // 
             this.panel10.Controls.Add(this.txtQueQuan);
             this.panel10.Controls.Add(this.QueQuanSV);
-            this.panel10.Location = new System.Drawing.Point(638, 350);
+            this.panel10.Location = new System.Drawing.Point(940, 379);
             this.panel10.Margin = new System.Windows.Forms.Padding(2);
             this.panel10.Name = "panel10";
             this.panel10.Size = new System.Drawing.Size(315, 39);
@@ -251,7 +425,7 @@
             // 
             this.panel11.Controls.Add(this.cbstatusSV);
             this.panel11.Controls.Add(this.statusSV);
-            this.panel11.Location = new System.Drawing.Point(638, 393);
+            this.panel11.Location = new System.Drawing.Point(940, 429);
             this.panel11.Margin = new System.Windows.Forms.Padding(2);
             this.panel11.Name = "panel11";
             this.panel11.Size = new System.Drawing.Size(315, 44);
@@ -264,7 +438,7 @@
             this.cbstatusSV.Items.AddRange(new object[] {
             "có trọ",
             "không có trọ"});
-            this.cbstatusSV.Location = new System.Drawing.Point(113, 9);
+            this.cbstatusSV.Location = new System.Drawing.Point(113, 7);
             this.cbstatusSV.Name = "cbstatusSV";
             this.cbstatusSV.Size = new System.Drawing.Size(156, 26);
             this.cbstatusSV.TabIndex = 12;
@@ -285,7 +459,7 @@
             // 
             this.panel9.Controls.Add(this.txtLopSV);
             this.panel9.Controls.Add(this.lopSV);
-            this.panel9.Location = new System.Drawing.Point(638, 315);
+            this.panel9.Location = new System.Drawing.Point(940, 337);
             this.panel9.Margin = new System.Windows.Forms.Padding(2);
             this.panel9.Name = "panel9";
             this.panel9.Size = new System.Drawing.Size(315, 31);
@@ -293,7 +467,7 @@
             // 
             // txtLopSV
             // 
-            this.txtLopSV.Location = new System.Drawing.Point(113, 6);
+            this.txtLopSV.Location = new System.Drawing.Point(113, 4);
             this.txtLopSV.Name = "txtLopSV";
             this.txtLopSV.Size = new System.Drawing.Size(156, 24);
             this.txtLopSV.TabIndex = 2;
@@ -313,7 +487,7 @@
             // 
             this.suaTTSV.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(59)))), ((int)(((byte)(122)))));
             this.suaTTSV.ForeColor = System.Drawing.Color.White;
-            this.suaTTSV.Location = new System.Drawing.Point(468, 22);
+            this.suaTTSV.Location = new System.Drawing.Point(513, 22);
             this.suaTTSV.Name = "suaTTSV";
             this.suaTTSV.Size = new System.Drawing.Size(97, 35);
             this.suaTTSV.TabIndex = 13;
@@ -325,7 +499,7 @@
             // 
             this.panel4.Controls.Add(this.DienthoaiSV);
             this.panel4.Controls.Add(this.txtDTSV);
-            this.panel4.Location = new System.Drawing.Point(637, 279);
+            this.panel4.Location = new System.Drawing.Point(940, 292);
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(316, 31);
             this.panel4.TabIndex = 10;
@@ -343,7 +517,7 @@
             // 
             // txtDTSV
             // 
-            this.txtDTSV.Location = new System.Drawing.Point(114, 10);
+            this.txtDTSV.Location = new System.Drawing.Point(114, 3);
             this.txtDTSV.Name = "txtDTSV";
             this.txtDTSV.Size = new System.Drawing.Size(156, 24);
             this.txtDTSV.TabIndex = 13;
@@ -352,7 +526,7 @@
             // 
             this.panel3.Controls.Add(this.cbKhoaSV);
             this.panel3.Controls.Add(this.KhoaSV);
-            this.panel3.Location = new System.Drawing.Point(637, 204);
+            this.panel3.Location = new System.Drawing.Point(940, 205);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(316, 31);
             this.panel3.TabIndex = 9;
@@ -360,7 +534,7 @@
             // cbKhoaSV
             // 
             this.cbKhoaSV.FormattingEnabled = true;
-            this.cbKhoaSV.Location = new System.Drawing.Point(114, 6);
+            this.cbKhoaSV.Location = new System.Drawing.Point(114, 4);
             this.cbKhoaSV.Name = "cbKhoaSV";
             this.cbKhoaSV.Size = new System.Drawing.Size(156, 26);
             this.cbKhoaSV.TabIndex = 11;
@@ -380,7 +554,7 @@
             // 
             this.panel2.Controls.Add(this.NameSV);
             this.panel2.Controls.Add(this.txtnameSV);
-            this.panel2.Location = new System.Drawing.Point(637, 242);
+            this.panel2.Location = new System.Drawing.Point(940, 247);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(316, 31);
             this.panel2.TabIndex = 8;
@@ -407,7 +581,7 @@
             // 
             this.panel1.Controls.Add(this.MSSVid);
             this.panel1.Controls.Add(this.txtMSSV);
-            this.panel1.Location = new System.Drawing.Point(637, 168);
+            this.panel1.Location = new System.Drawing.Point(940, 163);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(316, 31);
             this.panel1.TabIndex = 7;
@@ -425,7 +599,7 @@
             // 
             // txtMSSV
             // 
-            this.txtMSSV.Location = new System.Drawing.Point(114, 7);
+            this.txtMSSV.Location = new System.Drawing.Point(114, 5);
             this.txtMSSV.Name = "txtMSSV";
             this.txtMSSV.ReadOnly = true;
             this.txtMSSV.Size = new System.Drawing.Size(156, 24);
@@ -433,29 +607,31 @@
             // 
             // txtSearch
             // 
-            this.txtSearch.Location = new System.Drawing.Point(637, 84);
+            this.txtSearch.Location = new System.Drawing.Point(940, 84);
             this.txtSearch.Name = "txtSearch";
-            this.txtSearch.Size = new System.Drawing.Size(169, 24);
+            this.txtSearch.Size = new System.Drawing.Size(315, 24);
             this.txtSearch.TabIndex = 6;
             this.txtSearch.TextChanged += new System.EventHandler(this.txtSearch_TextChanged);
             // 
             // searchSV
             // 
-            this.searchSV.Location = new System.Drawing.Point(637, 114);
+            this.searchSV.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(59)))), ((int)(((byte)(122)))));
+            this.searchSV.ForeColor = System.Drawing.Color.White;
+            this.searchSV.Location = new System.Drawing.Point(940, 116);
             this.searchSV.Name = "searchSV";
-            this.searchSV.Size = new System.Drawing.Size(105, 35);
+            this.searchSV.Size = new System.Drawing.Size(153, 35);
             this.searchSV.TabIndex = 5;
             this.searchSV.Text = "Tìm kiếm";
-            this.searchSV.UseVisualStyleBackColor = true;
+            this.searchSV.UseVisualStyleBackColor = false;
             this.searchSV.Click += new System.EventHandler(this.searchSV_Click);
             // 
             // xemSV
             // 
             this.xemSV.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(59)))), ((int)(((byte)(122)))));
             this.xemSV.ForeColor = System.Drawing.Color.White;
-            this.xemSV.Location = new System.Drawing.Point(387, 22);
+            this.xemSV.Location = new System.Drawing.Point(397, 22);
             this.xemSV.Name = "xemSV";
-            this.xemSV.Size = new System.Drawing.Size(75, 35);
+            this.xemSV.Size = new System.Drawing.Size(97, 35);
             this.xemSV.TabIndex = 4;
             this.xemSV.Text = "Liệt Kê ";
             this.xemSV.UseVisualStyleBackColor = false;
@@ -465,11 +641,11 @@
             // 
             this.xoaSV.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(59)))), ((int)(((byte)(122)))));
             this.xoaSV.ForeColor = System.Drawing.Color.White;
-            this.xoaSV.Location = new System.Drawing.Point(306, 22);
+            this.xoaSV.Location = new System.Drawing.Point(282, 22);
             this.xoaSV.Name = "xoaSV";
-            this.xoaSV.Size = new System.Drawing.Size(75, 35);
+            this.xoaSV.Size = new System.Drawing.Size(97, 35);
             this.xoaSV.TabIndex = 3;
-            this.xoaSV.Text = "xóa";
+            this.xoaSV.Text = "Xóa";
             this.xoaSV.UseVisualStyleBackColor = false;
             this.xoaSV.Click += new System.EventHandler(this.xoaSV_Click);
             // 
@@ -477,9 +653,9 @@
             // 
             this.themSV.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(59)))), ((int)(((byte)(122)))));
             this.themSV.ForeColor = System.Drawing.Color.White;
-            this.themSV.Location = new System.Drawing.Point(225, 22);
+            this.themSV.Location = new System.Drawing.Point(169, 22);
             this.themSV.Name = "themSV";
-            this.themSV.Size = new System.Drawing.Size(75, 35);
+            this.themSV.Size = new System.Drawing.Size(97, 35);
             this.themSV.TabIndex = 1;
             this.themSV.Text = "Thêm";
             this.themSV.UseVisualStyleBackColor = false;
@@ -488,11 +664,12 @@
             // dgvSinhvien
             // 
             this.dgvSinhvien.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgvSinhvien.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(59)))), ((int)(((byte)(122)))));
             this.dgvSinhvien.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvSinhvien.Location = new System.Drawing.Point(169, 84);
             this.dgvSinhvien.Name = "dgvSinhvien";
             this.dgvSinhvien.RowHeadersWidth = 51;
-            this.dgvSinhvien.Size = new System.Drawing.Size(447, 389);
+            this.dgvSinhvien.Size = new System.Drawing.Size(753, 389);
             this.dgvSinhvien.TabIndex = 0;
             this.dgvSinhvien.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvSinhvien_CellClick);
             this.dgvSinhvien.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvSinhvien_CellContentClick_1);
@@ -519,16 +696,151 @@
             this.tabPage5.Location = new System.Drawing.Point(4, 27);
             this.tabPage5.Name = "tabPage5";
             this.tabPage5.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage5.Size = new System.Drawing.Size(963, 502);
+            this.tabPage5.Size = new System.Drawing.Size(1277, 502);
             this.tabPage5.TabIndex = 2;
             this.tabPage5.Text = "Phòng Trọ";
             this.tabPage5.Click += new System.EventHandler(this.tabPage5_Click);
+            // 
+            // panel21
+            // 
+            this.panel21.Controls.Add(this.panel24);
+            this.panel21.Controls.Add(this.button14);
+            this.panel21.Controls.Add(this.panel23);
+            this.panel21.Controls.Add(this.button13);
+            this.panel21.Controls.Add(this.panel22);
+            this.panel21.Controls.Add(this.button12);
+            this.panel21.Location = new System.Drawing.Point(0, 0);
+            this.panel21.Name = "panel21";
+            this.panel21.Size = new System.Drawing.Size(147, 502);
+            this.panel21.TabIndex = 22;
+            this.panel21.Paint += new System.Windows.Forms.PaintEventHandler(this.panel21_Paint);
+            // 
+            // panel24
+            // 
+            this.panel24.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(59)))), ((int)(((byte)(122)))));
+            this.panel24.Controls.Add(this.label21);
+            this.panel24.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel24.Location = new System.Drawing.Point(0, 267);
+            this.panel24.Name = "panel24";
+            this.panel24.Size = new System.Drawing.Size(147, 116);
+            this.panel24.TabIndex = 55;
+            // 
+            // label21
+            // 
+            this.label21.AutoSize = true;
+            this.label21.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(59)))), ((int)(((byte)(59)))), ((int)(((byte)(122)))));
+            this.label21.Dock = System.Windows.Forms.DockStyle.Top;
+            this.label21.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label21.ForeColor = System.Drawing.Color.White;
+            this.label21.Location = new System.Drawing.Point(0, 0);
+            this.label21.Name = "label21";
+            this.label21.Size = new System.Drawing.Size(145, 105);
+            this.label21.TabIndex = 23;
+            this.label21.Text = "Vui lòng nhập theo thứ tự \r\nMã Nhà Trọ\r\nChủ Nhà\r\nĐiện Thoại\r\nĐịa Chỉ\r\nGiá\r\nGiới H" +
+    "ạn\r\n";
+            this.label21.Click += new System.EventHandler(this.label21_Click);
+            // 
+            // button14
+            // 
+            this.button14.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(59)))), ((int)(((byte)(122)))));
+            this.button14.Dock = System.Windows.Forms.DockStyle.Top;
+            this.button14.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(59)))), ((int)(((byte)(122)))));
+            this.button14.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button14.ForeColor = System.Drawing.Color.White;
+            this.button14.Location = new System.Drawing.Point(0, 219);
+            this.button14.Name = "button14";
+            this.button14.Size = new System.Drawing.Size(147, 48);
+            this.button14.TabIndex = 53;
+            this.button14.Text = "Cập Nhật";
+            this.button14.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.button14.UseVisualStyleBackColor = false;
+            this.button14.Click += new System.EventHandler(this.button14_Click);
+            // 
+            // panel23
+            // 
+            this.panel23.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(59)))), ((int)(((byte)(122)))));
+            this.panel23.Controls.Add(this.label20);
+            this.panel23.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel23.Location = new System.Drawing.Point(0, 180);
+            this.panel23.Name = "panel23";
+            this.panel23.Size = new System.Drawing.Size(147, 39);
+            this.panel23.TabIndex = 53;
+            // 
+            // label20
+            // 
+            this.label20.AutoSize = true;
+            this.label20.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(59)))), ((int)(((byte)(59)))), ((int)(((byte)(122)))));
+            this.label20.Dock = System.Windows.Forms.DockStyle.Top;
+            this.label20.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label20.ForeColor = System.Drawing.Color.White;
+            this.label20.Location = new System.Drawing.Point(0, 0);
+            this.label20.Name = "label20";
+            this.label20.Size = new System.Drawing.Size(145, 30);
+            this.label20.TabIndex = 23;
+            this.label20.Text = "Vui lòng nhập theo thứ tự \r\nMã Nhà Trọ\r\n";
+            this.label20.Click += new System.EventHandler(this.label20_Click);
+            // 
+            // button13
+            // 
+            this.button13.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(59)))), ((int)(((byte)(122)))));
+            this.button13.Dock = System.Windows.Forms.DockStyle.Top;
+            this.button13.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(59)))), ((int)(((byte)(122)))));
+            this.button13.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button13.ForeColor = System.Drawing.Color.White;
+            this.button13.Location = new System.Drawing.Point(0, 132);
+            this.button13.Name = "button13";
+            this.button13.Size = new System.Drawing.Size(147, 48);
+            this.button13.TabIndex = 52;
+            this.button13.Text = "Xoá";
+            this.button13.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.button13.UseVisualStyleBackColor = false;
+            this.button13.Click += new System.EventHandler(this.button13_Click);
+            // 
+            // panel22
+            // 
+            this.panel22.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(59)))), ((int)(((byte)(122)))));
+            this.panel22.Controls.Add(this.label19);
+            this.panel22.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel22.Location = new System.Drawing.Point(0, 48);
+            this.panel22.Name = "panel22";
+            this.panel22.Size = new System.Drawing.Size(147, 84);
+            this.panel22.TabIndex = 23;
+            // 
+            // label19
+            // 
+            this.label19.AutoSize = true;
+            this.label19.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(59)))), ((int)(((byte)(59)))), ((int)(((byte)(122)))));
+            this.label19.Dock = System.Windows.Forms.DockStyle.Top;
+            this.label19.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label19.ForeColor = System.Drawing.Color.White;
+            this.label19.Location = new System.Drawing.Point(0, 0);
+            this.label19.Name = "label19";
+            this.label19.Size = new System.Drawing.Size(145, 75);
+            this.label19.TabIndex = 23;
+            this.label19.Text = "Vui lòng nhập theo thứ tự \r\nĐiện Thoại\r\nĐịa Chỉ\r\nGiá\r\nGiới Hạn";
+            this.label19.Click += new System.EventHandler(this.label19_Click);
+            // 
+            // button12
+            // 
+            this.button12.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(59)))), ((int)(((byte)(122)))));
+            this.button12.Dock = System.Windows.Forms.DockStyle.Top;
+            this.button12.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(59)))), ((int)(((byte)(122)))));
+            this.button12.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button12.ForeColor = System.Drawing.Color.White;
+            this.button12.Location = new System.Drawing.Point(0, 0);
+            this.button12.Name = "button12";
+            this.button12.Size = new System.Drawing.Size(147, 48);
+            this.button12.TabIndex = 51;
+            this.button12.Text = "Thêm";
+            this.button12.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.button12.UseVisualStyleBackColor = false;
+            this.button12.Click += new System.EventHandler(this.button12_Click);
             // 
             // panel15
             // 
             this.panel15.Controls.Add(this.textBox3);
             this.panel15.Controls.Add(this.label12);
-            this.panel15.Location = new System.Drawing.Point(627, 194);
+            this.panel15.Location = new System.Drawing.Point(939, 162);
             this.panel15.Name = "panel15";
             this.panel15.Size = new System.Drawing.Size(316, 31);
             this.panel15.TabIndex = 21;
@@ -553,19 +865,21 @@
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(839, 125);
+            this.button2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(59)))), ((int)(((byte)(122)))));
+            this.button2.ForeColor = System.Drawing.Color.White;
+            this.button2.Location = new System.Drawing.Point(1104, 118);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(86, 35);
+            this.button2.Size = new System.Drawing.Size(151, 35);
             this.button2.TabIndex = 21;
             this.button2.Text = "Xem";
-            this.button2.UseVisualStyleBackColor = true;
+            this.button2.UseVisualStyleBackColor = false;
             this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // panel14
             // 
             this.panel14.Controls.Add(this.textBox2);
             this.panel14.Controls.Add(this.label11);
-            this.panel14.Location = new System.Drawing.Point(627, 452);
+            this.panel14.Location = new System.Drawing.Point(939, 448);
             this.panel14.Name = "panel14";
             this.panel14.Size = new System.Drawing.Size(316, 31);
             this.panel14.TabIndex = 20;
@@ -592,10 +906,21 @@
             // 
             this.panel13.Controls.Add(this.label17);
             this.panel13.Controls.Add(this.numericUpDown1);
-            this.panel13.Location = new System.Drawing.Point(627, 377);
+            this.panel13.Location = new System.Drawing.Point(939, 367);
             this.panel13.Name = "panel13";
             this.panel13.Size = new System.Drawing.Size(316, 31);
             this.panel13.TabIndex = 17;
+            // 
+            // label17
+            // 
+            this.label17.AutoSize = true;
+            this.label17.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label17.ForeColor = System.Drawing.Color.White;
+            this.label17.Location = new System.Drawing.Point(8, 6);
+            this.label17.Name = "label17";
+            this.label17.Size = new System.Drawing.Size(64, 16);
+            this.label17.TabIndex = 19;
+            this.label17.Text = "Giới hạn";
             // 
             // numericUpDown1
             // 
@@ -608,10 +933,21 @@
             // 
             this.panel12.Controls.Add(this.label18);
             this.panel12.Controls.Add(this.comboBox2);
-            this.panel12.Location = new System.Drawing.Point(627, 415);
+            this.panel12.Location = new System.Drawing.Point(939, 408);
             this.panel12.Name = "panel12";
             this.panel12.Size = new System.Drawing.Size(316, 31);
             this.panel12.TabIndex = 19;
+            // 
+            // label18
+            // 
+            this.label18.AutoSize = true;
+            this.label18.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label18.ForeColor = System.Drawing.Color.White;
+            this.label18.Location = new System.Drawing.Point(8, 6);
+            this.label18.Name = "label18";
+            this.label18.Size = new System.Drawing.Size(62, 16);
+            this.label18.TabIndex = 21;
+            this.label18.Text = "Chủ nhà";
             // 
             // comboBox2
             // 
@@ -625,7 +961,7 @@
             // 
             this.panel5.Controls.Add(this.textBox4);
             this.panel5.Controls.Add(this.label5);
-            this.panel5.Location = new System.Drawing.Point(627, 268);
+            this.panel5.Location = new System.Drawing.Point(939, 244);
             this.panel5.Name = "panel5";
             this.panel5.Size = new System.Drawing.Size(316, 31);
             this.panel5.TabIndex = 15;
@@ -653,7 +989,7 @@
             // 
             this.panel7.Controls.Add(this.comboBox1);
             this.panel7.Controls.Add(this.label7);
-            this.panel7.Location = new System.Drawing.Point(627, 340);
+            this.panel7.Location = new System.Drawing.Point(939, 327);
             this.panel7.Name = "panel7";
             this.panel7.Size = new System.Drawing.Size(316, 31);
             this.panel7.TabIndex = 17;
@@ -686,7 +1022,7 @@
             // 
             this.panel8.Controls.Add(this.label8);
             this.panel8.Controls.Add(this.textBox8);
-            this.panel8.Location = new System.Drawing.Point(627, 303);
+            this.panel8.Location = new System.Drawing.Point(939, 285);
             this.panel8.Name = "panel8";
             this.panel8.Size = new System.Drawing.Size(316, 31);
             this.panel8.TabIndex = 16;
@@ -713,7 +1049,7 @@
             // 
             this.panel6.Controls.Add(this.label6);
             this.panel6.Controls.Add(this.textBox5);
-            this.panel6.Location = new System.Drawing.Point(627, 231);
+            this.panel6.Location = new System.Drawing.Point(939, 203);
             this.panel6.Name = "panel6";
             this.panel6.Size = new System.Drawing.Size(316, 31);
             this.panel6.TabIndex = 14;
@@ -739,31 +1075,33 @@
             // 
             // textBox6
             // 
-            this.textBox6.Location = new System.Drawing.Point(700, 89);
+            this.textBox6.Location = new System.Drawing.Point(939, 85);
             this.textBox6.Name = "textBox6";
-            this.textBox6.Size = new System.Drawing.Size(225, 24);
+            this.textBox6.Size = new System.Drawing.Size(316, 24);
             this.textBox6.TabIndex = 13;
             this.textBox6.TextChanged += new System.EventHandler(this.textBox6_TextChanged);
             // 
             // button10
             // 
-            this.button10.Location = new System.Drawing.Point(700, 125);
+            this.button10.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(59)))), ((int)(((byte)(122)))));
+            this.button10.ForeColor = System.Drawing.Color.White;
+            this.button10.Location = new System.Drawing.Point(939, 118);
             this.button10.Name = "button10";
-            this.button10.Size = new System.Drawing.Size(86, 35);
+            this.button10.Size = new System.Drawing.Size(151, 35);
             this.button10.TabIndex = 12;
             this.button10.Text = "Tìm kiếm";
-            this.button10.UseVisualStyleBackColor = true;
+            this.button10.UseVisualStyleBackColor = false;
             this.button10.Click += new System.EventHandler(this.button10_Click);
             // 
             // button7
             // 
             this.button7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(59)))), ((int)(((byte)(122)))));
             this.button7.ForeColor = System.Drawing.Color.White;
-            this.button7.Location = new System.Drawing.Point(430, 44);
+            this.button7.Location = new System.Drawing.Point(282, 22);
             this.button7.Name = "button7";
-            this.button7.Size = new System.Drawing.Size(86, 39);
+            this.button7.Size = new System.Drawing.Size(97, 35);
             this.button7.TabIndex = 8;
-            this.button7.Text = "xóa";
+            this.button7.Text = "Xóa";
             this.button7.UseVisualStyleBackColor = false;
             this.button7.Click += new System.EventHandler(this.button7_Click);
             // 
@@ -771,11 +1109,11 @@
             // 
             this.button8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(59)))), ((int)(((byte)(122)))));
             this.button8.ForeColor = System.Drawing.Color.White;
-            this.button8.Location = new System.Drawing.Point(535, 44);
+            this.button8.Location = new System.Drawing.Point(396, 22);
             this.button8.Name = "button8";
-            this.button8.Size = new System.Drawing.Size(86, 39);
+            this.button8.Size = new System.Drawing.Size(97, 35);
             this.button8.TabIndex = 7;
-            this.button8.Text = "sửa";
+            this.button8.Text = "Cập Nhật";
             this.button8.UseVisualStyleBackColor = false;
             this.button8.Click += new System.EventHandler(this.button8_Click);
             // 
@@ -783,9 +1121,9 @@
             // 
             this.button9.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(59)))), ((int)(((byte)(122)))));
             this.button9.ForeColor = System.Drawing.Color.White;
-            this.button9.Location = new System.Drawing.Point(324, 44);
+            this.button9.Location = new System.Drawing.Point(169, 22);
             this.button9.Name = "button9";
-            this.button9.Size = new System.Drawing.Size(86, 39);
+            this.button9.Size = new System.Drawing.Size(97, 35);
             this.button9.TabIndex = 6;
             this.button9.Text = "Thêm";
             this.button9.UseVisualStyleBackColor = false;
@@ -793,11 +1131,13 @@
             // 
             // dgvPart
             // 
+            this.dgvPart.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgvPart.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(59)))), ((int)(((byte)(122)))));
             this.dgvPart.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvPart.Location = new System.Drawing.Point(211, 89);
+            this.dgvPart.Location = new System.Drawing.Point(169, 85);
             this.dgvPart.Name = "dgvPart";
             this.dgvPart.RowHeadersWidth = 51;
-            this.dgvPart.Size = new System.Drawing.Size(410, 394);
+            this.dgvPart.Size = new System.Drawing.Size(753, 394);
             this.dgvPart.TabIndex = 5;
             this.dgvPart.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvPart_CellContentClick);
             this.dgvPart.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvPart_CellContentClick);
@@ -816,7 +1156,7 @@
             this.tabPage1.Margin = new System.Windows.Forms.Padding(2);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(2);
-            this.tabPage1.Size = new System.Drawing.Size(963, 502);
+            this.tabPage1.Size = new System.Drawing.Size(1277, 502);
             this.tabPage1.TabIndex = 3;
             this.tabPage1.Text = "Hợp Đồng";
             // 
@@ -856,12 +1196,13 @@
             // 
             // dateTo
             // 
-            this.dateTo.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dateTo.CalendarFont = new System.Drawing.Font("Century Gothic", 11.25F);
+            this.dateTo.Font = new System.Drawing.Font("Century Gothic", 11.25F);
             this.dateTo.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.dateTo.Location = new System.Drawing.Point(108, 135);
             this.dateTo.Margin = new System.Windows.Forms.Padding(2);
             this.dateTo.Name = "dateTo";
-            this.dateTo.Size = new System.Drawing.Size(151, 31);
+            this.dateTo.Size = new System.Drawing.Size(151, 26);
             this.dateTo.TabIndex = 21;
             this.dateTo.Value = new System.DateTime(2022, 4, 19, 16, 18, 38, 0);
             this.dateTo.ValueChanged += new System.EventHandler(this.dateTo_ValueChanged);
@@ -871,10 +1212,10 @@
             this.btnHopDong.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(59)))), ((int)(((byte)(122)))));
             this.btnHopDong.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnHopDong.ForeColor = System.Drawing.Color.White;
-            this.btnHopDong.Location = new System.Drawing.Point(26, 185);
+            this.btnHopDong.Location = new System.Drawing.Point(26, 184);
             this.btnHopDong.Margin = new System.Windows.Forms.Padding(2);
             this.btnHopDong.Name = "btnHopDong";
-            this.btnHopDong.Size = new System.Drawing.Size(190, 35);
+            this.btnHopDong.Size = new System.Drawing.Size(233, 35);
             this.btnHopDong.TabIndex = 20;
             this.btnHopDong.Text = "Hiển thị hợp đồng";
             this.btnHopDong.UseVisualStyleBackColor = false;
@@ -898,13 +1239,13 @@
             // historyDGV
             // 
             this.historyDGV.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.historyDGV.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.historyDGV.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(59)))), ((int)(((byte)(122)))));
             this.historyDGV.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.historyDGV.EnableHeadersVisualStyles = false;
-            this.historyDGV.Location = new System.Drawing.Point(276, 19);
+            this.historyDGV.Location = new System.Drawing.Point(276, 77);
             this.historyDGV.Name = "historyDGV";
             this.historyDGV.RowHeadersWidth = 51;
-            this.historyDGV.Size = new System.Drawing.Size(677, 329);
+            this.historyDGV.Size = new System.Drawing.Size(979, 396);
             this.historyDGV.TabIndex = 18;
             // 
             // menuStrip1
@@ -912,11 +1253,12 @@
             this.menuStrip1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(8)))), ((int)(((byte)(28)))), ((int)(((byte)(104)))));
             this.menuStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.managerToolStripMenuItem});
+            this.managerToolStripMenuItem,
+            this.toolStripMenuItem1});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Padding = new System.Windows.Forms.Padding(4, 10, 0, 2);
-            this.menuStrip1.Size = new System.Drawing.Size(1000, 33);
+            this.menuStrip1.Size = new System.Drawing.Size(1309, 36);
             this.menuStrip1.TabIndex = 4;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -924,10 +1266,11 @@
             // 
             this.managerToolStripMenuItem.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.managerToolStripMenuItem.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.managerToolStripMenuItem.Image = global::QuanLyNhaTro.Properties.Resources.profile;
             this.managerToolStripMenuItem.Margin = new System.Windows.Forms.Padding(25, 0, 0, 0);
             this.managerToolStripMenuItem.Name = "managerToolStripMenuItem";
             this.managerToolStripMenuItem.Padding = new System.Windows.Forms.Padding(40, 0, 4, 0);
-            this.managerToolStripMenuItem.Size = new System.Drawing.Size(98, 21);
+            this.managerToolStripMenuItem.Size = new System.Drawing.Size(118, 24);
             this.managerToolStripMenuItem.Text = "Admin";
             this.managerToolStripMenuItem.Click += new System.EventHandler(this.managerToolStripMenuItem_Click);
             // 
@@ -936,7 +1279,7 @@
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.DarkGray;
-            this.label1.Location = new System.Drawing.Point(810, 655);
+            this.label1.Location = new System.Drawing.Point(1128, 665);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(169, 17);
             this.label1.TabIndex = 48;
@@ -947,7 +1290,7 @@
             this.label9.AutoSize = true;
             this.label9.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label9.ForeColor = System.Drawing.Color.DarkGray;
-            this.label9.Location = new System.Drawing.Point(750, 638);
+            this.label9.Location = new System.Drawing.Point(1068, 648);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(229, 17);
             this.label9.TabIndex = 47;
@@ -958,7 +1301,7 @@
             this.label10.AutoSize = true;
             this.label10.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label10.ForeColor = System.Drawing.Color.DarkGray;
-            this.label10.Location = new System.Drawing.Point(921, 621);
+            this.label10.Location = new System.Drawing.Point(1239, 631);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(58, 17);
             this.label10.TabIndex = 46;
@@ -969,10 +1312,10 @@
             this.textBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(8)))), ((int)(((byte)(28)))), ((int)(((byte)(104)))));
             this.textBox1.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.textBox1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.textBox1.Location = new System.Drawing.Point(0, 33);
+            this.textBox1.Location = new System.Drawing.Point(0, 36);
             this.textBox1.Multiline = true;
             this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(1000, 32);
+            this.textBox1.Size = new System.Drawing.Size(1309, 32);
             this.textBox1.TabIndex = 49;
             // 
             // button3
@@ -982,348 +1325,13 @@
             this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button3.Font = new System.Drawing.Font("Verdana", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button3.ForeColor = System.Drawing.Color.White;
-            this.button3.Location = new System.Drawing.Point(956, 0);
+            this.button3.Location = new System.Drawing.Point(1265, 10);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(44, 44);
             this.button3.TabIndex = 50;
             this.button3.Text = "X";
             this.button3.UseVisualStyleBackColor = false;
             this.button3.Click += new System.EventHandler(this.button3_Click);
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(8)))), ((int)(((byte)(28)))), ((int)(((byte)(104)))));
-            this.pictureBox1.Image = global::QuanLyNhaTro.Properties.Resources.profile;
-            this.pictureBox1.Location = new System.Drawing.Point(24, 10);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(22, 25);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox1.TabIndex = 17;
-            this.pictureBox1.TabStop = false;
-            // 
-            // panel16
-            // 
-            this.panel16.Controls.Add(this.panel20);
-            this.panel16.Controls.Add(this.panel19);
-            this.panel16.Controls.Add(this.panel18);
-            this.panel16.Controls.Add(this.panel17);
-            this.panel16.Location = new System.Drawing.Point(3, 3);
-            this.panel16.Name = "panel16";
-            this.panel16.Size = new System.Drawing.Size(146, 495);
-            this.panel16.TabIndex = 50;
-            this.panel16.Paint += new System.Windows.Forms.PaintEventHandler(this.panel16_Paint);
-            // 
-            // button4
-            // 
-            this.button4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(59)))), ((int)(((byte)(122)))));
-            this.button4.Dock = System.Windows.Forms.DockStyle.Top;
-            this.button4.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(59)))), ((int)(((byte)(122)))));
-            this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button4.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button4.ForeColor = System.Drawing.Color.White;
-            this.button4.Location = new System.Drawing.Point(0, 0);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(146, 54);
-            this.button4.TabIndex = 0;
-            this.button4.Text = "Thêm";
-            this.button4.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button4.UseVisualStyleBackColor = false;
-            this.button4.Click += new System.EventHandler(this.button4_Click);
-            // 
-            // button5
-            // 
-            this.button5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(59)))), ((int)(((byte)(122)))));
-            this.button5.Dock = System.Windows.Forms.DockStyle.Top;
-            this.button5.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(59)))), ((int)(((byte)(122)))));
-            this.button5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button5.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button5.ForeColor = System.Drawing.Color.White;
-            this.button5.Location = new System.Drawing.Point(0, 0);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(146, 51);
-            this.button5.TabIndex = 2;
-            this.button5.Text = "Xoá";
-            this.button5.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button5.UseVisualStyleBackColor = false;
-            this.button5.Click += new System.EventHandler(this.button5_Click);
-            // 
-            // button6
-            // 
-            this.button6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(59)))), ((int)(((byte)(122)))));
-            this.button6.Dock = System.Windows.Forms.DockStyle.Top;
-            this.button6.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(59)))), ((int)(((byte)(122)))));
-            this.button6.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button6.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button6.ForeColor = System.Drawing.Color.White;
-            this.button6.Location = new System.Drawing.Point(0, 0);
-            this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(146, 51);
-            this.button6.TabIndex = 2;
-            this.button6.Text = "Liệt Kê";
-            this.button6.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button6.UseVisualStyleBackColor = false;
-            this.button6.Click += new System.EventHandler(this.button6_Click_1);
-            // 
-            // label14
-            // 
-            this.label14.AutoSize = true;
-            this.label14.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(59)))), ((int)(((byte)(59)))), ((int)(((byte)(122)))));
-            this.label14.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label14.ForeColor = System.Drawing.Color.White;
-            this.label14.Location = new System.Drawing.Point(1, 54);
-            this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(145, 30);
-            this.label14.TabIndex = 4;
-            this.label14.Text = "Vui lòng nhập theo thứ tự \r\nMSSV\r\n";
-            this.label14.Click += new System.EventHandler(this.label14_Click);
-            // 
-            // label15
-            // 
-            this.label15.AutoSize = true;
-            this.label15.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(59)))), ((int)(((byte)(59)))), ((int)(((byte)(122)))));
-            this.label15.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label15.ForeColor = System.Drawing.Color.White;
-            this.label15.Location = new System.Drawing.Point(0, 54);
-            this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(145, 45);
-            this.label15.TabIndex = 5;
-            this.label15.Text = "Vui lòng nhập theo thứ tự \r\nKhoa\r\n\r\n";
-            this.label15.Click += new System.EventHandler(this.label15_Click);
-            // 
-            // button11
-            // 
-            this.button11.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(59)))), ((int)(((byte)(122)))));
-            this.button11.Dock = System.Windows.Forms.DockStyle.Top;
-            this.button11.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(59)))), ((int)(((byte)(122)))));
-            this.button11.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button11.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button11.ForeColor = System.Drawing.Color.White;
-            this.button11.Location = new System.Drawing.Point(0, 0);
-            this.button11.Name = "button11";
-            this.button11.Size = new System.Drawing.Size(146, 51);
-            this.button11.TabIndex = 6;
-            this.button11.Text = "Cập Nhật";
-            this.button11.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button11.UseVisualStyleBackColor = false;
-            this.button11.Click += new System.EventHandler(this.button11_Click);
-            // 
-            // label16
-            // 
-            this.label16.AutoSize = true;
-            this.label16.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(59)))), ((int)(((byte)(59)))), ((int)(((byte)(122)))));
-            this.label16.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label16.ForeColor = System.Drawing.Color.White;
-            this.label16.Location = new System.Drawing.Point(0, 54);
-            this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(145, 120);
-            this.label16.TabIndex = 7;
-            this.label16.Text = "Vui lòng nhập theo thứ tự \r\nKhoa\r\nHọ và Tên\r\nĐiện Thoại\r\nLớp \r\nQuê Quán\r\n\r\n\r\n";
-            this.label16.Click += new System.EventHandler(this.label16_Click);
-            // 
-            // label13
-            // 
-            this.label13.AutoSize = true;
-            this.label13.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(59)))), ((int)(((byte)(59)))), ((int)(((byte)(122)))));
-            this.label13.Dock = System.Windows.Forms.DockStyle.Top;
-            this.label13.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label13.ForeColor = System.Drawing.Color.White;
-            this.label13.Location = new System.Drawing.Point(0, 54);
-            this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(145, 90);
-            this.label13.TabIndex = 1;
-            this.label13.Text = "Vui lòng nhập theo thứ tự \r\nKhoa \r\nHọ và Tên\r\nĐiện Thoại\r\nLớp\r\nQuê Quán";
-            this.label13.Click += new System.EventHandler(this.label13_Click);
-            // 
-            // panel17
-            // 
-            this.panel17.Controls.Add(this.label13);
-            this.panel17.Controls.Add(this.button4);
-            this.panel17.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel17.Location = new System.Drawing.Point(0, 0);
-            this.panel17.Name = "panel17";
-            this.panel17.Size = new System.Drawing.Size(146, 145);
-            this.panel17.TabIndex = 17;
-            // 
-            // panel18
-            // 
-            this.panel18.Controls.Add(this.button5);
-            this.panel18.Controls.Add(this.label14);
-            this.panel18.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel18.Location = new System.Drawing.Point(0, 145);
-            this.panel18.Name = "panel18";
-            this.panel18.Size = new System.Drawing.Size(146, 87);
-            this.panel18.TabIndex = 3;
-            // 
-            // panel19
-            // 
-            this.panel19.Controls.Add(this.button6);
-            this.panel19.Controls.Add(this.label15);
-            this.panel19.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel19.Location = new System.Drawing.Point(0, 232);
-            this.panel19.Name = "panel19";
-            this.panel19.Size = new System.Drawing.Size(146, 100);
-            this.panel19.TabIndex = 17;
-            // 
-            // panel20
-            // 
-            this.panel20.Controls.Add(this.button11);
-            this.panel20.Controls.Add(this.label16);
-            this.panel20.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel20.Location = new System.Drawing.Point(0, 332);
-            this.panel20.Name = "panel20";
-            this.panel20.Size = new System.Drawing.Size(146, 163);
-            this.panel20.TabIndex = 17;
-            // 
-            // label17
-            // 
-            this.label17.AutoSize = true;
-            this.label17.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label17.ForeColor = System.Drawing.Color.White;
-            this.label17.Location = new System.Drawing.Point(8, 6);
-            this.label17.Name = "label17";
-            this.label17.Size = new System.Drawing.Size(64, 16);
-            this.label17.TabIndex = 19;
-            this.label17.Text = "Giới hạn";
-            // 
-            // label18
-            // 
-            this.label18.AutoSize = true;
-            this.label18.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label18.ForeColor = System.Drawing.Color.White;
-            this.label18.Location = new System.Drawing.Point(8, 6);
-            this.label18.Name = "label18";
-            this.label18.Size = new System.Drawing.Size(62, 16);
-            this.label18.TabIndex = 21;
-            this.label18.Text = "Chủ nhà";
-            // 
-            // panel21
-            // 
-            this.panel21.Controls.Add(this.panel24);
-            this.panel21.Controls.Add(this.button14);
-            this.panel21.Controls.Add(this.panel23);
-            this.panel21.Controls.Add(this.button13);
-            this.panel21.Controls.Add(this.panel22);
-            this.panel21.Controls.Add(this.button12);
-            this.panel21.Location = new System.Drawing.Point(0, 0);
-            this.panel21.Name = "panel21";
-            this.panel21.Size = new System.Drawing.Size(147, 502);
-            this.panel21.TabIndex = 22;
-            this.panel21.Paint += new System.Windows.Forms.PaintEventHandler(this.panel21_Paint);
-            // 
-            // button12
-            // 
-            this.button12.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(59)))), ((int)(((byte)(122)))));
-            this.button12.Dock = System.Windows.Forms.DockStyle.Top;
-            this.button12.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(59)))), ((int)(((byte)(122)))));
-            this.button12.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button12.ForeColor = System.Drawing.Color.White;
-            this.button12.Location = new System.Drawing.Point(0, 0);
-            this.button12.Name = "button12";
-            this.button12.Size = new System.Drawing.Size(147, 48);
-            this.button12.TabIndex = 51;
-            this.button12.Text = "Thêm";
-            this.button12.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button12.UseVisualStyleBackColor = false;
-            this.button12.Click += new System.EventHandler(this.button12_Click);
-            // 
-            // panel22
-            // 
-            this.panel22.Controls.Add(this.label19);
-            this.panel22.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel22.Location = new System.Drawing.Point(0, 48);
-            this.panel22.Name = "panel22";
-            this.panel22.Size = new System.Drawing.Size(147, 84);
-            this.panel22.TabIndex = 23;
-            // 
-            // label19
-            // 
-            this.label19.AutoSize = true;
-            this.label19.Dock = System.Windows.Forms.DockStyle.Top;
-            this.label19.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label19.ForeColor = System.Drawing.Color.White;
-            this.label19.Location = new System.Drawing.Point(0, 0);
-            this.label19.Name = "label19";
-            this.label19.Size = new System.Drawing.Size(145, 75);
-            this.label19.TabIndex = 23;
-            this.label19.Text = "Vui lòng nhập theo thứ tự \r\nĐiện Thoại\r\nĐịa Chỉ\r\nGiá\r\nGiới Hạn";
-            this.label19.Click += new System.EventHandler(this.label19_Click);
-            // 
-            // button13
-            // 
-            this.button13.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(59)))), ((int)(((byte)(122)))));
-            this.button13.Dock = System.Windows.Forms.DockStyle.Top;
-            this.button13.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(59)))), ((int)(((byte)(122)))));
-            this.button13.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button13.ForeColor = System.Drawing.Color.White;
-            this.button13.Location = new System.Drawing.Point(0, 132);
-            this.button13.Name = "button13";
-            this.button13.Size = new System.Drawing.Size(147, 48);
-            this.button13.TabIndex = 52;
-            this.button13.Text = "Xoá";
-            this.button13.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button13.UseVisualStyleBackColor = false;
-            this.button13.Click += new System.EventHandler(this.button13_Click);
-            // 
-            // panel23
-            // 
-            this.panel23.Controls.Add(this.label20);
-            this.panel23.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel23.Location = new System.Drawing.Point(0, 180);
-            this.panel23.Name = "panel23";
-            this.panel23.Size = new System.Drawing.Size(147, 39);
-            this.panel23.TabIndex = 53;
-            // 
-            // label20
-            // 
-            this.label20.AutoSize = true;
-            this.label20.Dock = System.Windows.Forms.DockStyle.Top;
-            this.label20.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label20.ForeColor = System.Drawing.Color.White;
-            this.label20.Location = new System.Drawing.Point(0, 0);
-            this.label20.Name = "label20";
-            this.label20.Size = new System.Drawing.Size(145, 30);
-            this.label20.TabIndex = 23;
-            this.label20.Text = "Vui lòng nhập theo thứ tự \r\nMã Nhà Trọ\r\n";
-            this.label20.Click += new System.EventHandler(this.label20_Click);
-            // 
-            // button14
-            // 
-            this.button14.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(59)))), ((int)(((byte)(122)))));
-            this.button14.Dock = System.Windows.Forms.DockStyle.Top;
-            this.button14.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(59)))), ((int)(((byte)(122)))));
-            this.button14.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button14.ForeColor = System.Drawing.Color.White;
-            this.button14.Location = new System.Drawing.Point(0, 219);
-            this.button14.Name = "button14";
-            this.button14.Size = new System.Drawing.Size(147, 48);
-            this.button14.TabIndex = 53;
-            this.button14.Text = "Sửa";
-            this.button14.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button14.UseVisualStyleBackColor = false;
-            this.button14.Click += new System.EventHandler(this.button14_Click);
-            // 
-            // panel24
-            // 
-            this.panel24.Controls.Add(this.label21);
-            this.panel24.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel24.Location = new System.Drawing.Point(0, 267);
-            this.panel24.Name = "panel24";
-            this.panel24.Size = new System.Drawing.Size(147, 116);
-            this.panel24.TabIndex = 55;
-            // 
-            // label21
-            // 
-            this.label21.AutoSize = true;
-            this.label21.Dock = System.Windows.Forms.DockStyle.Top;
-            this.label21.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label21.ForeColor = System.Drawing.Color.White;
-            this.label21.Location = new System.Drawing.Point(0, 0);
-            this.label21.Name = "label21";
-            this.label21.Size = new System.Drawing.Size(145, 105);
-            this.label21.TabIndex = 23;
-            this.label21.Text = "Vui lòng nhập theo thứ tự \r\nMã Nhà Trọ\r\nChủ Nhà\r\nĐiện Thoại\r\nĐịa Chỉ\r\nGiá\r\nGiới H" +
-    "ạn\r\n";
-            this.label21.Click += new System.EventHandler(this.label21_Click);
             // 
             // label22
             // 
@@ -1336,14 +1344,25 @@
             this.label22.TabIndex = 23;
             this.label22.Text = "Motel Room";
             // 
+            // toolStripMenuItem1
+            // 
+            this.toolStripMenuItem1.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.toolStripMenuItem1.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.toolStripMenuItem1.Image = global::QuanLyNhaTro.Properties.Resources.keys;
+            this.toolStripMenuItem1.Margin = new System.Windows.Forms.Padding(25, 0, 0, 0);
+            this.toolStripMenuItem1.Name = "toolStripMenuItem1";
+            this.toolStripMenuItem1.Padding = new System.Windows.Forms.Padding(40, 0, 4, 0);
+            this.toolStripMenuItem1.Size = new System.Drawing.Size(122, 24);
+            this.toolStripMenuItem1.Text = "Logout";
+            this.toolStripMenuItem1.Click += new System.EventHandler(this.toolStripMenuItem1_Click);
+            // 
             // fDataManage
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(59)))), ((int)(((byte)(122)))));
-            this.ClientSize = new System.Drawing.Size(1000, 693);
+            this.ClientSize = new System.Drawing.Size(1309, 693);
             this.Controls.Add(this.label22);
-            this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.button3);
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.label1);
@@ -1360,6 +1379,15 @@
             this.tabControl2.ResumeLayout(false);
             this.tabPage4.ResumeLayout(false);
             this.tabPage4.PerformLayout();
+            this.panel16.ResumeLayout(false);
+            this.panel20.ResumeLayout(false);
+            this.panel20.PerformLayout();
+            this.panel19.ResumeLayout(false);
+            this.panel19.PerformLayout();
+            this.panel18.ResumeLayout(false);
+            this.panel18.PerformLayout();
+            this.panel17.ResumeLayout(false);
+            this.panel17.PerformLayout();
             this.panel10.ResumeLayout(false);
             this.panel10.PerformLayout();
             this.panel11.ResumeLayout(false);
@@ -1377,6 +1405,13 @@
             ((System.ComponentModel.ISupportInitialize)(this.dgvSinhvien)).EndInit();
             this.tabPage5.ResumeLayout(false);
             this.tabPage5.PerformLayout();
+            this.panel21.ResumeLayout(false);
+            this.panel24.ResumeLayout(false);
+            this.panel24.PerformLayout();
+            this.panel23.ResumeLayout(false);
+            this.panel23.PerformLayout();
+            this.panel22.ResumeLayout(false);
+            this.panel22.PerformLayout();
             this.panel15.ResumeLayout(false);
             this.panel15.PerformLayout();
             this.panel14.ResumeLayout(false);
@@ -1400,23 +1435,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.historyDGV)).EndInit();
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            this.panel16.ResumeLayout(false);
-            this.panel17.ResumeLayout(false);
-            this.panel17.PerformLayout();
-            this.panel18.ResumeLayout(false);
-            this.panel18.PerformLayout();
-            this.panel19.ResumeLayout(false);
-            this.panel19.PerformLayout();
-            this.panel20.ResumeLayout(false);
-            this.panel20.PerformLayout();
-            this.panel21.ResumeLayout(false);
-            this.panel22.ResumeLayout(false);
-            this.panel22.PerformLayout();
-            this.panel23.ResumeLayout(false);
-            this.panel23.PerformLayout();
-            this.panel24.ResumeLayout(false);
-            this.panel24.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -1500,7 +1518,6 @@
         private System.Windows.Forms.Panel panel15;
         private System.Windows.Forms.TextBox textBox3;
         private System.Windows.Forms.Label label12;
-        private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Panel panel16;
         private System.Windows.Forms.Button button6;
         private System.Windows.Forms.Button button5;
@@ -1527,6 +1544,7 @@
         private System.Windows.Forms.Label label17;
         private System.Windows.Forms.Label label18;
         private System.Windows.Forms.Label label22;
+        private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem1;
         /*        private System.Windows.Forms.Label label4;
 private System.Windows.Forms.Label label2;*/
     }

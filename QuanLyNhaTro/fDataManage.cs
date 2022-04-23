@@ -21,6 +21,15 @@ namespace QuanLyNhaTro
             manager.Closed += (s, args) => this.Close();
             manager.Show();
         }
+
+        private void toolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            Form1 formLogin = new Form1();
+            formLogin.Closed += (s, args) => this.Close();
+            formLogin.Show();
+        }
+
         public fDataManage()
         {
             InitializeComponent();
@@ -169,40 +178,46 @@ namespace QuanLyNhaTro
             }
             else
             {
-                nhaTroDAO.Instance.getTable2().ForEach(delegate (nhaTroList item)
+                DialogResult dialogResult = MessageBox.Show("Bạn có chắc chắn muốn cập nhật?", "Thông báo", MessageBoxButtons.YesNo);
+                if (dialogResult == DialogResult.Yes)
                 {
-                    if (item.DiaChi == textBox4.Text &&  item.MaNhaTro != int.Parse(textBox5.Text))
+                    nhaTroDAO.Instance.getTable2().ForEach(delegate (nhaTroList item)
                     {
-                        MessageBox.Show("Trùng địa chỉ", "Thông báo", MessageBoxButtons.OK);
-                        isSame = true;
+                        if (item.DiaChi == textBox4.Text && item.MaNhaTro != int.Parse(textBox5.Text))
+                        {
+                            MessageBox.Show("Trùng địa chỉ", "Thông báo", MessageBoxButtons.OK);
+                            isSame = true;
+                        }
+                    });
+                    if (!isSame)
+                    {
+                        string diaChi = textBox4.Text;
+                        int maChuNha = (comboBox2.SelectedItem as chuNha).MaChuNha;
+                        int limit = int.Parse(numericUpDown1.Value.ToString());
+                        float gia = float.Parse(textBox8.Text);
+                        int maNhaTro = int.Parse(textBox5.Text);
+                        if (countDAO.Instance.getSVCount(maNhaTro) > limit)
+                        {
+                            MessageBox.Show("Giới hạn thấp hơn số sinh viên đang ở trọ", "Thông báo", MessageBoxButtons.OK);
+                        }
+                        else
+                        {
+                            if (countDAO.Instance.getSVCount(maNhaTro) < limit)
+                                nhaTroDAO.Instance.availStatus(maNhaTro);
+                            else if (countDAO.Instance.getSVCount(maNhaTro) == limit)
+                                nhaTroDAO.Instance.fullStatus(maNhaTro);
+                            nhaTroDAO.Instance.UPDATEINSERT(maNhaTro, maChuNha, diaChi, gia, limit);
+                            LoadDanhmuc();
+                            LoadDanhmuc();
+                            textBox5.Clear();
+                            textBox4.Clear();
+                            textBox8.Clear();
+                            numericUpDown1.Value = 0;
+                            MessageBox.Show("Sửa nhà trọ thành công", "Thông báo", MessageBoxButtons.OK);
+                        }
                     }
-                });
-                if (!isSame)
-                {
-                    string diaChi = textBox4.Text;
-                    int maChuNha = (comboBox2.SelectedItem as chuNha).MaChuNha;
-                    int limit = int.Parse(numericUpDown1.Value.ToString());
-                    float gia = float.Parse(textBox8.Text);
-                    int maNhaTro = int.Parse(textBox5.Text);
-                    if (countDAO.Instance.getSVCount(maNhaTro) > limit)
-                    {
-                        MessageBox.Show("Giới hạn thấp hơn số sinh viên đang ở trọ", "Thông báo", MessageBoxButtons.OK);
-                    }else
-                    {
-                        if (countDAO.Instance.getSVCount(maNhaTro) < limit)
-                            nhaTroDAO.Instance.availStatus(maNhaTro);
-                        else if (countDAO.Instance.getSVCount(maNhaTro) == limit)
-                            nhaTroDAO.Instance.fullStatus(maNhaTro);
-                        nhaTroDAO.Instance.UPDATEINSERT(maNhaTro, maChuNha, diaChi, gia, limit);
-                        LoadDanhmuc();
-                        LoadDanhmuc();
-                        textBox5.Clear();
-                        textBox4.Clear();
-                        textBox8.Clear();
-                        numericUpDown1.Value = 0;
-                        MessageBox.Show("Sửa nhà trọ thành công", "Thông báo", MessageBoxButtons.OK);
-                    }
-                }
+                }    
+                    
             }
         }
 
@@ -348,27 +363,30 @@ namespace QuanLyNhaTro
                 MessageBox.Show("Chưa chọn Mã Sinh Viên", "Thông Báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             else {
-                int maSinhVien = int.Parse(txtMSSV.Text);
-                int maThanhToan = sinhVienDAO.Instance.getMaTTFromMaSV(maSinhVien);
-                int maNhaTro = sinhVienDAO.Instance.getMaNTFromMaSV(maSinhVien);
-                hopDongDAO.Instance.updateCountDown(maThanhToan);
-                if (countDAO.Instance.getSVCount(maNhaTro) == 0) /*Nếu nhà trọ cũ 0 có người*/
+                DialogResult dialogResult = MessageBox.Show("Xóa sinh viên sẽ xóa hợp đồng, thanh toán có liên quan", "Thông báo", MessageBoxButtons.YesNo);
+                if (dialogResult == DialogResult.Yes)
                 {
-                    thanhToanDAO.Instance.checkOut(maThanhToan); /*đổi status thanh toán thành đã thanh toán*/
-                    nhaTroDAO.Instance.availStatus(maNhaTro);  /*update status NT -> trống*/
+                    int maSinhVien = int.Parse(txtMSSV.Text);
+                    int maThanhToan = sinhVienDAO.Instance.getMaTTFromMaSV(maSinhVien);
+                    int maNhaTro = sinhVienDAO.Instance.getMaNTFromMaSV(maSinhVien);
+                    hopDongDAO.Instance.updateCountDown(maThanhToan);
+                    if (countDAO.Instance.getSVCount(maNhaTro) == 0) /*Nếu nhà trọ cũ 0 có người*/
+                    {
+                        thanhToanDAO.Instance.checkOut(maThanhToan); /*đổi status thanh toán thành đã thanh toán*/
+                        nhaTroDAO.Instance.availStatus(maNhaTro);  /*update status NT -> trống*/
+                    }
+                    hopDongDAO.Instance.deleteSinhvien(maSinhVien); /*Xoa hop dong cua sv*/
+                    sinhVienDAO.Instance.DELETESinhVien(maSinhVien); /*xóa sinh viên*/
+                    if (countDAO.Instance.getSVCount(maNhaTro) < nhaTroDAO.Instance.checkNhaTro(maNhaTro))
+                        nhaTroDAO.Instance.availStatus(maNhaTro); /*update status nha tro thanh con cho*/
+                    LoadListsinhVien();
+                    txtMSSV.Clear();
+                    txtnameSV.Clear();
+                    txtDTSV.Clear();
+                    txtLopSV.Clear();
+                    txtQueQuan.Clear();
+                    MessageBox.Show("Xóa sinh viên thành công", "Thông Báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
-                hopDongDAO.Instance.deleteSinhvien(maSinhVien); /*Xoa hop dong cua sv*/
-                sinhVienDAO.Instance.DELETESinhVien(maSinhVien); /*xóa sinh viên*/
-                if (countDAO.Instance.getSVCount(maNhaTro) < nhaTroDAO.Instance.checkNhaTro(maNhaTro))
-                    nhaTroDAO.Instance.availStatus(maNhaTro); /*update status nha tro thanh con cho*/
-                LoadListsinhVien();
-                txtMSSV.Clear();
-                txtnameSV.Clear();
-                txtDTSV.Clear();
-                txtLopSV.Clear();
-                txtQueQuan.Clear();
-                MessageBox.Show("Xóa sinh viên thành công", "Thông Báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
-
             }
         }
 
@@ -401,20 +419,24 @@ namespace QuanLyNhaTro
             }
             else
             {
-                int maSinhVien = Convert.ToInt32(txtMSSV.Text);
-                string name = txtnameSV.Text;
-                int khoa = (cbKhoaSV.SelectedItem as khoa).MaKhoa;
-                string dienThoai = txtDTSV.Text;
-                string lop = txtLopSV.Text;
-                string queQuan = txtQueQuan.Text;
-                sinhVienDAO.Instance.UPDATESinhVien(maSinhVien,khoa, name, dienThoai, lop, queQuan);
-                LoadListsinhVien();
-                txtMSSV.Clear();
-                txtnameSV.Clear();
-                txtDTSV.Clear();
-                txtLopSV.Clear();
-                txtQueQuan.Clear();
-                MessageBox.Show("Cập nhật sinh viên thành công", "Thông Báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                DialogResult dialogResult = MessageBox.Show("Bạn có chắc chắn muốn cập nhật?", "Thông báo", MessageBoxButtons.YesNo);
+                if (dialogResult == DialogResult.Yes)
+                {
+                    int maSinhVien = Convert.ToInt32(txtMSSV.Text);
+                    string name = txtnameSV.Text;
+                    int khoa = (cbKhoaSV.SelectedItem as khoa).MaKhoa;
+                    string dienThoai = txtDTSV.Text;
+                    string lop = txtLopSV.Text;
+                    string queQuan = txtQueQuan.Text;
+                    sinhVienDAO.Instance.UPDATESinhVien(maSinhVien, khoa, name, dienThoai, lop, queQuan);
+                    LoadListsinhVien();
+                    txtMSSV.Clear();
+                    txtnameSV.Clear();
+                    txtDTSV.Clear();
+                    txtLopSV.Clear();
+                    txtQueQuan.Clear();
+                    MessageBox.Show("Cập nhật sinh viên thành công", "Thông Báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
             }
         }
 
@@ -636,5 +658,7 @@ namespace QuanLyNhaTro
             label20.Hide();
             label21.Hide();
         }
+
+
     }
 }

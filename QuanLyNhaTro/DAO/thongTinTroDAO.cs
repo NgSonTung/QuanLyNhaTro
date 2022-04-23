@@ -20,7 +20,7 @@ namespace QuanLyNhaTro.DAO
 
         public List<thongTinTro> getMenu(int id)
         {
-            string sql = "select SV.maSinhVien, SV.name, SV.dienThoai, TT.dateCheckIn, NT.gia, NT.gia / HD.soSinhVien as tienNha from sinhVien SV, hopDong HD, thanhToan TT, nhaTro NT where SV.maSinhVien = HD.maSinhVien and HD.soSinhVien > 0 and HD.maThanhToan = TT.maThanhToan and SV.status = 1 and TT.status = 0 and TT.maNhaTro = NT.maNhaTro and TT.maNhaTro = " + id;
+            string sql = "select SV.maSinhVien, SV.name, SV.dienThoai, TT.dateCheckIn, NT.gia, NT.gia / HD.soSinhVien as tienNha from sinhVien SV, hopDong HD, thanhToan TT, nhaTro NT where SV.maSinhVien = HD.maSinhVien and HD.soSinhVien > 0 and HD.maThanhToan = TT.maThanhToan and SV.status = 1 and TT.status = 0 and TT.maNhaTro = NT.maNhaTro and HD.soSinhVien > 0 and TT.maNhaTro = " + id;
             List<thongTinTro> thongTinTroList = new List<thongTinTro>();
             DataTable data = providerDAO.Instance.loadDL(sql);
             foreach (DataRow item in data.Rows)

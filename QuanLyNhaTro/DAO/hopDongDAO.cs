@@ -33,7 +33,7 @@ namespace QuanLyNhaTro.DAO
         }
         public List<hopDong> getBillInfo()
         {
-            string query = "select * from hopDong";
+            string query = "select * from hopDong ";
             List<hopDong> hopDongList = new List<hopDong>();
             DataTable data = providerDAO.Instance.loadDL(query);
             foreach (DataRow item in data.Rows)
@@ -44,6 +44,13 @@ namespace QuanLyNhaTro.DAO
             return hopDongList;
 
         }
+
+        public void updateChuyenTro(int maThanhToan,int maSinhVien)
+        {
+            string query = "update hopDong set soSinhVien = -1  where maThanhToan = " + maThanhToan+" and masinhvien = "+ maSinhVien;
+            providerDAO.Instance.loadDL(query);
+        }
+
         public void insertBillInfo(int maThanhToan, int maSinhVien, int soSinhVien)
         {
             string query = "insert into hopDong values('" + maThanhToan + "','" + maSinhVien + "','" + soSinhVien + "')";
@@ -64,13 +71,13 @@ namespace QuanLyNhaTro.DAO
 
         public void updateCountUp(int maThanhToan)
         {
-            string query = "update hopDong set soSinhVien = soSinhVien + 1  where maThanhToan = " + maThanhToan;
+            string query = "update hopDong set soSinhVien = soSinhVien + 1  where maThanhToan = " + maThanhToan + "and soSinhVien > 0";
             providerDAO.Instance.loadDL(query);
         }
 
         public void updateCountDown(int maThanhToan)
         {
-            string query = "update hopDong set soSinhVien = soSinhVien - 1  where maThanhToan = " + maThanhToan;
+            string query = "update hopDong set soSinhVien = soSinhVien - 1  where maThanhToan = " + maThanhToan + "and soSinhVien > 0";
             providerDAO.Instance.loadDL(query);
         }
         public void count(int maHopDong)
@@ -85,6 +92,5 @@ namespace QuanLyNhaTro.DAO
             DataTable data = providerDAO.Instance.loadDL(query);
             return data.Rows.Count; /* kiểm tra xem nếu có sẽ trả dữ liệu => số dòng > 0 */
         }
-
     }
 }
