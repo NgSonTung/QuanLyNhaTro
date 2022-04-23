@@ -484,7 +484,6 @@ namespace QuanLyNhaTro
         {
             checkDate();
         }
-
         private void dateTo_ValueChanged(object sender, EventArgs e)
         {
             checkDate();
@@ -513,6 +512,123 @@ namespace QuanLyNhaTro
         private void button2_Click(object sender, EventArgs e)
         {
             LoadDanhmuc();
+        }
+
+        private void panel16_Paint(object sender, PaintEventArgs e)
+        {
+            label13.Hide();
+            label14.Hide();
+            label15.Hide();
+            label16.Hide();
+        }
+
+        private void button6_Click_1(object sender, EventArgs e)
+        {
+            showMenu(label15);
+
+        }
+
+        private void button11_Click(object sender, EventArgs e)
+        {
+            showMenu(label16);
+        }
+        private void customizeDesign()
+        {
+            label13.Visible = false;
+            label14.Visible = false;
+            label15.Visible = false;
+            label16.Visible = false;
+            label19.Visible = false;
+            label20.Visible = false;
+            label21.Visible = false;
+        }
+        private void hideMenu()
+        {
+            if (label13.Visible == true || label14.Visible == true || label15.Visible == true || label16.Visible == true)
+                label13.Visible = false;
+                label14.Visible = false;
+                label15.Visible = false;
+                label16.Visible = false;
+        }
+        private void showMenu(Label subMenu)
+        {
+            if (subMenu.Visible == false)
+            {
+                hideMenu();
+                subMenu.Visible = true;
+            }
+            else
+                subMenu.Visible=false;
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            showMenu(label13);
+
+
+        }
+
+        private void label13_Click(object sender, EventArgs e)
+        {
+            hideMenu();
+        }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            showMenu(label14);
+
+        }
+
+        private void label14_Click(object sender, EventArgs e)
+        {
+            hideMenu();
+        }
+
+        private void label15_Click(object sender, EventArgs e)
+        {
+            hideMenu();
+        }
+
+        private void label16_Click(object sender, EventArgs e)
+        {
+            hideMenu();
+        }
+
+        private void button12_Click(object sender, EventArgs e)
+        {
+            showMenu(label19);
+        }
+
+        private void button13_Click(object sender, EventArgs e)
+        {
+            showMenu(label20);
+        }
+
+        private void button14_Click(object sender, EventArgs e)
+        {
+            showMenu(label21);
+        }
+
+        private void label19_Click(object sender, EventArgs e)
+        {
+            hideMenu();
+        }
+
+        private void label20_Click(object sender, EventArgs e)
+        {
+            hideMenu();
+        }
+
+        private void label21_Click(object sender, EventArgs e)
+        {
+            hideMenu();
+        }
+
+        private void panel21_Paint(object sender, PaintEventArgs e)
+        {
+            label19.Hide();
+            label20.Hide();
+            label21.Hide();
         }
     }
 }
