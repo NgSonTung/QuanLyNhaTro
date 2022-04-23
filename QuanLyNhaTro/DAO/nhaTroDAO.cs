@@ -93,9 +93,9 @@ namespace QuanLyNhaTro.DAO
         {
             List<nhaTroList> list = new List<nhaTroList>();
             List<nhaTroList> listTemp = getTable2();
-            string cmdDiaChi = "select distinct NT.maNhaTro, CN.ten, NT.diaChi, NT.gia, NT.limit , NT.status, HDTT.soSinhVien, CN.sdt from chuNha CN, nhaTro NT left join ( select HD.soSinhVien ,TT.maNhaTro from hopDong HD, thanhToan TT where HD.maThanhToan = TT.maNhaTro and TT.status = 0 ) HDTT on NT.maNhaTro = HDTT.maNhaTro where NT.maChuNha = CN.maChuNha and dbo.fuConvertToUnsign1 (nt.diachi) LIKE N'%' + dbo.fuConvertToUnsign1 (N'" + searchItem + "') + '%' ";
-            string cmdChuNha = "select distinct NT.maNhaTro, CN.ten, NT.diaChi, NT.gia, NT.limit , NT.status, HDTT.soSinhVien, CN.sdt from chuNha CN, nhaTro NT left join ( select HD.soSinhVien ,TT.maNhaTro from hopDong HD, thanhToan TT where HD.maThanhToan = TT.maNhaTro and TT.status = 0 ) HDTT on NT.maNhaTro = HDTT.maNhaTro where NT.maChuNha = CN.maChuNha and dbo.fuConvertToUnsign1 (CN.ten) LIKE N'%' + dbo.fuConvertToUnsign1 (N'" + searchItem + "') + '%' ";
-            string cmdSDT = "select distinct NT.maNhaTro, CN.ten, NT.diaChi, NT.gia, NT.limit , NT.status, HDTT.soSinhVien, CN.sdt from chuNha CN, nhaTro NT left join ( select HD.soSinhVien ,TT.maNhaTro from hopDong HD, thanhToan TT where HD.maThanhToan = TT.maNhaTro and TT.status = 0 ) HDTT on NT.maNhaTro = HDTT.maNhaTro where NT.maChuNha = CN.maChuNha and CN.sdt like N'%' + dbo.fuConvertToUnsign1 (" + searchItem + ") + '%' ";
+            string cmdDiaChi = "select distinct NT.maNhaTro, CN.ten, NT.diaChi, NT.gia, NT.limit , NT.status, HDTT.soSinhVien, CN.sdt, CN.diaChiChu from chuNha CN, nhaTro NT left join ( select HD.soSinhVien ,TT.maNhaTro from hopDong HD, thanhToan TT where HD.maThanhToan = TT.maNhaTro and TT.status = 0 ) HDTT on NT.maNhaTro = HDTT.maNhaTro where NT.maChuNha = CN.maChuNha and dbo.fuConvertToUnsign1 (nt.diachi) LIKE N'%' + dbo.fuConvertToUnsign1 (N'" + searchItem + "') + '%' ";
+            string cmdChuNha = "select distinct NT.maNhaTro, CN.ten, NT.diaChi, NT.gia, NT.limit , NT.status, HDTT.soSinhVien, CN.sdt, CN.diaChiChu from chuNha CN, nhaTro NT left join ( select HD.soSinhVien ,TT.maNhaTro from hopDong HD, thanhToan TT where HD.maThanhToan = TT.maNhaTro and TT.status = 0 ) HDTT on NT.maNhaTro = HDTT.maNhaTro where NT.maChuNha = CN.maChuNha and dbo.fuConvertToUnsign1 (CN.ten) LIKE N'%' + dbo.fuConvertToUnsign1 (N'" + searchItem + "') + '%' ";
+            string cmdSDT = "select distinct NT.maNhaTro, CN.ten, NT.diaChi, NT.gia, NT.limit , NT.status, HDTT.soSinhVien, CN.sdt, CN.diaChiChu from chuNha CN, nhaTro NT left join ( select HD.soSinhVien ,TT.maNhaTro from hopDong HD, thanhToan TT where HD.maThanhToan = TT.maNhaTro and TT.status = 0 ) HDTT on NT.maNhaTro = HDTT.maNhaTro where NT.maChuNha = CN.maChuNha and CN.sdt like N'%' + dbo.fuConvertToUnsign1 (" + searchItem + ") + '%' ";
             DataTable data;
             if (!int.TryParse(searchItem, out int _))
             {
@@ -127,13 +127,5 @@ namespace QuanLyNhaTro.DAO
             else
                 return listTemp;
         }
-        /*public bool deletenhatro(int maNhaTro)
-        {
-            thanhToanDAO.Instance.DeletethanhToan(maNhaTro); 
-            string query = "delete nhaTro where maNhaTro =" + maNhaTro;
-
-            int result = providerDAO.Instance.ExecuteQuery(query);
-            return result > 0;
-        }*/
     }
 }
