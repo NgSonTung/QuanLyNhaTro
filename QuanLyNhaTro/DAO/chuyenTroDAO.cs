@@ -36,5 +36,19 @@ namespace QuanLyNhaTro.DAO
             return chuyenTroList;
 
         }
+
+        public List<chuyenTro> getListTro(int maNhaTro)
+        {
+            string sql = "select sv.maSinhVien, sv.name, hd.maHopDong, tt.maThanhToan, nt.maNhaTro from sinhVien sv, hopDong hd, thanhToan  tt, nhaTro nt where nt.maNhaTro = tt.maNhaTro and tt.maThanhToan = hd.maThanhToan and hd.maSinhVien = sv.maSinhVien and nt.maNhaTro = " + maNhaTro;
+            List<chuyenTro> chuyenTroList = new List<chuyenTro>();
+            DataTable data = providerDAO.Instance.loadDL(sql);
+            foreach (DataRow item in data.Rows)
+            {
+                chuyenTro chuyenTro = new chuyenTro(item);
+                chuyenTroList.Add(chuyenTro);
+            }
+            return chuyenTroList;
+
+        }
     }
 }

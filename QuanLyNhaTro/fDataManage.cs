@@ -26,12 +26,22 @@ namespace QuanLyNhaTro
             InitializeComponent();
             loadDate();
             loadHistory();
+            loadChuNha();
+        }
+        void loadChuNha()
+        {   
+            comboBox2.DataSource = chunhaDAO.Instance.getChuNha();
+            comboBox2.DisplayMember = "ten";
         }
         void LoadDanhmuc()
         {
-            List<nhaTro> nhatro = nhaTroDAO.Instance.getTable();
-            DAO.providerDAO DP = new DAO.providerDAO();
-            dgvPart.DataSource = nhatro;
+            List<nhaTroList> nhaTroList = nhaTroDAO.Instance.getTable2();
+            dgvPart.DataSource = nhaTroDAO.Instance.getTable2();
+            foreach (nhaTroList item in nhaTroList)
+            {
+                dgvPart.Tag = item;
+            }
+            dgvPart.Columns["diaChiChu"].Visible = false;
         }
 
         private void Admin_Load_1(object sender, EventArgs e)
@@ -42,12 +52,50 @@ namespace QuanLyNhaTro
 
         private void button9_Click(object sender, EventArgs e)
         {
-            string diaChi = textBox4.Text;
-            float gia = float.Parse(textBox8.Text);
-            
-            /*nhaTroDAO.Instance.INSERT(diaChi, gia);*/
-            LoadDanhmuc();
-
+            bool isSame = false;
+            if (comboBox2.Text == "")
+            {
+                MessageBox.Show("Chưa chọn chủ nhà", "Thông báo", MessageBoxButtons.OK);
+            } else if (textBox4.Text == "")
+            {
+                MessageBox.Show("Chưa nhập địa chỉ", "Thông báo", MessageBoxButtons.OK);
+            }
+            else if (textBox8.Text == "")
+            {
+                MessageBox.Show("Chưa nhập giá", "Thông báo", MessageBoxButtons.OK);
+            }
+            else if (!float.TryParse(textBox8.Text, out float _))
+            {
+                MessageBox.Show("Giá chưa đúng", "Thông báo", MessageBoxButtons.OK);
+            }
+            else if (numericUpDown1.Value <= 0)
+            {
+                MessageBox.Show("Chưa chọn giới hạn nhà trọ", "Thông báo", MessageBoxButtons.OK);
+            }
+            else 
+            {
+                nhaTroDAO.Instance.getTable2().ForEach(delegate (nhaTroList item)
+                {
+                    if (item.DiaChi == textBox4.Text)
+                    {
+                        MessageBox.Show("Trùng địa chỉ", "Thông báo", MessageBoxButtons.OK);
+                        isSame = true;
+                    }
+                });
+                if (!isSame)
+                {
+                    int maChuNha = (comboBox2.SelectedItem as chuNha).MaChuNha;
+                    string diaChi = textBox4.Text;
+                    float gia = float.Parse(textBox8.Text);
+                    int limit = int.Parse(numericUpDown1.Value.ToString());
+                    nhaTroDAO.Instance.insertNhaTro(maChuNha, diaChi, gia, limit);
+                    LoadDanhmuc();
+                    textBox5.Clear();
+                    textBox4.Clear();
+                    textBox8.Clear();
+                    numericUpDown1.Value = 0;
+                }
+            } 
         }
         
         private void dgvPart_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -60,7 +108,17 @@ namespace QuanLyNhaTro
                 textBox5.Text = row.Cells[0].Value.ToString();
                 textBox4.Text = row.Cells[1].Value.ToString();
                 textBox8.Text = row.Cells[2].Value.ToString();
-                cbstatusSV.Text = row.Cells[3].Value.ToString();
+                if (row.Cells[3].Value.ToString() == "còn chỗ")
+                    comboBox1.SelectedIndex = 0;
+                else
+                    comboBox1.SelectedIndex = 1;
+                numericUpDown1.Value = int.Parse(row.Cells[4].Value.ToString());
+                comboBox2.SelectedIndex = chunhaDAO.Instance.getChuNhaIndex(row.Cells[5].Value.ToString());
+                textBox6.Text = chunhaDAO.Instance.getChuNhaIndex(row.Cells[5].Value.ToString()).ToString();
+                textBox2.Text = row.Cells[6].Value.ToString();
+                if (int.Parse(row.Cells[8].Value.ToString()) > 0)
+                    textBox3.Text = row.Cells[7].Value.ToString();
+                else textBox3.Clear();
             }
         }
 
@@ -80,33 +138,110 @@ namespace QuanLyNhaTro
         }
 
         private void button8_Click(object sender, EventArgs e)
-        {
-            string diaChi = textBox4.Text;
-            float gia = float.Parse(textBox8.Text);
-            string status = cbstatusSV.Text;
-            int maNhaTro = int.Parse(textBox5.Text);
-            nhaTroDAO.Instance.UPDATEINSERT(maNhaTro,diaChi, gia, status);
-            LoadDanhmuc();
-            
+        {   bool isSame = false;
+            if (comboBox2.Text == "")
+            {
+                MessageBox.Show("Chưa chọn chủ nhà", "Thông báo", MessageBoxButtons.OK);
+            }
+            else if (textBox5.Text == "")
+            {
+                MessageBox.Show("Chưa chọn mã nhà trọ", "Thông báo", MessageBoxButtons.OK);
+            }
+            else if (!float.TryParse(textBox5.Text, out float _))
+            {
+                MessageBox.Show("Mã nhà trọ chưa đúng", "Thông báo", MessageBoxButtons.OK);
+            }
+            else if (textBox4.Text == "")
+            {
+                MessageBox.Show("Chưa nhập địa chỉ", "Thông báo", MessageBoxButtons.OK);
+            }
+            else if (textBox8.Text == "")
+            {
+                MessageBox.Show("Chưa nhập giá", "Thông báo", MessageBoxButtons.OK);
+            }
+            else if (!float.TryParse(textBox8.Text, out float _))
+            {
+                MessageBox.Show("Giá chưa đúng", "Thông báo", MessageBoxButtons.OK);
+            }
+            else if (numericUpDown1.Value <= 0)
+            {
+                MessageBox.Show("Chưa chọn giới hạn nhà trọ", "Thông báo", MessageBoxButtons.OK);
+            }
+            else
+            {
+                nhaTroDAO.Instance.getTable2().ForEach(delegate (nhaTroList item)
+                {
+                    if (item.DiaChi == textBox4.Text &&  item.MaNhaTro != int.Parse(textBox5.Text))
+                    {
+                        MessageBox.Show("Trùng địa chỉ", "Thông báo", MessageBoxButtons.OK);
+                        isSame = true;
+                    }
+                });
+                if (!isSame)
+                {
+                    string diaChi = textBox4.Text;
+                    int maChuNha = (comboBox2.SelectedItem as chuNha).MaChuNha;
+                    int limit = int.Parse(numericUpDown1.Value.ToString());
+                    float gia = float.Parse(textBox8.Text);
+                    int maNhaTro = int.Parse(textBox5.Text);
+                    if (countDAO.Instance.getSVCount(maNhaTro) > limit)
+                    {
+                        MessageBox.Show("Giới hạn thấp hơn số sinh viên đang ở trọ", "Thông báo", MessageBoxButtons.OK);
+                    }else
+                    {
+                        if (countDAO.Instance.getSVCount(maNhaTro) < limit)
+                            nhaTroDAO.Instance.availStatus(maNhaTro);
+                        else if (countDAO.Instance.getSVCount(maNhaTro) == limit)
+                            nhaTroDAO.Instance.fullStatus(maNhaTro);
+                        nhaTroDAO.Instance.UPDATEINSERT(maNhaTro, maChuNha, diaChi, gia, limit);
+                        LoadDanhmuc();
+                        LoadDanhmuc();
+                        textBox5.Clear();
+                        textBox4.Clear();
+                        textBox8.Clear();
+                        numericUpDown1.Value = 0;
+                    }
+                }
+            }
         }
 
         private void button7_Click(object sender, EventArgs e)
         {
-            /*int maNhaTro = int.Parse(textBox5.Text);
-            nhaTroDAO.Instance.DELETEINSERT(maNhaTro);
-            LoadDanhmuc();*/
-            if (textBox5.Text == "")
+            
+            DialogResult dialogResult = MessageBox.Show("Xóa nhà trọ sẽ xóa hợp đồng, thanh toán có liên quan", "Thông báo", MessageBoxButtons.YesNo);
+            if (dialogResult == DialogResult.Yes)
             {
-                MessageBox.Show("Chưa chọn ID", "Thông Báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
-
+                if (textBox5.Text == "")
+                    MessageBox.Show("Chưa chọn nhà trọ", "Thông báo", MessageBoxButtons.OK);
+                else
+                {
+                    int maNhaTro = int.Parse(textBox5.Text);
+                    List<chuyenTro> chuyenTroList = chuyenTroDAO.Instance.getListTro(maNhaTro);
+                    if (chuyenTroList.Count > 0) /*Nếu trong các nhà trọ xóa có sinh viên đang ở*/
+                    {
+                        chuyenTroList.ForEach(delegate (chuyenTro item) /*Với mỗi sv đang ở nhà trọ đang xóa*/
+                        {
+                            sinhVienDAO.Instance.statusKhongTro(item.MaSinhVien); /*update status sinh viên thành không có trọ*/
+                        });
+                    }
+                    List<thanhToan> thanhToanList = thanhToanDAO.Instance.getMaThanhToanByMaNT(maNhaTro); /*Lấy danh sách thanh toán từ mã nhà trọ*/
+                    if (thanhToanList.Count > 0)
+                    {
+                        thanhToanList.ForEach(delegate (thanhToan item) /*Với mỗi thanh toán của nhà trọ*/
+                        {
+                            hopDongDAO.Instance.deleteHopDongByMaThanhToan(item.MaThanhToan); /*Xóa hợp đồng theo mã thanh toán*/
+                        });
+                    }
+                    thanhToanDAO.Instance.deleteThanhToan(maNhaTro); /*xóa tất cả thanh toán theo mã nhà trọ*/
+                    nhaTroDAO.Instance.deleteNhaTro(maNhaTro); /*Xóa nhà trọ*/
+                    LoadDanhmuc();
+                    LoadDanhmuc();
+                    textBox5.Clear();
+                    textBox4.Clear();
+                    textBox8.Clear();
+                    numericUpDown1.Value = 0;
+                }
             }
-            else
-            {
-                int maNhaTro = int.Parse(textBox5.Text);
-                /*nhaTroDAO.Instance.deletenhatro(maNhaTro);*/
-                LoadListsinhVien();
-            }
-
         }
 
         private void tabControl2_SelectedIndexChanged(object sender, EventArgs e)
@@ -132,7 +267,11 @@ namespace QuanLyNhaTro
             }
             else if (txtDTSV.Text == "")
             {
-                MessageBox.Show("Chưa nhập điện thoại sinh viên", "Thông Báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show("Chưa nhập số điện thoại sinh viên", "Thông Báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            else if (!int.TryParse(txtDTSV.Text, out int _) || txtDTSV.Text.Length != 10)
+            {
+                MessageBox.Show("Số điện thoại chưa đúng", "Thông Báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             else if (txtLopSV.Text == "")
             {
@@ -264,7 +403,7 @@ namespace QuanLyNhaTro
             if (txtSearch.Text == "")
             {
                 MessageBox.Show("Chưa nhập từ khóa", "Thông Báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            }
+            }else
             dgvSinhvien.DataSource = sinhVienDAO.Instance.SearchSinhVien(txtSearch.Text);
         }
 
@@ -287,6 +426,10 @@ namespace QuanLyNhaTro
 
         private void button10_Click(object sender, EventArgs e)
         {
+            if (textBox6.Text == "")
+            {
+                MessageBox.Show("Chưa nhập từ khóa", "Thông Báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }else
             dgvPart.DataSource = nhaTroDAO.Instance.SearchNhaTro(textBox6.Text);
         }
 
@@ -360,6 +503,16 @@ namespace QuanLyNhaTro
         private void button1_Click(object sender, EventArgs e)
         {
             LoadListsinhVien();
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            LoadDanhmuc();
         }
     }
 }

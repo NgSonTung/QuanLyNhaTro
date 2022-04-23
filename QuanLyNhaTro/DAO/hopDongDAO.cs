@@ -22,9 +22,9 @@ namespace QuanLyNhaTro.DAO
 
         public hopDongDAO()
         { }
-        public void deleteinsert(int maHopDong)
+        public void deleteHopDongByMaThanhToan(int maThanhToan)
         {
-            providerDAO.Instance.loadDL("delete hopDong WHERE maHopDong =" + maHopDong);
+            providerDAO.Instance.loadDL("delete hopDong WHERE maThanhToan =" + maThanhToan);
         }
 
         public void deleteSinhvien(int maThanhToan)
@@ -84,12 +84,6 @@ namespace QuanLyNhaTro.DAO
             string query = "select * from hopDong where maSinhVien = '" + maSinhVien + "' and maThanhToan = '" + maThanhToan + "'";
             DataTable data = providerDAO.Instance.loadDL(query);
             return data.Rows.Count; /* kiểm tra xem nếu có sẽ trả dữ liệu => số dòng > 0 */
-        }
-
-        public void autoDeleteHopDong()
-        {
-            string query = "DELETE FROM hopDong WHERE soSinhVien = 0 ";
-            providerDAO.Instance.loadDL(query);
         }
 
     }

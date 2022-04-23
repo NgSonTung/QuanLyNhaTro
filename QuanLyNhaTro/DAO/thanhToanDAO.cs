@@ -44,6 +44,18 @@ namespace QuanLyNhaTro.DAO
             string sql = "select maThanhToan from thanhToan where status = 0 and maNhaTro = " + maNhaTro;
             return (int)providerDAO.Instance.executeScalar(sql);
         }
+        public List<thanhToan> getMaThanhToanByMaNT(int maNhaTro)
+        {
+            string sql = "select * from thanhToan where maNhaTro = " + maNhaTro;
+            List<thanhToan> thanhToanList = new List<thanhToan>();
+            DataTable data = providerDAO.Instance.loadDL(sql);
+            foreach (DataRow item in data.Rows)
+            {
+                thanhToan thanhToan = new thanhToan(item);
+                thanhToanList.Add(thanhToan);
+            }
+            return thanhToanList;
+        }
         public void insertBill(int id)
         {
             string sql = "insert into thanhToan(datecheckin,maNhaTro,status) values (getdate()," + id + ",0)";
@@ -59,14 +71,12 @@ namespace QuanLyNhaTro.DAO
             string sql = "Update thanhToan set status = 1, dateCheckOut = GETDATE()  where maThanhToan =" + id;
             providerDAO.Instance.loadDL(sql);
         }
-        /*public bool DeletethanhToan(int maNhaTro)
+        public bool deleteThanhToan(int maNhaTro)
         {
-            hopDongDAO.Instance.deleteSinhvien(maThanhToan); 
             string query = "delete thanhToan where maNhaTro =" + maNhaTro;
-
             int result = providerDAO.Instance.ExecuteQuery(query);
             return result > 0;
-        }*/
+        }
 
     }
 }
