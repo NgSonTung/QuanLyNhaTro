@@ -40,7 +40,10 @@ namespace QuanLyNhaTro
 
         private void button1_Click(object sender, EventArgs e)
         {
-            Application.Exit();
+            DialogResult h = MessageBox.Show
+                ("Bạn có chắc muốn thoát không?", "Error", MessageBoxButtons.OKCancel);
+            if (h == DialogResult.OK)
+                Application.Exit();
         }
 
         private void label7_Click(object sender, EventArgs e)
@@ -66,7 +69,10 @@ namespace QuanLyNhaTro
         }
         private void button3_Click(object sender, EventArgs e)
         {
-            Application.Exit();
+            DialogResult h = MessageBox.Show
+                ("Bạn có chắc muốn thoát không?", "Error", MessageBoxButtons.OKCancel);
+            if (h == DialogResult.OK)
+                Application.Exit();
         }
     }
 }

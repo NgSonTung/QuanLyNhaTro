@@ -549,7 +549,10 @@ namespace QuanLyNhaTro
 
         private void button3_Click(object sender, EventArgs e)
         {
-            Application.Exit();
+            DialogResult h = MessageBox.Show
+                ("Bạn có chắc muốn thoát không?", "Error", MessageBoxButtons.OKCancel);
+            if (h == DialogResult.OK)
+                Application.Exit();
         }
 
         private void button2_Click(object sender, EventArgs e)
