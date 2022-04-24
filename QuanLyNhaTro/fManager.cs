@@ -369,5 +369,13 @@ namespace QuanLyNhaTro
         {
 
         }
+
+        private void logoutToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            Form1 formLogin = new Form1();
+            formLogin.Closed += (s, args) => this.Close();
+            formLogin.Show();
+        }
     }
 } 
