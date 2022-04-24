@@ -342,7 +342,22 @@ namespace QuanLyNhaTro
                 DataGridViewRow row = dgvSinhvien.Rows[e.RowIndex];
                 //Đưa dữ liệu vào textbox
                 txtMSSV.Text = row.Cells[0].Value.ToString();
-                cbKhoaSV.SelectedItem = row.Cells[1].Value.ToString();
+                switch (row.Cells[1].Value.ToString())
+                {
+                    case "khoa công nghệ thông tin":
+                        cbKhoaSV.SelectedIndex = 0;
+                        break;
+                    case "khoa y":
+                        cbKhoaSV.SelectedIndex = 1;
+                        break;
+                    case "khoa kỹ thuật":
+                        cbKhoaSV.SelectedIndex = 2;
+                        break;
+                    case "khoa tài chính ngân hàng":
+                        cbKhoaSV.SelectedIndex = 3;
+                        break;
+                }
+
                 txtnameSV.Text = row.Cells[2].Value.ToString();
                 txtDTSV.Text = row.Cells[3].Value.ToString();
                 txtLopSV.Text = row.Cells[4].Value.ToString();
