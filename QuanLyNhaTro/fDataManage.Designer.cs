@@ -42,7 +42,6 @@
             this.label14 = new System.Windows.Forms.Label();
             this.panel17 = new System.Windows.Forms.Panel();
             this.label13 = new System.Windows.Forms.Label();
-            this.button4 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.panel10 = new System.Windows.Forms.Panel();
             this.txtQueQuan = new System.Windows.Forms.TextBox();
@@ -131,6 +130,7 @@
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.button3 = new System.Windows.Forms.Button();
             this.label22 = new System.Windows.Forms.Label();
+            this.button4 = new System.Windows.Forms.Button();
             this.tabControl2.SuspendLayout();
             this.tabPage4.SuspendLayout();
             this.panel16.SuspendLayout();
@@ -178,7 +178,7 @@
             this.tabControl2.Name = "tabControl2";
             this.tabControl2.SelectedIndex = 0;
             this.tabControl2.Size = new System.Drawing.Size(1285, 533);
-            this.tabControl2.TabIndex = 3;
+            this.tabControl2.TabIndex = 2;
             this.tabControl2.SelectedIndexChanged += new System.EventHandler(this.tabControl2_SelectedIndexChanged);
             // 
             // tabPage4
@@ -241,7 +241,7 @@
             this.button11.Location = new System.Drawing.Point(0, 0);
             this.button11.Name = "button11";
             this.button11.Size = new System.Drawing.Size(146, 51);
-            this.button11.TabIndex = 6;
+            this.button11.TabIndex = 7;
             this.button11.Text = "Cập Nhật";
             this.button11.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.button11.UseVisualStyleBackColor = false;
@@ -256,7 +256,7 @@
             this.label16.Location = new System.Drawing.Point(0, 54);
             this.label16.Name = "label16";
             this.label16.Size = new System.Drawing.Size(145, 120);
-            this.label16.TabIndex = 7;
+            this.label16.TabIndex = 0;
             this.label16.Text = "Vui lòng nhập theo thứ tự \r\nKhoa\r\nHọ và Tên\r\nĐiện Thoại\r\nLớp \r\nQuê Quán\r\n\r\n\r\n";
             this.label16.Click += new System.EventHandler(this.label16_Click);
             // 
@@ -281,7 +281,7 @@
             this.button6.Location = new System.Drawing.Point(0, 0);
             this.button6.Name = "button6";
             this.button6.Size = new System.Drawing.Size(146, 51);
-            this.button6.TabIndex = 2;
+            this.button6.TabIndex = 6;
             this.button6.Text = "Liệt Kê";
             this.button6.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.button6.UseVisualStyleBackColor = false;
@@ -296,7 +296,7 @@
             this.label15.Location = new System.Drawing.Point(0, 54);
             this.label15.Name = "label15";
             this.label15.Size = new System.Drawing.Size(145, 45);
-            this.label15.TabIndex = 5;
+            this.label15.TabIndex = 0;
             this.label15.Text = "Vui lòng nhập theo thứ tự \r\nKhoa\r\n\r\n";
             this.label15.Click += new System.EventHandler(this.label15_Click);
             // 
@@ -321,7 +321,7 @@
             this.button5.Location = new System.Drawing.Point(0, 0);
             this.button5.Name = "button5";
             this.button5.Size = new System.Drawing.Size(146, 51);
-            this.button5.TabIndex = 2;
+            this.button5.TabIndex = 5;
             this.button5.Text = "Xoá";
             this.button5.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.button5.UseVisualStyleBackColor = false;
@@ -336,7 +336,7 @@
             this.label14.Location = new System.Drawing.Point(1, 54);
             this.label14.Name = "label14";
             this.label14.Size = new System.Drawing.Size(145, 30);
-            this.label14.TabIndex = 4;
+            this.label14.TabIndex = 1;
             this.label14.Text = "Vui lòng nhập theo thứ tự \r\nMSSV\r\n";
             this.label14.Click += new System.EventHandler(this.label14_Click);
             // 
@@ -364,23 +364,6 @@
             this.label13.Text = "Vui lòng nhập theo thứ tự \r\nKhoa \r\nHọ và Tên\r\nĐiện Thoại\r\nLớp\r\nQuê Quán";
             this.label13.Click += new System.EventHandler(this.label13_Click);
             // 
-            // button4
-            // 
-            this.button4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(59)))), ((int)(((byte)(122)))));
-            this.button4.Dock = System.Windows.Forms.DockStyle.Top;
-            this.button4.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(59)))), ((int)(((byte)(122)))));
-            this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button4.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F);
-            this.button4.ForeColor = System.Drawing.Color.White;
-            this.button4.Location = new System.Drawing.Point(0, 0);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(146, 54);
-            this.button4.TabIndex = 0;
-            this.button4.Text = "Thêm";
-            this.button4.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button4.UseVisualStyleBackColor = false;
-            this.button4.Click += new System.EventHandler(this.button4_Click);
-            // 
             // button1
             // 
             this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(59)))), ((int)(((byte)(122)))));
@@ -388,7 +371,7 @@
             this.button1.Location = new System.Drawing.Point(1102, 116);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(153, 35);
-            this.button1.TabIndex = 16;
+            this.button1.TabIndex = 7;
             this.button1.Text = "Xem";
             this.button1.UseVisualStyleBackColor = false;
             this.button1.Click += new System.EventHandler(this.button1_Click);
@@ -401,14 +384,14 @@
             this.panel10.Margin = new System.Windows.Forms.Padding(2);
             this.panel10.Name = "panel10";
             this.panel10.Size = new System.Drawing.Size(315, 39);
-            this.panel10.TabIndex = 15;
+            this.panel10.TabIndex = 13;
             // 
             // txtQueQuan
             // 
             this.txtQueQuan.Location = new System.Drawing.Point(113, 8);
             this.txtQueQuan.Name = "txtQueQuan";
             this.txtQueQuan.Size = new System.Drawing.Size(156, 24);
-            this.txtQueQuan.TabIndex = 3;
+            this.txtQueQuan.TabIndex = 0;
             // 
             // QueQuanSV
             // 
@@ -418,7 +401,7 @@
             this.QueQuanSV.Location = new System.Drawing.Point(20, 13);
             this.QueQuanSV.Name = "QueQuanSV";
             this.QueQuanSV.Size = new System.Drawing.Size(75, 16);
-            this.QueQuanSV.TabIndex = 2;
+            this.QueQuanSV.TabIndex = 25;
             this.QueQuanSV.Text = "Quê Quán";
             // 
             // panel11
@@ -441,7 +424,7 @@
             this.cbstatusSV.Location = new System.Drawing.Point(113, 7);
             this.cbstatusSV.Name = "cbstatusSV";
             this.cbstatusSV.Size = new System.Drawing.Size(156, 26);
-            this.cbstatusSV.TabIndex = 12;
+            this.cbstatusSV.TabIndex = 0;
             this.cbstatusSV.SelectedIndexChanged += new System.EventHandler(this.cbstatusSV_SelectedIndexChanged);
             // 
             // statusSV
@@ -452,7 +435,7 @@
             this.statusSV.Location = new System.Drawing.Point(20, 12);
             this.statusSV.Name = "statusSV";
             this.statusSV.Size = new System.Drawing.Size(82, 16);
-            this.statusSV.TabIndex = 11;
+            this.statusSV.TabIndex = 1;
             this.statusSV.Text = "Tình Trạng";
             // 
             // panel9
@@ -463,14 +446,14 @@
             this.panel9.Margin = new System.Windows.Forms.Padding(2);
             this.panel9.Name = "panel9";
             this.panel9.Size = new System.Drawing.Size(315, 31);
-            this.panel9.TabIndex = 14;
+            this.panel9.TabIndex = 12;
             // 
             // txtLopSV
             // 
             this.txtLopSV.Location = new System.Drawing.Point(113, 4);
             this.txtLopSV.Name = "txtLopSV";
             this.txtLopSV.Size = new System.Drawing.Size(156, 24);
-            this.txtLopSV.TabIndex = 2;
+            this.txtLopSV.TabIndex = 0;
             // 
             // lopSV
             // 
@@ -480,7 +463,7 @@
             this.lopSV.Location = new System.Drawing.Point(20, 6);
             this.lopSV.Name = "lopSV";
             this.lopSV.Size = new System.Drawing.Size(33, 16);
-            this.lopSV.TabIndex = 1;
+            this.lopSV.TabIndex = 24;
             this.lopSV.Text = "Lớp";
             // 
             // suaTTSV
@@ -490,7 +473,7 @@
             this.suaTTSV.Location = new System.Drawing.Point(513, 22);
             this.suaTTSV.Name = "suaTTSV";
             this.suaTTSV.Size = new System.Drawing.Size(97, 35);
-            this.suaTTSV.TabIndex = 13;
+            this.suaTTSV.TabIndex = 4;
             this.suaTTSV.Text = "Cập Nhật";
             this.suaTTSV.UseVisualStyleBackColor = false;
             this.suaTTSV.Click += new System.EventHandler(this.suaTTSV_Click);
@@ -502,7 +485,7 @@
             this.panel4.Location = new System.Drawing.Point(940, 292);
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(316, 31);
-            this.panel4.TabIndex = 10;
+            this.panel4.TabIndex = 11;
             // 
             // DienthoaiSV
             // 
@@ -512,7 +495,7 @@
             this.DienthoaiSV.Location = new System.Drawing.Point(20, 10);
             this.DienthoaiSV.Name = "DienthoaiSV";
             this.DienthoaiSV.Size = new System.Drawing.Size(82, 16);
-            this.DienthoaiSV.TabIndex = 13;
+            this.DienthoaiSV.TabIndex = 23;
             this.DienthoaiSV.Text = "Điện Thoại";
             // 
             // txtDTSV
@@ -520,7 +503,7 @@
             this.txtDTSV.Location = new System.Drawing.Point(114, 3);
             this.txtDTSV.Name = "txtDTSV";
             this.txtDTSV.Size = new System.Drawing.Size(156, 24);
-            this.txtDTSV.TabIndex = 13;
+            this.txtDTSV.TabIndex = 0;
             // 
             // panel3
             // 
@@ -537,7 +520,7 @@
             this.cbKhoaSV.Location = new System.Drawing.Point(114, 4);
             this.cbKhoaSV.Name = "cbKhoaSV";
             this.cbKhoaSV.Size = new System.Drawing.Size(156, 26);
-            this.cbKhoaSV.TabIndex = 11;
+            this.cbKhoaSV.TabIndex = 0;
             // 
             // KhoaSV
             // 
@@ -547,7 +530,7 @@
             this.KhoaSV.Location = new System.Drawing.Point(20, 7);
             this.KhoaSV.Name = "KhoaSV";
             this.KhoaSV.Size = new System.Drawing.Size(42, 16);
-            this.KhoaSV.TabIndex = 1;
+            this.KhoaSV.TabIndex = 21;
             this.KhoaSV.Text = "Khoa";
             // 
             // panel2
@@ -557,7 +540,7 @@
             this.panel2.Location = new System.Drawing.Point(940, 247);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(316, 31);
-            this.panel2.TabIndex = 8;
+            this.panel2.TabIndex = 10;
             // 
             // NameSV
             // 
@@ -567,7 +550,7 @@
             this.NameSV.Location = new System.Drawing.Point(20, 7);
             this.NameSV.Name = "NameSV";
             this.NameSV.Size = new System.Drawing.Size(79, 16);
-            this.NameSV.TabIndex = 1;
+            this.NameSV.TabIndex = 22;
             this.NameSV.Text = "Họ và Tên";
             // 
             // txtnameSV
@@ -575,7 +558,7 @@
             this.txtnameSV.Location = new System.Drawing.Point(114, 3);
             this.txtnameSV.Name = "txtnameSV";
             this.txtnameSV.Size = new System.Drawing.Size(156, 24);
-            this.txtnameSV.TabIndex = 0;
+            this.txtnameSV.TabIndex = 1;
             // 
             // panel1
             // 
@@ -584,7 +567,7 @@
             this.panel1.Location = new System.Drawing.Point(940, 163);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(316, 31);
-            this.panel1.TabIndex = 7;
+            this.panel1.TabIndex = 8;
             // 
             // MSSVid
             // 
@@ -594,7 +577,7 @@
             this.MSSVid.Location = new System.Drawing.Point(20, 7);
             this.MSSVid.Name = "MSSVid";
             this.MSSVid.Size = new System.Drawing.Size(49, 16);
-            this.MSSVid.TabIndex = 1;
+            this.MSSVid.TabIndex = 20;
             this.MSSVid.Text = "MSSV";
             // 
             // txtMSSV
@@ -603,14 +586,14 @@
             this.txtMSSV.Name = "txtMSSV";
             this.txtMSSV.ReadOnly = true;
             this.txtMSSV.Size = new System.Drawing.Size(156, 24);
-            this.txtMSSV.TabIndex = 0;
+            this.txtMSSV.TabIndex = 1;
             // 
             // txtSearch
             // 
             this.txtSearch.Location = new System.Drawing.Point(940, 84);
             this.txtSearch.Name = "txtSearch";
             this.txtSearch.Size = new System.Drawing.Size(315, 24);
-            this.txtSearch.TabIndex = 6;
+            this.txtSearch.TabIndex = 5;
             this.txtSearch.TextChanged += new System.EventHandler(this.txtSearch_TextChanged);
             // 
             // searchSV
@@ -620,7 +603,7 @@
             this.searchSV.Location = new System.Drawing.Point(940, 116);
             this.searchSV.Name = "searchSV";
             this.searchSV.Size = new System.Drawing.Size(153, 35);
-            this.searchSV.TabIndex = 5;
+            this.searchSV.TabIndex = 6;
             this.searchSV.Text = "Tìm kiếm";
             this.searchSV.UseVisualStyleBackColor = false;
             this.searchSV.Click += new System.EventHandler(this.searchSV_Click);
@@ -632,7 +615,7 @@
             this.xemSV.Location = new System.Drawing.Point(397, 22);
             this.xemSV.Name = "xemSV";
             this.xemSV.Size = new System.Drawing.Size(97, 35);
-            this.xemSV.TabIndex = 4;
+            this.xemSV.TabIndex = 3;
             this.xemSV.Text = "Liệt Kê ";
             this.xemSV.UseVisualStyleBackColor = false;
             this.xemSV.Click += new System.EventHandler(this.xemSV_Click);
@@ -644,7 +627,7 @@
             this.xoaSV.Location = new System.Drawing.Point(282, 22);
             this.xoaSV.Name = "xoaSV";
             this.xoaSV.Size = new System.Drawing.Size(97, 35);
-            this.xoaSV.TabIndex = 3;
+            this.xoaSV.TabIndex = 2;
             this.xoaSV.Text = "Xóa";
             this.xoaSV.UseVisualStyleBackColor = false;
             this.xoaSV.Click += new System.EventHandler(this.xoaSV_Click);
@@ -670,7 +653,7 @@
             this.dgvSinhvien.Name = "dgvSinhvien";
             this.dgvSinhvien.RowHeadersWidth = 51;
             this.dgvSinhvien.Size = new System.Drawing.Size(753, 389);
-            this.dgvSinhvien.TabIndex = 0;
+            this.dgvSinhvien.TabIndex = 15;
             this.dgvSinhvien.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvSinhvien_CellClick);
             this.dgvSinhvien.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvSinhvien_CellContentClick_1);
             // 
@@ -750,7 +733,7 @@
             this.button14.Location = new System.Drawing.Point(0, 219);
             this.button14.Name = "button14";
             this.button14.Size = new System.Drawing.Size(147, 48);
-            this.button14.TabIndex = 53;
+            this.button14.TabIndex = 3;
             this.button14.Text = "Cập Nhật";
             this.button14.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.button14.UseVisualStyleBackColor = false;
@@ -790,7 +773,7 @@
             this.button13.Location = new System.Drawing.Point(0, 132);
             this.button13.Name = "button13";
             this.button13.Size = new System.Drawing.Size(147, 48);
-            this.button13.TabIndex = 52;
+            this.button13.TabIndex = 1;
             this.button13.Text = "Xoá";
             this.button13.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.button13.UseVisualStyleBackColor = false;
@@ -830,7 +813,7 @@
             this.button12.Location = new System.Drawing.Point(0, 0);
             this.button12.Name = "button12";
             this.button12.Size = new System.Drawing.Size(147, 48);
-            this.button12.TabIndex = 51;
+            this.button12.TabIndex = 0;
             this.button12.Text = "Thêm";
             this.button12.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.button12.UseVisualStyleBackColor = false;
@@ -843,14 +826,14 @@
             this.panel15.Location = new System.Drawing.Point(939, 162);
             this.panel15.Name = "panel15";
             this.panel15.Size = new System.Drawing.Size(316, 31);
-            this.panel15.TabIndex = 21;
+            this.panel15.TabIndex = 6;
             // 
             // textBox3
             // 
             this.textBox3.Location = new System.Drawing.Point(125, 3);
             this.textBox3.Name = "textBox3";
             this.textBox3.Size = new System.Drawing.Size(188, 24);
-            this.textBox3.TabIndex = 2;
+            this.textBox3.TabIndex = 0;
             // 
             // label12
             // 
@@ -870,7 +853,7 @@
             this.button2.Location = new System.Drawing.Point(1104, 118);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(151, 35);
-            this.button2.TabIndex = 21;
+            this.button2.TabIndex = 5;
             this.button2.Text = "Xem";
             this.button2.UseVisualStyleBackColor = false;
             this.button2.Click += new System.EventHandler(this.button2_Click);
@@ -882,7 +865,7 @@
             this.panel14.Location = new System.Drawing.Point(939, 448);
             this.panel14.Name = "panel14";
             this.panel14.Size = new System.Drawing.Size(316, 31);
-            this.panel14.TabIndex = 20;
+            this.panel14.TabIndex = 13;
             // 
             // textBox2
             // 
@@ -909,7 +892,7 @@
             this.panel13.Location = new System.Drawing.Point(939, 367);
             this.panel13.Name = "panel13";
             this.panel13.Size = new System.Drawing.Size(316, 31);
-            this.panel13.TabIndex = 17;
+            this.panel13.TabIndex = 11;
             // 
             // label17
             // 
@@ -936,7 +919,7 @@
             this.panel12.Location = new System.Drawing.Point(939, 408);
             this.panel12.Name = "panel12";
             this.panel12.Size = new System.Drawing.Size(316, 31);
-            this.panel12.TabIndex = 19;
+            this.panel12.TabIndex = 12;
             // 
             // label18
             // 
@@ -964,7 +947,7 @@
             this.panel5.Location = new System.Drawing.Point(939, 244);
             this.panel5.Name = "panel5";
             this.panel5.Size = new System.Drawing.Size(316, 31);
-            this.panel5.TabIndex = 15;
+            this.panel5.TabIndex = 8;
             // 
             // textBox4
             // 
@@ -992,7 +975,7 @@
             this.panel7.Location = new System.Drawing.Point(939, 327);
             this.panel7.Name = "panel7";
             this.panel7.Size = new System.Drawing.Size(316, 31);
-            this.panel7.TabIndex = 17;
+            this.panel7.TabIndex = 10;
             // 
             // comboBox1
             // 
@@ -1025,7 +1008,7 @@
             this.panel8.Location = new System.Drawing.Point(939, 285);
             this.panel8.Name = "panel8";
             this.panel8.Size = new System.Drawing.Size(316, 31);
-            this.panel8.TabIndex = 16;
+            this.panel8.TabIndex = 9;
             // 
             // label8
             // 
@@ -1052,7 +1035,7 @@
             this.panel6.Location = new System.Drawing.Point(939, 203);
             this.panel6.Name = "panel6";
             this.panel6.Size = new System.Drawing.Size(316, 31);
-            this.panel6.TabIndex = 14;
+            this.panel6.TabIndex = 7;
             // 
             // label6
             // 
@@ -1078,7 +1061,7 @@
             this.textBox6.Location = new System.Drawing.Point(939, 85);
             this.textBox6.Name = "textBox6";
             this.textBox6.Size = new System.Drawing.Size(316, 24);
-            this.textBox6.TabIndex = 13;
+            this.textBox6.TabIndex = 3;
             this.textBox6.TextChanged += new System.EventHandler(this.textBox6_TextChanged);
             // 
             // button10
@@ -1088,7 +1071,7 @@
             this.button10.Location = new System.Drawing.Point(939, 118);
             this.button10.Name = "button10";
             this.button10.Size = new System.Drawing.Size(151, 35);
-            this.button10.TabIndex = 12;
+            this.button10.TabIndex = 4;
             this.button10.Text = "Tìm kiếm";
             this.button10.UseVisualStyleBackColor = false;
             this.button10.Click += new System.EventHandler(this.button10_Click);
@@ -1100,7 +1083,7 @@
             this.button7.Location = new System.Drawing.Point(282, 22);
             this.button7.Name = "button7";
             this.button7.Size = new System.Drawing.Size(97, 35);
-            this.button7.TabIndex = 8;
+            this.button7.TabIndex = 1;
             this.button7.Text = "Xóa";
             this.button7.UseVisualStyleBackColor = false;
             this.button7.Click += new System.EventHandler(this.button7_Click);
@@ -1112,7 +1095,7 @@
             this.button8.Location = new System.Drawing.Point(396, 22);
             this.button8.Name = "button8";
             this.button8.Size = new System.Drawing.Size(97, 35);
-            this.button8.TabIndex = 7;
+            this.button8.TabIndex = 2;
             this.button8.Text = "Cập Nhật";
             this.button8.UseVisualStyleBackColor = false;
             this.button8.Click += new System.EventHandler(this.button8_Click);
@@ -1124,7 +1107,7 @@
             this.button9.Location = new System.Drawing.Point(169, 22);
             this.button9.Name = "button9";
             this.button9.Size = new System.Drawing.Size(97, 35);
-            this.button9.TabIndex = 6;
+            this.button9.TabIndex = 0;
             this.button9.Text = "Thêm";
             this.button9.UseVisualStyleBackColor = false;
             this.button9.Click += new System.EventHandler(this.button9_Click);
@@ -1138,7 +1121,7 @@
             this.dgvPart.Name = "dgvPart";
             this.dgvPart.RowHeadersWidth = 51;
             this.dgvPart.Size = new System.Drawing.Size(753, 394);
-            this.dgvPart.TabIndex = 5;
+            this.dgvPart.TabIndex = 14;
             this.dgvPart.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvPart_CellContentClick);
             this.dgvPart.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvPart_CellContentClick);
             // 
@@ -1203,7 +1186,7 @@
             this.dateTo.Margin = new System.Windows.Forms.Padding(2);
             this.dateTo.Name = "dateTo";
             this.dateTo.Size = new System.Drawing.Size(151, 26);
-            this.dateTo.TabIndex = 21;
+            this.dateTo.TabIndex = 2;
             this.dateTo.Value = new System.DateTime(2022, 4, 19, 16, 18, 38, 0);
             this.dateTo.ValueChanged += new System.EventHandler(this.dateTo_ValueChanged);
             // 
@@ -1216,7 +1199,7 @@
             this.btnHopDong.Margin = new System.Windows.Forms.Padding(2);
             this.btnHopDong.Name = "btnHopDong";
             this.btnHopDong.Size = new System.Drawing.Size(233, 35);
-            this.btnHopDong.TabIndex = 20;
+            this.btnHopDong.TabIndex = 3;
             this.btnHopDong.Text = "Hiển thị hợp đồng";
             this.btnHopDong.UseVisualStyleBackColor = false;
             this.btnHopDong.Click += new System.EventHandler(this.btnHopDong_Click);
@@ -1232,7 +1215,7 @@
             this.dateFrom.Margin = new System.Windows.Forms.Padding(2);
             this.dateFrom.Name = "dateFrom";
             this.dateFrom.Size = new System.Drawing.Size(151, 26);
-            this.dateFrom.TabIndex = 19;
+            this.dateFrom.TabIndex = 1;
             this.dateFrom.Value = new System.DateTime(2022, 4, 19, 16, 18, 38, 0);
             this.dateFrom.ValueChanged += new System.EventHandler(this.dateFrom_ValueChanged);
             // 
@@ -1246,7 +1229,7 @@
             this.historyDGV.Name = "historyDGV";
             this.historyDGV.RowHeadersWidth = 51;
             this.historyDGV.Size = new System.Drawing.Size(979, 396);
-            this.historyDGV.TabIndex = 18;
+            this.historyDGV.TabIndex = 4;
             // 
             // menuStrip1
             // 
@@ -1259,7 +1242,7 @@
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Padding = new System.Windows.Forms.Padding(4, 10, 0, 2);
             this.menuStrip1.Size = new System.Drawing.Size(1309, 36);
-            this.menuStrip1.TabIndex = 4;
+            this.menuStrip1.TabIndex = 1;
             this.menuStrip1.Text = "menuStrip1";
             // 
             // managerToolStripMenuItem
@@ -1327,8 +1310,9 @@
             this.textBox1.Location = new System.Drawing.Point(0, 36);
             this.textBox1.Multiline = true;
             this.textBox1.Name = "textBox1";
+            this.textBox1.ReadOnly = true;
             this.textBox1.Size = new System.Drawing.Size(1309, 32);
-            this.textBox1.TabIndex = 49;
+            this.textBox1.TabIndex = 2;
             // 
             // button3
             // 
@@ -1337,10 +1321,10 @@
             this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button3.Font = new System.Drawing.Font("Verdana", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button3.ForeColor = System.Drawing.Color.White;
-            this.button3.Location = new System.Drawing.Point(1265, 10);
+            this.button3.Location = new System.Drawing.Point(1265, 0);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(44, 44);
-            this.button3.TabIndex = 50;
+            this.button3.TabIndex = 0;
             this.button3.Text = "X";
             this.button3.UseVisualStyleBackColor = false;
             this.button3.Click += new System.EventHandler(this.button3_Click);
@@ -1355,6 +1339,23 @@
             this.label22.Size = new System.Drawing.Size(137, 24);
             this.label22.TabIndex = 23;
             this.label22.Text = "Motel Room";
+            // 
+            // button4
+            // 
+            this.button4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(59)))), ((int)(((byte)(122)))));
+            this.button4.Dock = System.Windows.Forms.DockStyle.Top;
+            this.button4.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(59)))), ((int)(((byte)(122)))));
+            this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button4.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F);
+            this.button4.ForeColor = System.Drawing.Color.White;
+            this.button4.Location = new System.Drawing.Point(0, 0);
+            this.button4.Name = "button4";
+            this.button4.Size = new System.Drawing.Size(146, 54);
+            this.button4.TabIndex = 4;
+            this.button4.Text = "Thêm";
+            this.button4.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.button4.UseVisualStyleBackColor = false;
+            this.button4.Click += new System.EventHandler(this.button4_Click);
             // 
             // fDataManage
             // 
@@ -1374,7 +1375,6 @@
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "fDataManage";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Data Manager";
             this.Load += new System.EventHandler(this.Admin_Load_1);
             this.tabControl2.ResumeLayout(false);
             this.tabPage4.ResumeLayout(false);
@@ -1521,7 +1521,6 @@
         private System.Windows.Forms.Panel panel16;
         private System.Windows.Forms.Button button6;
         private System.Windows.Forms.Button button5;
-        private System.Windows.Forms.Button button4;
         private System.Windows.Forms.Label label14;
         private System.Windows.Forms.Button button11;
         private System.Windows.Forms.Label label15;
@@ -1545,6 +1544,7 @@
         private System.Windows.Forms.Label label18;
         private System.Windows.Forms.Label label22;
         private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem1;
+        private System.Windows.Forms.Button button4;
         /*        private System.Windows.Forms.Label label4;
 private System.Windows.Forms.Label label2;*/
     }

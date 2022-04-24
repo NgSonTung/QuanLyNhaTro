@@ -357,7 +357,10 @@ namespace QuanLyNhaTro
 
         private void button3_Click_1(object sender, EventArgs e)
         {
-            Application.Exit();
+            DialogResult h = MessageBox.Show
+                ("Bạn có chắc muốn thoát không?", "Error", MessageBoxButtons.OKCancel);
+            if (h == DialogResult.OK)
+                Application.Exit();
         }
 
         private void menuStrip1_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
