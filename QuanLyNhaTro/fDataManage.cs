@@ -677,6 +677,32 @@ namespace QuanLyNhaTro
             label21.Hide();
         }
 
+        private void textBox7_Click(object sender, EventArgs e)
+        {   
+            if (textBox7.Text == "Nhập tên hoặc mssv")
+                textBox7.Clear();
+        }
 
+        private void textBox6_Click(object sender, EventArgs e)
+        {
+            if(textBox6.Text == "Nhập sđt, địa chỉ hoặc tên chủ nhà")
+                textBox6.Clear();
+        }
+
+        private void txtSearch_Click(object sender, EventArgs e)
+        {
+            if (txtSearch.Text == "Nhập tên, quê quán, lớp hoặc MSSV")
+                txtSearch.Clear();
+        }
+
+        private void button15_Click(object sender, EventArgs e)
+        {
+            if (textBox7.Text == "")
+            {
+                MessageBox.Show("Chưa nhập từ khóa", "Thông Báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            else
+                historyDGV.DataSource = historyDAO.Instance.searchHistory(textBox7.Text, dateFrom.Value.Date.ToString("yyyyMMdd"), dateTo.Value.Date.ToString("yyyyMMdd"));
+        }
     }
 }
